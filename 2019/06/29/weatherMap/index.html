@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/06/29/weatherMap/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="A Taiwan weather map create by Vue.js.">
-<meta property="og:locale" content="en, zh-tw">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.pexels.com/photos/226664/pexels-photo-226664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800">
 <meta property="og:image" content="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png">
 <meta property="og:updated_time" content="2019-06-29T05:31:55.138Z">
@@ -108,7 +108,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+            <a class="navbar-item" title="GitHub" href="https://github.com/InkyChew">
                 
                 <i class="fab fa-github"></i>
                 
@@ -207,11 +207,23 @@ A Taiwan weather map create by Vue.js.
 <div class="comments">
     <h3 class="title is-4">Comments</h3>
     
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/06/29/weatherMap/';
+        this.page.identifier = '2019/06/29/weatherMap/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
 <div id="disqus_thread">
-    
-    <div class="notification is-danger">
-        You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.
-    </div>
     
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
@@ -233,7 +245,7 @@ A Taiwan weather map create by Vue.js.
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/InkyChew">
                     
                     GitHub
                     
@@ -271,7 +283,7 @@ A Taiwan weather map create by Vue.js.
     window.FontAwesomeConfig = {
         searchPseudoElements: true
     }
-    moment.locale("en, zh-TW");
+    moment.locale("en-AU");
 </script>
 
 

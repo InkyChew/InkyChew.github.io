@@ -20,7 +20,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/06/28/hello-world/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:locale" content="en, zh-tw">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-06-29T03:48:25.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
@@ -104,7 +104,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+            <a class="navbar-item" title="GitHub" href="https://github.com/InkyChew">
                 
                 <i class="fab fa-github"></i>
                 
@@ -174,11 +174,23 @@
 <div class="comments">
     <h3 class="title is-4">Comments</h3>
     
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/06/28/hello-world/';
+        this.page.identifier = '2019/06/28/hello-world/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
 <div id="disqus_thread">
-    
-    <div class="notification is-danger">
-        You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.
-    </div>
     
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
@@ -200,7 +212,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/InkyChew">
                     
                     GitHub
                     
@@ -238,7 +250,7 @@
     window.FontAwesomeConfig = {
         searchPseudoElements: true
     }
-    moment.locale("en, zh-TW");
+    moment.locale("en-AU");
 </script>
 
 
