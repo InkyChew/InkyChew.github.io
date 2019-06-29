@@ -117,19 +117,42 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2019/06/29/TodoList/" itemprop="url"></a>
+            <a href="/2019/06/29/TodoList/" itemprop="url">TodoList</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-06-29T02:35:24.790Z" itemprop="datePublished">6月 29 2019</time>
+            <time datetime="2019-06-29T02:36:40.000Z" itemprop="datePublished">6月 29 2019</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Front-end/">Front-end</a>
         </span>
         
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        
+        <ul>
+<li><p><a href="https://github.com/InkyChew/Vue.js_todolist" target="_blank" rel="noopener">https://github.com/InkyChew/Vue.js_todolist</a></p>
+</li>
+<li><p>body中引入vue.js<br><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>Directive<br>v-model 資料雙向綁定<br>v-on method<br>v-if<br>v-for<br>v-focus 自訂directive，防止多個 li 因 v-model 綁定同時修改</p>
+</li>
+</ul>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">   focus: &#123;</span><br><span class="line">     inserted: function (el) &#123;</span><br><span class="line">       el.focus()</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p><code>v-bind:class=&quot;{&#39;completed&#39; : todo.completed}&quot;</code><br>use <code>completed</code> class ， when <code>todo.completed == true</code></p>
+<p><code>:class</code> 無法使用data綁定class<br><code>:style</code> 可使用data綁定class</p>
+<p>配置方式<br><img src="https://ithelp.ithome.com.tw/upload/images/20190627/20111666B56MKRpVsV.png" alt="https://ithelp.ithome.com.tw/upload/images/20190627/20111666B56MKRpVsV.png"></p>
+<hr>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">    el:&apos;&apos;,  //綁定最外層要素</span><br><span class="line">    data: &#123;&#125;,  //綁定 v-model 資料</span><br><span class="line">    computed:&#123;&#125;,  //即時更新的運算資料</span><br><span class="line">    methods: &#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<ul>
+<li>參考資料<br><a href="https://peterhpchen.github.io/VuejsQuest/basic/06_Directives.html#%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">https://peterhpchen.github.io/VuejsQuest/basic/06_Directives.html#%E4%BB%8B%E7%B4%B9</a><br><a href="https://quip.com/M2eCAQo6bXh8" target="_blank" rel="noopener">https://quip.com/M2eCAQo6bXh8</a><br><a href="https://vuejs.org/v2/guide/installation.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/installation.html</a></li>
+</ul>
+
     
     </div>
     
@@ -202,7 +225,8 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <a id="more"></a>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
