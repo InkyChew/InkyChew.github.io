@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-29T00:56:16.485Z</updated>
+  <updated>2019-06-29T02:35:25.023Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,23 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/06/29/TodoList/"/>
+    <id>http://yoursite.com/2019/06/29/TodoList/</id>
+    <published>2019-06-29T02:35:24.790Z</published>
+    <updated>2019-06-29T02:35:25.023Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>weatherMap</title>
     <link href="http://yoursite.com/2019/06/29/weatherMap/"/>
     <id>http://yoursite.com/2019/06/29/weatherMap/</id>
     <published>2019-06-29T00:27:39.000Z</published>
-    <updated>2019-06-29T00:56:16.485Z</updated>
+    <updated>2019-06-29T02:07:19.323Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><p><a href="https://codepen.io/becomegood0308/pen/GbyNVM" target="_blank" rel="noopener">https://codepen.io/becomegood0308/pen/GbyNVM</a></p><h3 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h3><ul><li>name and get id/data-name</li></ul><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><ul><li>regular expressions</li><li>json data array</li></ul><h3 id="Vue-js-jQuery"><a href="#Vue-js-jQuery" class="headerlink" title="Vue.js / jQuery"></a>Vue.js / jQuery</h3><p><img src="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png" alt="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png"></p><ul><li>vobj = vm</li><li>vm.filter = <code>&lt;p id=&quot;&quot;&gt;</code></li></ul><hr><p>參考資料<br><a href="https://www.youtube.com/watch?v=eHrGB5EHtF4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=eHrGB5EHtF4</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://images.pexels.com/photos/669964/pexels-photo-669964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="TaiwanWeatherMap"></p><h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><p><a href="https://codepen.io/becomegood0308/pen/GbyNVM" target="_blank" rel="noopener">https://codepen.io/becomegood0308/pen/GbyNVM</a></p><h3 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h3><ul><li>name and get id/data-name</li></ul><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><ul><li>regular expressions</li><li>json data array</li></ul><h3 id="Vue-js-jQuery"><a href="#Vue-js-jQuery" class="headerlink" title="Vue.js / jQuery"></a>Vue.js / jQuery</h3><p><img src="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png" alt="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png"></p><ul><li>vobj = vm</li><li>vm.filter = <code>&lt;p id=&quot;&quot;&gt;</code></li></ul><hr><p>參考資料<br><a href="https://www.youtube.com/watch?v=eHrGB5EHtF4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=eHrGB5EHtF4</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;demo&quot;&gt;&lt;a href=&quot;#demo&quot; class=&quot;headerlink&quot; title=&quot;demo&quot;&gt;&lt;/a&gt;demo&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://codepen.io/becomegood0308/pen/GbyNVM&quot; target=
+        &lt;p&gt;&lt;img src=&quot;https://images.pexels.com/photos/669964/pexels-photo-669964.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260&quot; alt=&quot;TaiwanWeath
       
     
     </summary>
     
+      <category term="Front-end" scheme="http://yoursite.com/categories/Front-end/"/>
+    
+    
+      <category term="Vue.js" scheme="http://yoursite.com/tags/Vue-js/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="sass" scheme="http://yoursite.com/tags/sass/"/>
+    
+      <category term="svg" scheme="http://yoursite.com/tags/svg/"/>
+    
+      <category term="json" scheme="http://yoursite.com/tags/json/"/>
     
   </entry>
   
