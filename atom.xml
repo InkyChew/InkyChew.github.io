@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://become_good_code_world.com/"/>
+  <link href="https://InkyChew.github.io/"/>
   <updated>2019-06-29T11:51:16.340Z</updated>
-  <id>http://become_good_code_world.com/</id>
+  <id>https://InkyChew.github.io/</id>
   
   <author>
     <name>InkyChew</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>TodoList</title>
-    <link href="http://become_good_code_world.com/2019/06/29/TodoList/"/>
-    <id>http://become_good_code_world.com/2019/06/29/TodoList/</id>
+    <link href="https://InkyChew.github.io/2019/06/29/TodoList/"/>
+    <id>https://InkyChew.github.io/2019/06/29/TodoList/</id>
     <published>2019-06-29T02:36:40.000Z</published>
     <updated>2019-06-29T11:51:16.340Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Notes" scheme="http://become_good_code_world.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
     
-      <category term="Front-end" scheme="http://become_good_code_world.com/categories/Notes/Front-end/"/>
+      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
     
     
-      <category term="Vue.js" scheme="http://become_good_code_world.com/tags/Vue-js/"/>
+      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
     
   </entry>
   
   <entry>
     <title>weatherMap</title>
-    <link href="http://become_good_code_world.com/2019/06/29/weatherMap/"/>
-    <id>http://become_good_code_world.com/2019/06/29/weatherMap/</id>
+    <link href="https://InkyChew.github.io/2019/06/29/weatherMap/"/>
+    <id>https://InkyChew.github.io/2019/06/29/weatherMap/</id>
     <published>2019-06-29T00:27:39.000Z</published>
     <updated>2019-06-29T11:51:10.737Z</updated>
     
@@ -55,27 +55,27 @@
     
     </summary>
     
-      <category term="Notes" scheme="http://become_good_code_world.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
     
-      <category term="Front-end" scheme="http://become_good_code_world.com/categories/Notes/Front-end/"/>
+      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
     
     
-      <category term="Vue.js" scheme="http://become_good_code_world.com/tags/Vue-js/"/>
+      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
     
-      <category term="jQuery" scheme="http://become_good_code_world.com/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://InkyChew.github.io/tags/jQuery/"/>
     
-      <category term="sass" scheme="http://become_good_code_world.com/tags/sass/"/>
+      <category term="sass" scheme="https://InkyChew.github.io/tags/sass/"/>
     
-      <category term="svg" scheme="http://become_good_code_world.com/tags/svg/"/>
+      <category term="svg" scheme="https://InkyChew.github.io/tags/svg/"/>
     
-      <category term="json" scheme="http://become_good_code_world.com/tags/json/"/>
+      <category term="json" scheme="https://InkyChew.github.io/tags/json/"/>
     
   </entry>
   
   <entry>
     <title>Hello Hexo</title>
-    <link href="http://become_good_code_world.com/2019/06/28/hello-world/"/>
-    <id>http://become_good_code_world.com/2019/06/28/hello-world/</id>
+    <link href="https://InkyChew.github.io/2019/06/28/hello-world/"/>
+    <id>https://InkyChew.github.io/2019/06/28/hello-world/</id>
     <published>2019-06-28T14:03:07.240Z</published>
     <updated>2019-06-29T03:48:25.457Z</updated>
     
