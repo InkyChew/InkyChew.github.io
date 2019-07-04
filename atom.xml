@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2019-07-03T00:51:54.372Z</updated>
+  <updated>2019-07-04T15:46:27.049Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -17,21 +17,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>internship-day2</title>
-    <link href="https://InkyChew.github.io/2019/07/03/internship-day2/"/>
-    <id>https://InkyChew.github.io/2019/07/03/internship-day2/</id>
-    <published>2019-07-02T23:07:02.000Z</published>
-    <updated>2019-07-03T00:51:54.372Z</updated>
+    <title>internship-Day4</title>
+    <link href="https://InkyChew.github.io/2019/07/04/internship-day4/"/>
+    <id>https://InkyChew.github.io/2019/07/04/internship-day4/</id>
+    <published>2019-07-04T15:20:00.000Z</published>
+    <updated>2019-07-04T15:46:27.049Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Javascript-in-Pug"><a href="#Javascript-in-Pug" class="headerlink" title="Javascript in Pug"></a>Javascript in Pug</h3><ul><li><p>Buffered Code <code>-</code></p><ul><li>no direct output, but value may be used in Pug<br><figure class="highlight h hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="hljs-keyword">for</span>(var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>Unbuffered Code <code>=</code></p><ul><li><p>evaluates JavaScript expression and outputs the result.<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p= <span class="hljs-string">'Two to the power of ten is: '</span> + <span class="hljs-number">2</span>**<span class="hljs-number">10</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Two to the power of ten is: 1024<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li></ul></li></ul><h3 id="export-export-default"><a href="#export-export-default" class="headerlink" title="export / export default"></a>export / export default</h3><ul><li><a href="https://www.itread01.com/content/1542084847.html" target="_blank" rel="noopener">https://www.itread01.com/content/1542084847.html</a></li><li>export<ul><li>import { }</li></ul></li><li>export default<ul><li>only one </li><li>import</li></ul></li></ul><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul><li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_es6.asp</a></li><li><a href="https://ithelp.ithome.com.tw/articles/10206587" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10206587</a></li><li><h4 id="解構賦值-宣告-來源"><a href="#解構賦值-宣告-來源" class="headerlink" title="解構賦值 (宣告 = 來源)"></a>解構賦值 (宣告 = 來源)</h4><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a> <br><ul><li>陣列</li><li>物件</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="AJAX-（Asynchronous-JavaScript-And-XML）"><a href="#AJAX-（Asynchronous-JavaScript-And-XML）" class="headerlink" title="AJAX （Asynchronous JavaScript And XML）"></a>AJAX （Asynchronous JavaScript And XML）</h3><ul><li><a href="https://www.w3schools.com/js/js_ajax_intro.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_ajax_intro.asp</a></li></ul><p><img src="https://upload.cc/i1/2019/07/04/IhykUe.png" alt="How AJAX Works"></p><a id="more"></a><h3 id="css-display-flex"><a href="#css-display-flex" class="headerlink" title="css display: flex"></a>css <code>display: flex</code></h3><ul><li><a href="https://hexschool.github.io/flexbox-pirate/index.html#/end" target="_blank" rel="noopener">https://hexschool.github.io/flexbox-pirate/index.html#/end</a></li><li><a href="https://flexboxfroggy.com/" target="_blank" rel="noopener">https://flexboxfroggy.com/</a></li></ul><table><thead><tr><th>justify-content</th><th align="center">align-items</th><th align="right">flex-direction</th><th align="right">flex-wrap</th></tr></thead><tbody><tr><td>flex-start</td><td align="center">flex-start</td><td align="right">row</td><td align="right">nowrap</td></tr><tr><td>flex-end</td><td align="center">flex-end</td><td align="right">row-reverse</td><td align="right">wrap</td></tr><tr><td>center</td><td align="center">center</td><td align="right">column</td><td align="right">wrap-reverse</td></tr><tr><td>space-between</td><td align="center">baseline</td><td align="right">column-reverse</td><td align="right"></td></tr><tr><td>space-around</td><td align="center">stretch</td><td align="right"></td><td align="right"></td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;Javascript-in-Pug&quot;&gt;&lt;a href=&quot;#Javascript-in-Pug&quot; class=&quot;headerlink&quot; title=&quot;Javascript in Pug&quot;&gt;&lt;/a&gt;Javascript in Pug&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;B
-      
+      &lt;h3 id=&quot;AJAX-（Asynchronous-JavaScript-And-XML）&quot;&gt;&lt;a href=&quot;#AJAX-（Asynchronous-JavaScript-And-XML）&quot; class=&quot;headerlink&quot; title=&quot;AJAX （Asynchronous JavaScript And XML）&quot;&gt;&lt;/a&gt;AJAX （Asynchronous JavaScript And XML）&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/js/js_ajax_intro.asp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.w3schools.com/js/js_ajax_intro.asp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload.cc/i1/2019/07/04/IhykUe.png&quot; alt=&quot;How AJAX Works&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
+    
+    
+      <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
+    
+      <category term="AJAX" scheme="https://InkyChew.github.io/tags/AJAX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>internship-Day2</title>
+    <link href="https://InkyChew.github.io/2019/07/03/internship-day2/"/>
+    <id>https://InkyChew.github.io/2019/07/03/internship-day2/</id>
+    <published>2019-07-02T23:07:02.000Z</published>
+    <updated>2019-07-04T15:46:21.132Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Javascript-in-Pug"><a href="#Javascript-in-Pug" class="headerlink" title="Javascript in Pug"></a>Javascript in Pug</h3><ul><li><p>Buffered Code <code>-</code></p><ul><li>no direct output, but value may be used in Pug<br><figure class="highlight h hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="hljs-keyword">for</span>(var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>Unbuffered Code <code>=</code></p><ul><li><p>evaluates JavaScript expression and outputs the result.<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p= <span class="hljs-string">'Two to the power of ten is: '</span> + <span class="hljs-number">2</span>**<span class="hljs-number">10</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Two to the power of ten is: 1024<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li></ul></li></ul><a id="more"></a><h3 id="export-export-default"><a href="#export-export-default" class="headerlink" title="export / export default"></a>export / export default</h3><ul><li><a href="https://www.itread01.com/content/1542084847.html" target="_blank" rel="noopener">https://www.itread01.com/content/1542084847.html</a></li><li>export<ul><li>import { }</li></ul></li><li>export default<ul><li>only one </li><li>import</li></ul></li></ul><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul><li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_es6.asp</a></li><li><a href="https://ithelp.ithome.com.tw/articles/10206587" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10206587</a></li><li><h4 id="解構賦值-宣告-來源"><a href="#解構賦值-宣告-來源" class="headerlink" title="解構賦值 (宣告 = 來源)"></a>解構賦值 (宣告 = 來源)</h4><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a> <br><ul><li>陣列</li><li>物件</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Javascript-in-Pug&quot;&gt;&lt;a href=&quot;#Javascript-in-Pug&quot; class=&quot;headerlink&quot; title=&quot;Javascript in Pug&quot;&gt;&lt;/a&gt;Javascript in Pug&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Buffered Code &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;no direct output, but value may be used in Pug&lt;br&gt;&lt;epacse hidden&gt;6&lt;/epacse&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Unbuffered Code &lt;code&gt;=&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;evaluates JavaScript expression and outputs the result.&lt;br&gt;&lt;epacse hidden&gt;7&lt;/epacse&gt;&lt;/p&gt;
+&lt;p&gt;&lt;epacse hidden&gt;8&lt;/epacse&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
