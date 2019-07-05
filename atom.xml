@@ -59,13 +59,13 @@
       &lt;h3 id=&quot;Javascript-in-Pug&quot;&gt;&lt;a href=&quot;#Javascript-in-Pug&quot; class=&quot;headerlink&quot; title=&quot;Javascript in Pug&quot;&gt;&lt;/a&gt;Javascript in Pug&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Buffered Code &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;no direct output, but value may be used in Pug&lt;br&gt;&lt;epacse hidden&gt;6&lt;/epacse&gt;&lt;/li&gt;
+&lt;li&gt;no direct output, but value may be used in Pug&lt;br&gt;&lt;epacse hidden&gt;2&lt;/epacse&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Unbuffered Code &lt;code&gt;=&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;evaluates JavaScript expression and outputs the result.&lt;br&gt;&lt;epacse hidden&gt;7&lt;/epacse&gt;&lt;/p&gt;
-&lt;p&gt;&lt;epacse hidden&gt;8&lt;/epacse&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;evaluates JavaScript expression and outputs the result.&lt;br&gt;&lt;epacse hidden&gt;3&lt;/epacse&gt;&lt;/p&gt;
+&lt;p&gt;&lt;epacse hidden&gt;4&lt;/epacse&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
