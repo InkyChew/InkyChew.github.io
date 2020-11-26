@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2020-11-26T12:55:30.984Z</updated>
+  <updated>2020-11-26T12:56:22.657Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://InkyChew.github.io/2020/11/26/interview-Taitan/"/>
     <id>https://InkyChew.github.io/2020/11/26/interview-Taitan/</id>
     <published>2020-11-26T11:25:27.000Z</published>
-    <updated>2020-11-26T12:55:30.984Z</updated>
+    <updated>2020-11-26T12:56:22.657Z</updated>
     
     <content type="html"><![CDATA[<p>應徵職位: 軟體工程師 (台北學期實習生)</p><h2 id="面試之前的小功課"><a href="#面試之前的小功課" class="headerlink" title="面試之前的小功課"></a>面試之前的小功課</h2><ol><li>完成鈦坦電子履歷</li><li>看敏捷思維的影片，回答三個問題</li><li>邏輯測驗</li><li>DISC人格測驗</li></ol><h2 id="面試流程"><a href="#面試流程" class="headerlink" title="面試流程"></a>面試流程</h2><ol><li>程式筆試(30min)</li><li>暖場自我介紹活動</li><li>跑關面試</li><li>製作海報發表</li><li>桌遊</li><li>回顧(Retro)</li></ol><h3 id="程式筆試"><a href="#程式筆試" class="headerlink" title="程式筆試"></a>程式筆試</h3><ol><li><p>印出三角形<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   #</span><br><span class="line">  ## </span><br><span class="line"> #-#</span><br><span class="line">#--#</span><br><span class="line"> #-#</span><br><span class="line">  ##</span><br><span class="line">   #</span><br></pre></td></tr></table></figure></p></li><li><p>判斷n為2的幾次方<br><br> n = 4; return 2<br><br> n = 3; return -1<br><br> <em>不確定有沒有記錯</em></p></li><li><p>n = 4; ary = [2, 5, 1, 4]<br><br> if n 在 ary 中: True<br><br> else: False</p></li><li><p>[1, 2, 3, 4, 5, 6, 7]<br>找出第三大的數字</p></li><li><p>SQL</p></li></ol><h3 id="暖場自我介紹活動"><a href="#暖場自我介紹活動" class="headerlink" title="暖場自我介紹活動"></a>暖場自我介紹活動</h3><ul><li>在一張A4紙上，寫上希望別人怎麼稱呼你，三句有關於自己的話(可以多寫)，並畫出一個能夠代表自己的圖案。</li><li>利用這張紙，跟身旁的夥伴介紹自己，並請對方簽名，至少蒐集到三個名子。</li><li>活動結束後，主持人會問大家對誰印象最深刻。</li></ul><h3 id="跑關面試-5關"><a href="#跑關面試-5關" class="headerlink" title="跑關面試(5關)"></a>跑關面試(5關)</h3><p>問題可分為這五大類</p><ol><li>未來規劃<br></li><li>跳脫框架<ul><li>你跟你的朋友分一塊Pizza，請問你會怎麼切讓自己吃到最多?</li><li>在大學有沒有做過什麼跳脫框架的事?</li></ul></li><li>衝突失敗<br><br> 描述衝突與失敗的經驗，並將重點放在你怎麼面對與解決。</li><li>程式邏輯<br><br> 根據程式筆試所寫的答案，討論程式邏輯，演算法與時間複雜度。</li><li>針對你的履歷自傳提問</li></ol><p>我在面試前準備的面試題目:</p><ol><li>自我介紹<br><br>在自我介紹中，提到我擅長什麼?我的優點是什麼?團隊合作的經驗，為什麼喜歡團隊合作?</li><li>想在這裡學到什麼，為什麼想來鈦坦?</li><li>失敗的經驗或挫折?</li><li>你覺得你有什麼樣的缺點?</li><li>為什麼要錄取你?</li><li>請問有沒有什麼問題想問的呢?</li></ol><p>除了跳脫框架的問題讓我有些意外，其他的題目都可以透過我在面試前準備的這些題目，加以延伸進行回答。建議熟讀自己所寫的履歷自傳，並了解敏開發與Scrum。回答時間有限，當面試官問誰要先回答時?盡量爭取當第一個先說話的，以免自己還沒講到重點時，就要換關了。如果是自己沒有預料到的問題，盡量也要跟能為自己加分的經驗結合，不要亂回答。</p><h3 id="製作海報發表"><a href="#製作海報發表" class="headerlink" title="製作海報發表"></a>製作海報發表</h3><ul><li>題目: 你所認為的敏捷?</li><li>方式:<ol><li>拿一張海報紙，便利貼，彩色筆進行分組討論</li><li>分組討論後進行報告</li></ol></li></ul><p>我們這組寫下敏捷思維的核心概念，並舉出自己使用敏捷思維的例子。<br>另外一組將敏捷寫在中間，並舉了三大特點下去延伸，呈現的方式類似心智圖，是很有組織的表示方式，可以學習。</p><h3 id="桌遊"><a href="#桌遊" class="headerlink" title="桌遊"></a>桌遊</h3><ul><li>角色:<ol><li>建築師: 只能比手畫腳</li><li>監工: 只能動口</li><li>工人: 戴上眼罩，動手組合積木</li><li>旁觀者: 什麼都不能做，只能用眼睛看</li></ol></li></ul><p>建築師抽取卡片，比出要組合積木的樣子與方向，給監工看。監工依照建築師的比劃，用說的方式指揮工人，應該要拿取哪一塊積木，並引導正確的角度，將積木放在正確的位子，以組合出卡片上所要求的樣子。</p><h3 id="回顧-Retro"><a href="#回顧-Retro" class="headerlink" title="回顧(Retro)"></a>回顧(Retro)</h3><ol><li>將今天面試印象最深刻的事或任何想分享的事物寫在便利貼上，幾分鐘後進行口頭分享。</li><li>有沒有想要感謝的夥伴，覺得哪一位夥伴最不錯，為什麼?</li><li>寫回饋表單。</li></ol>]]></content>
     
@@ -36,7 +36,9 @@
     
     </summary>
     
-      <category term="Interview" scheme="https://InkyChew.github.io/categories/Interview/"/>
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+      <category term="Interview" scheme="https://InkyChew.github.io/categories/Notes/Interview/"/>
     
     
       <category term="Interview, Intern" scheme="https://InkyChew.github.io/tags/Interview-Intern/"/>
