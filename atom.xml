@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2020-12-04T00:43:00.180Z</updated>
+  <updated>2020-12-04T00:54:57.015Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://InkyChew.github.io/2020/12/02/engineer-3types/"/>
     <id>https://InkyChew.github.io/2020/12/02/engineer-3types/</id>
     <published>2020-12-02T07:36:55.000Z</published>
-    <updated>2020-12-04T00:43:00.180Z</updated>
+    <updated>2020-12-04T00:54:57.015Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><ol><li>了解軟體工程師的種類與職涯發展方向。</li><li>成為一名優秀的軟體工程師所需技能。</li><li>軟體工程師可依照思維區分為三種類型。</li></ol><a id="more"></a><h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>在文章<a href="https://wei729.pixnet.net/blog/post/17798907" target="_blank" rel="noopener">剖析IT人員工作種類</a>中，可以大致瞭解IT領域人員的各個職稱與工作內容。再依照自身的興趣，選定想走的方向，並到人力銀行使用關鍵字進行搜索，進而了解並整理出各個職位的必備技能，以供未來進修學習的方向。以下為我有興趣的職位:</p><h2 id="研究開發人員-RD"><a href="#研究開發人員-RD" class="headerlink" title="研究開發人員(RD)"></a>研究開發人員(RD)</h2><h3 id="軟體工程師"><a href="#軟體工程師" class="headerlink" title="軟體工程師"></a>軟體工程師</h3><ol><li>前端</li><li>後端<br>AJAX GoLang REST API</li><li>DevOps</li></ol><h3 id="系統分析師"><a href="#系統分析師" class="headerlink" title="系統分析師"></a>系統分析師</h3><ul><li>程式撰寫前進行規劃與設計。  </li><li>使用者與開發團隊間的溝通橋樑。  </li><li>須具備多年程式設計經驗。</li></ul><h2 id="軟體工程師的三種類型"><a href="#軟體工程師的三種類型" class="headerlink" title="軟體工程師的三種類型"></a>軟體工程師的三種類型</h2><p>可依照思維區分為:</p><h3 id="1-Coder"><a href="#1-Coder" class="headerlink" title="1. Coder"></a>1. Coder</h3><p>對於被交付的任務，只求盡快且輕鬆的完成工作。也就是老闆說什麼，就做什麼。不質疑功能的好壞，不提出更好的想法以優化產品。寫程式時看重輸入、輸出與結果。產品只是所有功能的結合，很可能不符合使用者需求。企業若想開發出好產品，必須要有很厲害的PM與PD。</p><h3 id="2-Hacker"><a href="#2-Hacker" class="headerlink" title="2. Hacker"></a>2. Hacker</h3><p>Know and do 和 Don’t know and do 這兩類型的人都可以稱為 Hacker。因此 Hacker 也被稱為 Doer。Hacker一詞，在字典上有兩個解釋，分別為: </p><ol><li>寫程式和解決問題的專家。 (Know and do)</li><li>沒有技能或天賦而投入於活動中的人。  (Don’t know and do)</li></ol><p><strong>為什麼做?</strong> 對Hacker而言很重要，他們致力於打造好用且創新的產品。因此提出更好的想法以優化產品，思考產品是否有用?是否能符合需求?</p><h3 id="3-Architect"><a href="#3-Architect" class="headerlink" title="3. Architect"></a>3. Architect</h3><p>寫程式時看重架構、優化、成本、格局。持續的學習、思考、質疑、創造。用Geek來稱呼這些人也不為過!他們擁有兩大特徵:</p><ol><li>喜歡有秩序，可以重複使用且永久保存的code</li><li>樂於分享</li></ol><p>他們致力於開創新系統、新套件、新框架，將複雜重複的流程打包以簡化流程，並無私的分享給世界，對於IT領域有很大的貢獻。例如: Linux, Open source 。</p><h1 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h1><p>期許自己在軟體工程師的職涯中，永遠當一個Hacker，並朝著Architect之路邁進。雖然寫code的功力還遠遠不足，但我可以一直是個分享者Giver，持續的學習並分享。</p><h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ol><li><a href="https://betweengos.com/career-3-types-of-programmer-coder-hacker-architect/" target="_blank" rel="noopener">如果妳也開始學寫Code－依個性分類，會是哪種程式設計師？</a>  </li><li><a href="https://wei729.pixnet.net/blog/post/17798907" target="_blank" rel="noopener">剖析IT人員工作種類</a></li></ol>]]></content>
     
@@ -38,8 +38,6 @@
       <category term="Reflection" scheme="https://InkyChew.github.io/categories/Reflection/"/>
     
     
-      <category term="engineer" scheme="https://InkyChew.github.io/tags/engineer/"/>
-    
       <category term="reflection" scheme="https://InkyChew.github.io/tags/reflection/"/>
     
   </entry>
@@ -49,7 +47,7 @@
     <link href="https://InkyChew.github.io/2020/11/26/interview-Taitan/"/>
     <id>https://InkyChew.github.io/2020/11/26/interview-Taitan/</id>
     <published>2020-11-26T11:25:27.000Z</published>
-    <updated>2020-11-29T09:17:56.731Z</updated>
+    <updated>2020-12-04T00:55:07.153Z</updated>
     
     <content type="html"><![CDATA[<p>應徵職位: 軟體工程師 (台北學期實習生)</p><h2 id="面試之前的小功課"><a href="#面試之前的小功課" class="headerlink" title="面試之前的小功課"></a>面試之前的小功課</h2><ol><li>完成鈦坦電子履歷</li><li>看敏捷思維的影片，回答三個問題</li><li>邏輯測驗</li><li>DISC人格測驗</li></ol><h2 id="面試流程"><a href="#面試流程" class="headerlink" title="面試流程"></a>面試流程</h2><ol><li>程式筆試(30min)</li><li>暖場自我介紹活動</li><li>跑關面試</li><li>製作海報發表</li><li>桌遊</li><li>回顧(Retro)<a id="more"></a></li></ol><h3 id="程式筆試"><a href="#程式筆試" class="headerlink" title="程式筆試"></a>程式筆試</h3><ol><li><p>印出三角形<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   #</span><br><span class="line">  ## </span><br><span class="line"> #-#</span><br><span class="line">#--#</span><br><span class="line"> #-#</span><br><span class="line">  ##</span><br><span class="line">   #</span><br></pre></td></tr></table></figure></p></li><li><p>判斷n為2的幾次方<br> n = 4; return 2<br> n = 3; return -1<br> <em>不確定有沒有記錯</em></p></li><li><p>n = 4; ary = [2, 5, 1, 4]<br> if n 在 ary 中: True<br> else: False</p></li><li><p>[1, 2, 3, 4, 5, 6, 7]<br>找出第三大的數字</p></li><li><p>SQL</p></li></ol><h3 id="暖場自我介紹活動"><a href="#暖場自我介紹活動" class="headerlink" title="暖場自我介紹活動"></a>暖場自我介紹活動</h3><ul><li>在一張A4紙上，寫上希望別人怎麼稱呼你，三句有關於自己的話(可以多寫)，並畫出一個能夠代表自己的圖案。</li><li>利用這張紙，跟身旁的夥伴介紹自己，並請對方簽名，至少蒐集到三個名子。</li><li>活動結束後，主持人會問大家對誰印象最深刻。</li></ul><h3 id="跑關面試-5關"><a href="#跑關面試-5關" class="headerlink" title="跑關面試(5關)"></a>跑關面試(5關)</h3><p>問題可分為這五大類</p><ol><li>未來規劃  </li><li>跳脫框架<ul><li>你跟你的朋友分一塊Pizza，請問你會怎麼切讓自己吃到最多?</li><li>在大學有沒有做過什麼跳脫框架的事?</li></ul></li><li>衝突失敗<br> 描述衝突與失敗的經驗，並將重點放在你怎麼面對與解決。</li><li>程式邏輯<br> 根據程式筆試所寫的答案，討論程式邏輯，演算法與時間複雜度。</li><li>針對你的履歷自傳提問</li></ol><p>我在面試前準備的面試題目:</p><ol><li>自我介紹<br>在自我介紹中，提到我擅長什麼?我的優點是什麼?團隊合作的經驗，為什麼喜歡團隊合作?</li><li>想在這裡學到什麼，為什麼想來鈦坦?</li><li>失敗的經驗或挫折?</li><li>你覺得你有什麼樣的缺點?</li><li>為什麼要錄取你?</li><li>請問有沒有什麼問題想問的呢?</li></ol><p>除了跳脫框架的問題讓我有些意外，其他的題目都可以透過我在面試前準備的這些題目，加以延伸進行回答。建議熟讀自己所寫的履歷自傳，並了解敏開發與Scrum。回答時間有限，當面試官問誰要先回答時?盡量爭取當第一個先說話的，以免自己還沒講到重點時，就要換關了。如果是自己沒有預料到的問題，盡量也要跟能為自己加分的經驗結合，不要亂回答。</p><h3 id="製作海報發表"><a href="#製作海報發表" class="headerlink" title="製作海報發表"></a>製作海報發表</h3><ul><li>題目: 你所認為的敏捷?</li><li>方式:<ol><li>拿一張海報紙，便利貼，彩色筆進行分組討論</li><li>分組討論後進行報告</li></ol></li></ul><p>我們這組寫下敏捷思維的核心概念，並舉出自己使用敏捷思維的例子。<br>另外一組將敏捷寫在中間，並舉了三大特點下去延伸，呈現的方式類似心智圖，是很有組織的表示方式，可以學習。</p><h3 id="桌遊"><a href="#桌遊" class="headerlink" title="桌遊"></a>桌遊</h3><ul><li>角色:<ol><li>建築師: 只能比手畫腳</li><li>監工: 只能動口</li><li>工人: 戴上眼罩，動手組合積木</li><li>旁觀者: 什麼都不能做，只能用眼睛看</li></ol></li></ul><p>建築師抽取卡片，比出要組合積木的樣子與方向，給監工看。監工依照建築師的比劃，用說的方式指揮工人，應該要拿取哪一塊積木，並引導正確的角度，將積木放在正確的位子，以組合出卡片上所要求的樣子。</p><h3 id="回顧-Retro"><a href="#回顧-Retro" class="headerlink" title="回顧(Retro)"></a>回顧(Retro)</h3><ol><li>將今天面試印象最深刻的事或任何想分享的事物寫在便利貼上，幾分鐘後進行口頭分享。</li><li>有沒有想要感謝的夥伴，覺得哪一位夥伴最不錯，為什麼?</li><li>寫回饋表單。</li></ol>]]></content>
     
@@ -77,7 +75,7 @@
     
       <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
     
-      <category term="Interview" scheme="https://InkyChew.github.io/tags/Interview/"/>
+      <category term="interview" scheme="https://InkyChew.github.io/tags/interview/"/>
     
   </entry>
   
