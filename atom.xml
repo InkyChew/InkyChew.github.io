@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2020-11-29T09:17:56.731Z</updated>
+  <updated>2020-12-04T00:43:00.180Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>軟體工程師有三種，你是哪一種?</title>
+    <link href="https://InkyChew.github.io/2020/12/02/engineer-3types/"/>
+    <id>https://InkyChew.github.io/2020/12/02/engineer-3types/</id>
+    <published>2020-12-02T07:36:55.000Z</published>
+    <updated>2020-12-04T00:43:00.180Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><ol><li>了解軟體工程師的種類與職涯發展方向。</li><li>成為一名優秀的軟體工程師所需技能。</li><li>軟體工程師可依照思維區分為三種類型。</li></ol><a id="more"></a><h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>在文章<a href="https://wei729.pixnet.net/blog/post/17798907" target="_blank" rel="noopener">剖析IT人員工作種類</a>中，可以大致瞭解IT領域人員的各個職稱與工作內容。再依照自身的興趣，選定想走的方向，並到人力銀行使用關鍵字進行搜索，進而了解並整理出各個職位的必備技能，以供未來進修學習的方向。以下為我有興趣的職位:</p><h2 id="研究開發人員-RD"><a href="#研究開發人員-RD" class="headerlink" title="研究開發人員(RD)"></a>研究開發人員(RD)</h2><h3 id="軟體工程師"><a href="#軟體工程師" class="headerlink" title="軟體工程師"></a>軟體工程師</h3><ol><li>前端</li><li>後端<br>AJAX GoLang REST API</li><li>DevOps</li></ol><h3 id="系統分析師"><a href="#系統分析師" class="headerlink" title="系統分析師"></a>系統分析師</h3><ul><li>程式撰寫前進行規劃與設計。  </li><li>使用者與開發團隊間的溝通橋樑。  </li><li>須具備多年程式設計經驗。</li></ul><h2 id="軟體工程師的三種類型"><a href="#軟體工程師的三種類型" class="headerlink" title="軟體工程師的三種類型"></a>軟體工程師的三種類型</h2><p>可依照思維區分為:</p><h3 id="1-Coder"><a href="#1-Coder" class="headerlink" title="1. Coder"></a>1. Coder</h3><p>對於被交付的任務，只求盡快且輕鬆的完成工作。也就是老闆說什麼，就做什麼。不質疑功能的好壞，不提出更好的想法以優化產品。寫程式時看重輸入、輸出與結果。產品只是所有功能的結合，很可能不符合使用者需求。企業若想開發出好產品，必須要有很厲害的PM與PD。</p><h3 id="2-Hacker"><a href="#2-Hacker" class="headerlink" title="2. Hacker"></a>2. Hacker</h3><p>Know and do 和 Don’t know and do 這兩類型的人都可以稱為 Hacker。因此 Hacker 也被稱為 Doer。Hacker一詞，在字典上有兩個解釋，分別為: </p><ol><li>寫程式和解決問題的專家。 (Know and do)</li><li>沒有技能或天賦而投入於活動中的人。  (Don’t know and do)</li></ol><p><strong>為什麼做?</strong> 對Hacker而言很重要，他們致力於打造好用且創新的產品。因此提出更好的想法以優化產品，思考產品是否有用?是否能符合需求?</p><h3 id="3-Architect"><a href="#3-Architect" class="headerlink" title="3. Architect"></a>3. Architect</h3><p>寫程式時看重架構、優化、成本、格局。持續的學習、思考、質疑、創造。用Geek來稱呼這些人也不為過!他們擁有兩大特徵:</p><ol><li>喜歡有秩序，可以重複使用且永久保存的code</li><li>樂於分享</li></ol><p>他們致力於開創新系統、新套件、新框架，將複雜重複的流程打包以簡化流程，並無私的分享給世界，對於IT領域有很大的貢獻。例如: Linux, Open source 。</p><h1 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h1><p>期許自己在軟體工程師的職涯中，永遠當一個Hacker，並朝著Architect之路邁進。雖然寫code的功力還遠遠不足，但我可以一直是個分享者Giver，持續的學習並分享。</p><h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ol><li><a href="https://betweengos.com/career-3-types-of-programmer-coder-hacker-architect/" target="_blank" rel="noopener">如果妳也開始學寫Code－依個性分類，會是哪種程式設計師？</a>  </li><li><a href="https://wei729.pixnet.net/blog/post/17798907" target="_blank" rel="noopener">剖析IT人員工作種類</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Why&quot;&gt;&lt;a href=&quot;#Why&quot; class=&quot;headerlink&quot; title=&quot;Why&quot;&gt;&lt;/a&gt;Why&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;了解軟體工程師的種類與職涯發展方向。&lt;/li&gt;
+&lt;li&gt;成為一名優秀的軟體工程師所需技能。&lt;/li&gt;
+&lt;li&gt;軟體工程師可依照思維區分為三種類型。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Reflection" scheme="https://InkyChew.github.io/categories/Reflection/"/>
+    
+    
+      <category term="engineer" scheme="https://InkyChew.github.io/tags/engineer/"/>
+    
+      <category term="reflection" scheme="https://InkyChew.github.io/tags/reflection/"/>
+    
+  </entry>
   
   <entry>
     <title>2020新加坡商鈦坦科技台北實習生面試</title>
@@ -50,162 +78,6 @@
       <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
     
       <category term="Interview" scheme="https://InkyChew.github.io/tags/Interview/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chat-room</title>
-    <link href="https://InkyChew.github.io/2019/07/07/chat-room/"/>
-    <id>https://InkyChew.github.io/2019/07/07/chat-room/</id>
-    <published>2019-07-07T14:19:01.000Z</published>
-    <updated>2019-07-07T15:15:37.747Z</updated>
-    
-    <content type="html"><![CDATA[<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br><span class="line">$ vue init webpack</span><br><span class="line">$ cd my-project</span><br><span class="line">$ npm install</span><br><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="資料夾結構"><a href="#資料夾結構" class="headerlink" title="資料夾結構"></a>資料夾結構</h3><p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|- build (webpacak 資料結構)</span><br><span class="line">|- config</span><br><span class="line">|- dist (npm run build 輸出結果)</span><br><span class="line">|- node_modules (all packages in paackage.json)</span><br><span class="line">|- static (其他靜態檔案)</span><br><span class="line">|- src</span><br><span class="line">  |- assets (其他 css, js, images)</span><br><span class="line">  |- components (主要 vue 元件)</span><br><span class="line">  |- router (vue 的路由器)</span><br><span class="line">    |-index.js</span><br><span class="line">  |- App.vue (主要樣版檔案)</span><br><span class="line">  |- main.js (vue js 主檔案)</span><br><span class="line">|- index.html</span><br></pre></td></tr></table></figure></p><h3 id="Use-Bootstrap"><a href="#Use-Bootstrap" class="headerlink" title="Use Bootstrap"></a>Use Bootstrap</h3><p><a href="https://dwatow.github.io/2018/03-25-vuejs/vue-cli-webpack-bootstrap/" target="_blank" rel="noopener">https://dwatow.github.io/2018/03-25-vuejs/vue-cli-webpack-bootstrap/</a><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install bootstrap</span><br><span class="line">$ npm install sass-loader node-sass webpack --save-dev</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;epacse hidden&gt;6&lt;/epacse&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
-    
-      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
-    
-    
-      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
-    
-      <category term="vue-cli" scheme="https://InkyChew.github.io/tags/vue-cli/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>internship-Day4</title>
-    <link href="https://InkyChew.github.io/2019/07/04/internship-day4/"/>
-    <id>https://InkyChew.github.io/2019/07/04/internship-day4/</id>
-    <published>2019-07-04T15:20:00.000Z</published>
-    <updated>2019-07-05T00:26:10.780Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="AJAX-（Asynchronous-JavaScript-And-XML）"><a href="#AJAX-（Asynchronous-JavaScript-And-XML）" class="headerlink" title="AJAX （Asynchronous JavaScript And XML）"></a>AJAX （Asynchronous JavaScript And XML）</h3><ul><li><a href="https://www.w3schools.com/js/js_ajax_intro.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_ajax_intro.asp</a></li></ul><p><img src="https://upload.cc/i1/2019/07/04/IhykUe.png" alt="How AJAX Works"></p><a id="more"></a><h3 id="css-display-flex"><a href="#css-display-flex" class="headerlink" title="css display: flex"></a>css <code>display: flex</code></h3><ul><li><a href="https://hexschool.github.io/flexbox-pirate/index.html#/end" target="_blank" rel="noopener">https://hexschool.github.io/flexbox-pirate/index.html#/end</a></li><li><a href="https://flexboxfroggy.com/" target="_blank" rel="noopener">https://flexboxfroggy.com/</a></li></ul><table><thead><tr><th>justify-content</th><th align="center">align-items</th><th align="right">flex-direction</th><th align="right">flex-wrap</th></tr></thead><tbody><tr><td>flex-start</td><td align="center">flex-start</td><td align="right">row</td><td align="right">nowrap</td></tr><tr><td>flex-end</td><td align="center">flex-end</td><td align="right">row-reverse</td><td align="right">wrap</td></tr><tr><td>center</td><td align="center">center</td><td align="right">column</td><td align="right">wrap-reverse</td></tr><tr><td>space-between</td><td align="center">baseline</td><td align="right">column-reverse</td><td align="right"></td></tr><tr><td>space-around</td><td align="center">stretch</td><td align="right"></td><td align="right"></td></tr></tbody></table><h3 id="展開-其餘運算符"><a href="#展開-其餘運算符" class="headerlink" title="... 展開 / 其餘運算符"></a><code>...</code> 展開 / 其餘運算符</h3><ul><li><a href="https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/rest_spread.html" target="_blank" rel="noopener">https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/rest_spread.html</a></li><li>與陣列有關</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;AJAX-（Asynchronous-JavaScript-And-XML）&quot;&gt;&lt;a href=&quot;#AJAX-（Asynchronous-JavaScript-And-XML）&quot; class=&quot;headerlink&quot; title=&quot;AJAX （Asynchronous JavaScript And XML）&quot;&gt;&lt;/a&gt;AJAX （Asynchronous JavaScript And XML）&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/js/js_ajax_intro.asp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.w3schools.com/js/js_ajax_intro.asp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload.cc/i1/2019/07/04/IhykUe.png&quot; alt=&quot;How AJAX Works&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
-    
-      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
-    
-    
-      <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
-    
-      <category term="AJAX" scheme="https://InkyChew.github.io/tags/AJAX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>internship-Day2</title>
-    <link href="https://InkyChew.github.io/2019/07/03/internship-day2/"/>
-    <id>https://InkyChew.github.io/2019/07/03/internship-day2/</id>
-    <published>2019-07-02T23:07:02.000Z</published>
-    <updated>2019-07-04T15:46:21.132Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Javascript-in-Pug"><a href="#Javascript-in-Pug" class="headerlink" title="Javascript in Pug"></a>Javascript in Pug</h3><ul><li><p>Buffered Code <code>-</code></p><ul><li>no direct output, but value may be used in Pug<br><figure class="highlight h hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="hljs-keyword">for</span>(var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>Unbuffered Code <code>=</code></p><ul><li><p>evaluates JavaScript expression and outputs the result.<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p= <span class="hljs-string">'Two to the power of ten is: '</span> + <span class="hljs-number">2</span>**<span class="hljs-number">10</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Two to the power of ten is: 1024<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li></ul></li></ul><a id="more"></a><h3 id="export-export-default"><a href="#export-export-default" class="headerlink" title="export / export default"></a>export / export default</h3><ul><li><a href="https://www.itread01.com/content/1542084847.html" target="_blank" rel="noopener">https://www.itread01.com/content/1542084847.html</a></li><li>export<ul><li>import { }</li></ul></li><li>export default<ul><li>only one </li><li>import</li></ul></li></ul><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul><li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_es6.asp</a></li><li><a href="https://ithelp.ithome.com.tw/articles/10206587" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10206587</a></li><li><h4 id="解構賦值-宣告-來源"><a href="#解構賦值-宣告-來源" class="headerlink" title="解構賦值 (宣告 = 來源)"></a>解構賦值 (宣告 = 來源)</h4><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a> <br><ul><li>陣列</li><li>物件</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Javascript-in-Pug&quot;&gt;&lt;a href=&quot;#Javascript-in-Pug&quot; class=&quot;headerlink&quot; title=&quot;Javascript in Pug&quot;&gt;&lt;/a&gt;Javascript in Pug&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Buffered Code &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;no direct output, but value may be used in Pug&lt;br&gt;&lt;epacse hidden&gt;23&lt;/epacse&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Unbuffered Code &lt;code&gt;=&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;evaluates JavaScript expression and outputs the result.&lt;br&gt;&lt;epacse hidden&gt;24&lt;/epacse&gt;&lt;/p&gt;
-&lt;p&gt;&lt;epacse hidden&gt;25&lt;/epacse&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
-    
-      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
-    
-    
-      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
-    
-      <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Internship_Day1</title>
-    <link href="https://InkyChew.github.io/2019/07/02/internship-day1/"/>
-    <id>https://InkyChew.github.io/2019/07/02/internship-day1/</id>
-    <published>2019-07-01T16:08:15.000Z</published>
-    <updated>2019-07-02T22:48:28.781Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="建新專案"><a href="#建新專案" class="headerlink" title="建新專案"></a>建新專案</h3><ul><li><code>vue create</code><ul><li>Babel //Javascript to ES6</li><li>TypeScript //弱型</li><li>PWA //Progressive Web App</li><li>Router</li><li>Vuex //狀態</li><li>CSS Pre-processors //sass</li><li>Linter / Formatter //檢查</li></ul></li><li>npm install run package.json<ul><li>npm run serve //啟動webpack-dev-server</li><li>npm run dev</li><li>npm run build //打包至dist產生生產環境，帶有JS/CSS/HTML的壓縮包<a id="more"></a></li></ul></li></ul><h3 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h3><ul><li>mount 渲染前後<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    initData () &#123;</span><br><span class="line">      this.$step(this.step) // active 步驟 1 //Vuex</span><br><span class="line">      this.$pageId(this.id)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">mounted () &#123;</span><br><span class="line">    this.initData()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p><img src="https://vuejs.org/images/lifecycle.png" alt="LifeCycle of Vue.js"></p><h3 id="ES6-module"><a href="#ES6-module" class="headerlink" title="ES6 module"></a>ES6 module</h3><ul><li><code>import from</code></li><li><code>export default</code></li></ul><h3 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h3><p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router</span><br><span class="line"></span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import VueRouter from &apos;vue-router&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br></pre></td></tr></table></figure></p><h3 id="Pug-to-Vue-js"><a href="#Pug-to-Vue-js" class="headerlink" title="Pug to Vue.js"></a>Pug to Vue.js</h3><ul><li><p>img<code>@</code><br>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img(src=&quot;../assets/images/slide__1.jpg&quot;) //pug</span><br></pre></td></tr></table></figure></p><p>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img(src=&quot;@/assets/images/slide__1.jpg&quot;) //vue</span><br></pre></td></tr></table></figure></p></li><li><p><code>router-link</code><br>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.button--xl(</span><br><span class="line">    href=&quot;dashboard.html&quot; //only route in router</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><p>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router-link.button--xl(</span><br><span class="line">    :to=&quot;&apos;/dashboard&apos;&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p></li><li><p>input</p><ul><li><p><a href="https://dwatow.github.io/2018/09-21-vuejs/vue-component-with-v-model/" target="_blank" rel="noopener">https://dwatow.github.io/2018/09-21-vuejs/vue-component-with-v-model/</a><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//pug</span><br><span class="line">+form--input(&quot;手機號碼&quot;, &quot;&quot;, &quot;請輸入手機號碼&quot;)</span><br></pre></td></tr></table></figure></p><p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//vue</span><br><span class="line">---template---</span><br><span class="line">FormInput(</span><br><span class="line">    :required=&quot;true&quot;,</span><br><span class="line">    :title=&quot;&apos;手機號碼&apos;&quot;</span><br><span class="line">    :value=&quot;formData.phone&quot;</span><br><span class="line">    @input=&quot;formData.phone = $event&quot;</span><br><span class="line">)</span><br><span class="line"> ---script---</span><br><span class="line">import &#123; FormInput, FormParents &#125; from &apos;@/components/_form&apos;</span><br><span class="line">components: &#123;</span><br><span class="line">    FormInput, FormParents</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p><p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//component.vue</span><br><span class="line">---template---</span><br><span class="line">input(</span><br><span class="line">  type=&quot;text&quot;</span><br><span class="line">  :placeholder=&quot;placeholder&quot;</span><br><span class="line">  :value=&quot;value&quot;</span><br><span class="line">  @input=&quot;onInput&quot;</span><br><span class="line">)</span><br><span class="line">---script---</span><br><span class="line">methods: &#123;</span><br><span class="line">    onInput (event) &#123;</span><br><span class="line">        this.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li></ul></li><li><p>radio<br>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//pug</span><br><span class="line">input(type=&quot;radio&quot; name=&quot;gender&quot; checked)</span><br></pre></td></tr></table></figure></p><p>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//vue</span><br><span class="line">---template---</span><br><span class="line">FormParents(</span><br><span class="line">    :value=&quot;formData.gender&quot;</span><br><span class="line">    @input=&quot;formData.gender = $event&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><p>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//component.vue</span><br><span class="line">---template---</span><br><span class="line">input(</span><br><span class="line">    type=&quot;radio&quot;</span><br><span class="line">    name=&quot;gender&quot;</span><br><span class="line">    :check=&quot;value === &apos;dad&apos;&quot;</span><br><span class="line">    @input=&quot;onInput(&apos;dad&apos;)&quot;</span><br><span class="line">)</span><br><span class="line">---script---</span><br><span class="line">props: &#123;</span><br><span class="line">    value: &#123;</span><br><span class="line">        type: String,</span><br><span class="line">        default: &apos;dad&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    onInput (value) &#123;</span><br><span class="line">        this.$emit(&apos;input&apos;, value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>modal<br>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a.button--xl(</span><br><span class="line">    data-toggle=&quot;modal&quot;</span><br><span class="line">    data-target=&quot;#registerSuccess&quot;</span><br><span class="line">    href=&quot;#registerSuccess&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><p>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a.button--xl(</span><br><span class="line">    href=&quot;javascript:;&quot;</span><br><span class="line">    @click=&quot;openModal(&apos;ModalRegisterSuccess&apos;, true)&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;建新專案&quot;&gt;&lt;a href=&quot;#建新專案&quot; class=&quot;headerlink&quot; title=&quot;建新專案&quot;&gt;&lt;/a&gt;建新專案&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;vue create&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;Babel //Javascript to ES6&lt;/li&gt;
-&lt;li&gt;TypeScript //弱型&lt;/li&gt;
-&lt;li&gt;PWA //Progressive Web App&lt;/li&gt;
-&lt;li&gt;Router&lt;/li&gt;
-&lt;li&gt;Vuex //狀態&lt;/li&gt;
-&lt;li&gt;CSS Pre-processors //sass&lt;/li&gt;
-&lt;li&gt;Linter / Formatter //檢查&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;npm install run package.json&lt;ul&gt;
-&lt;li&gt;npm run serve //啟動webpack-dev-server&lt;/li&gt;
-&lt;li&gt;npm run dev&lt;/li&gt;
-&lt;li&gt;npm run build //打包至dist產生生產環境，帶有JS/CSS/HTML的壓縮包&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
-    
-      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
-    
-    
-      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
-    
-      <category term="internship" scheme="https://InkyChew.github.io/tags/internship/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>book_room</title>
-    <link href="https://InkyChew.github.io/2019/06/30/book-room/"/>
-    <id>https://InkyChew.github.io/2019/06/30/book-room/</id>
-    <published>2019-06-30T01:04:27.000Z</published>
-    <updated>2019-06-30T09:07:02.787Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul><li><code>&lt;template&gt;</code>  holds HTML code without displaying it, <br><br>  the content can be made visible and rendered later by using JavaScript.</li></ul><h2 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h2><ul><li>component</li></ul><h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul><li><a href="https://hackmd.io/SFgotrQnQwWP0H3KB1BJ1g?fbclid=IwAR0MRhMELxcQT-KQyAyPHEbCflZi9BvhfSsIcYtpEX5tNOjEHonvyY6vp8c" target="_blank" rel="noopener">https://hackmd.io/SFgotrQnQwWP0H3KB1BJ1g?fbclid=IwAR0MRhMELxcQT-KQyAyPHEbCflZi9BvhfSsIcYtpEX5tNOjEHonvyY6vp8c</a></li><li><a href="https://www.youtube.com/watch?v=uLhXpzsv5kk&amp;t=949s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=uLhXpzsv5kk&amp;t=949s</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML&quot;&gt;&lt;/a&gt;HTML&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  holds HTML code without d
-      
-    
-    </summary>
-    
     
   </entry>
   
