@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload.cc/i1/2020/12/14/R8K2Zq.jpg">
 <meta property="og:image" content="https://upload.cc/i1/2020/12/14/sF6TPy.jpg">
-<meta property="og:updated_time" content="2020-12-14T04:16:26.114Z">
+<meta property="og:updated_time" content="2020-12-14T04:22:57.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="物件導向的五大原則">
 <meta name="twitter:description" content="SOLID 原則1. SRP (Single Responsibility Principle) 一個class只對一種role(actor)負責。">
@@ -154,7 +154,7 @@
         <span class="column is-narrow">
             
             
-            11 minutes read (About 1588 words)
+            11 minutes read (About 1628 words)
         </span>
         
 
@@ -212,7 +212,11 @@
 <li>postconditions</li>
 <li>class invariants  </li>
 </ol>
-<p>父類別的條件要比子類別嚴格</p>
+<p>Subclasses need to follow these rules:</p>
+<ol>
+<li>Don’t implement any stricter validation rules on input parameters than implemented by the parent class.<br>父類別的條件要比子類別嚴格</li>
+<li>Apply at the least the same rules to all output parameters as applied by the parent class.</li>
+</ol>
 <h2 id="4-ISP-Interface-Segregation-Principle"><a href="#4-ISP-Interface-Segregation-Principle" class="headerlink" title="4. ISP (Interface Segregation Principle)"></a>4. ISP (Interface Segregation Principle)</h2><blockquote>
 <p>Clients should not be forced to depend upon interfaces that they do not use.</p>
 </blockquote>
