@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Archives: 2020 - Becomegood Code World</title>
+<title>遞迴與迴圈 - Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,17 +18,18 @@
 
 
 
-    <meta name="description" content="Inky&apos;s coding, reading notes and experience.">
-<meta name="keywords" content="engineer,code,reflection">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Becomegood Code World">
-<meta property="og:url" content="https://InkyChew.github.io/archives/2020/index.html">
+    <meta name="description" content="遞迴 Recursion以求N的階乘為例fac(1) = 1fac(N) = N * fac(N-1) 內涵式遞迴 Embedded recursion 最後一個函式fac(1)呼叫完成後，一層層由內而外回傳數值並計算。 階層式架構">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="遞迴與迴圈">
+<meta property="og:url" content="https://InkyChew.github.io/2020/12/11/recursion/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
-<meta property="og:description" content="Inky&apos;s coding, reading notes and experience.">
+<meta property="og:description" content="遞迴 Recursion以求N的階乘為例fac(1) = 1fac(N) = N * fac(N-1) 內涵式遞迴 Embedded recursion 最後一個函式fac(1)呼叫完成後，一層層由內而外回傳數值並計算。 階層式架構">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-12-11T06:12:59.281Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Becomegood Code World">
-<meta name="twitter:description" content="Inky&apos;s coding, reading notes and experience.">
+<meta name="twitter:title" content="遞迴與迴圈">
+<meta name="twitter:description" content="遞迴 Recursion以求N的階乘為例fac(1) = 1fac(N) = N * fac(N-1) 內涵式遞迴 Embedded recursion 最後一個函式fac(1)呼叫完成後，一層層由內而外回傳數值並計算。 階層式架構">
 
 
 
@@ -130,46 +131,117 @@
 
     <section class="section">
     <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            遞迴與迴圈
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-11T04:29:27.000Z" itemprop="datePublished">Dec 11 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            a minute read (About 213 words)
+        </span>
+        
+
+        <!--文章觀看次數-->
+        <span class="column is-narrow" id="busuanzi_container_page_pv">
+            Views <span id="busuanzi_value_page_pv"></span>
+        </span>
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="遞迴-Recursion"><a href="#遞迴-Recursion" class="headerlink" title="遞迴 Recursion"></a>遞迴 Recursion</h1><p>以求N的階乘為例<br>fac(1) = 1<br>fac(N) = N * fac(N-1)</p>
+<h2 id="內涵式遞迴-Embedded-recursion"><a href="#內涵式遞迴-Embedded-recursion" class="headerlink" title="內涵式遞迴 Embedded recursion"></a>內涵式遞迴 Embedded recursion</h2><ul>
+<li>最後一個函式fac(1)呼叫完成後，一層層<strong>由內而外回傳</strong>數值並計算。</li>
+<li>階層式架構</li>
+</ul>
+<a id="more"></a>
+
+<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fac</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">else</span></span><br><span class="line">    <span class="hljs-keyword">return</span> n * fac(n-<span class="hljs-number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>fac(3)<br>return 3 * <code>fac(3-1)</code>       // n=3<br>return 3 * <code>2 * fac(2-1)</code>    // n=2<br>return 3 * 2 * <code>1 * fac(1)</code>   // n=1  </p>
+<h2 id="尾端式遞迴-Tail-recursion"><a href="#尾端式遞迴-Tail-recursion" class="headerlink" title="尾端式遞迴 Tail recursion"></a>尾端式遞迴 Tail recursion</h2><ul>
+<li>增加一個參數(ans)，紀錄累乘值。</li>
+<li>平的架構</li>
+</ul>
+<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fac</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> ans)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> ans;</span><br><span class="line">  <span class="hljs-keyword">else</span></span><br><span class="line">    <span class="hljs-keyword">return</span> fac(n-<span class="hljs-number">1</span>, ans*n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>fac(3, 1)<br>return fac(2, 1*3)<br>return fac(1, 3*2)<br>return fac(0, 6*1)  </p>
+<p>可以將尾端式遞迴轉換成While迴圈</p>
+<h1 id="迴圈-Loop"><a href="#迴圈-Loop" class="headerlink" title="迴圈 Loop"></a>迴圈 Loop</h1><ol>
+<li>將尾端式遞迴的終止條件，以not的形式當作while的進行條件。</li>
+<li>將參數的變動放在迴圈中，必須先累乘，才將n-1。</li>
+</ol>
+<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fac</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;</span><br><span class="line">    ans = ans * n;</span><br><span class="line">    n--;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Java/">#Java</a></span>
+    
+    </div>
     
     
-        <div class="archive content">
-            <h4 class="title is-4" id="2020">2020</h4>
-            <div class="articles">
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2020-12-11T04:29:27.000Z" itemprop="datePublished">
-                        Dec 11</time>
-                    <h6 class="title is-6"><a href="/2020/12/11/recursion/">遞迴與迴圈</a></h6>
-                </div>
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2020-12-10T01:32:08.000Z" itemprop="datePublished">
-                        Dec 10</time>
-                    <h6 class="title is-6"><a href="/2020/12/10/oo-principle/">物件導向的五大原則</a></h6>
-                </div>
+            <a href="/2020/12/10/oo-principle/">物件導向的五大原則</a>
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2020-12-09T13:21:01.000Z" itemprop="datePublished">
-                        Dec 9</time>
-                    <h6 class="title is-6"><a href="/2020/12/09/oo-basic/">物件導向的三大特性和抽象化</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2020-12-02T07:36:55.000Z" itemprop="datePublished">
-                        Dec 2</time>
-                    <h6 class="title is-6"><a href="/2020/12/02/engineer-3types/">軟體工程師有三種，你是哪一種?</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2020-11-26T11:25:27.000Z" itemprop="datePublished">
-                        Nov 26</time>
-                    <h6 class="title is-6"><a href="/2020/11/26/interview-Taitan/">2020新加坡商鈦坦科技台北實習生面試</a></h6>
-                </div>
-            
-            </div>
-        </div>
+        </span>
+    </div>
     
+</article>
+
+
+<div class="sharebox" style="display: flex; justify-content:center">
     
+<div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
+
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://InkyChew.github.io/2020/12/11/recursion/';
+        this.page.identifier = '2020/12/11/recursion/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
     </div>
 </section>
     <footer class="footer">

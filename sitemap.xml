@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://InkyChew.github.io/2020/12/10/oo-principle/</loc>
+    
+    <lastmod>2020-12-14T04:16:26.114Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/11/recursion/</loc>
+    
+    <lastmod>2020-12-11T06:12:59.281Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://InkyChew.github.io/2020/12/09/oo-basic/</loc>
     
-    <lastmod>2020-12-09T15:02:17.948Z</lastmod>
+    <lastmod>2020-12-10T02:34:22.368Z</lastmod>
     
   </url>
   
