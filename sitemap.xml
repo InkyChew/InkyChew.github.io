@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://InkyChew.github.io/2020/12/11/recursion/</loc>
+    <loc>https://InkyChew.github.io/2020/12/17/oo-dp-observer/</loc>
     
-    <lastmod>2020-12-14T14:12:55.933Z</lastmod>
+    <lastmod>2020-12-20T00:49:33.094Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://InkyChew.github.io/2020/12/10/oo-principle/</loc>
     
-    <lastmod>2020-12-14T04:22:57.277Z</lastmod>
+    <lastmod>2020-12-17T12:15:14.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/11/recursion/</loc>
+    
+    <lastmod>2020-12-14T14:12:55.933Z</lastmod>
     
   </url>
   
