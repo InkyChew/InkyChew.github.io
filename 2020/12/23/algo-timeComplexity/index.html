@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>internship-Day2 - Becomegood Code World</title><meta name="robots" content="noindex">
+<title>Time Complexity - Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,18 +18,20 @@
 
 
 
-    <meta name="description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
-<meta name="keywords" content="Vue.js,internship">
+    <meta name="description" content="在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。   Time Complexity 時間複雜度隨著輸入資料量的增加，執行時間的變化使用Asymptotic Notation表示時間複雜度。 Asymptotic Not">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="internship-Day2">
-<meta property="og:url" content="https://InkyChew.github.io/2019/07/03/internship-day2/index.html">
+<meta property="og:title" content="Time Complexity">
+<meta property="og:url" content="https://InkyChew.github.io/2020/12/23/algo-timeComplexity/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
-<meta property="og:description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
+<meta property="og:description" content="在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。   Time Complexity 時間複雜度隨著輸入資料量的增加，執行時間的變化使用Asymptotic Notation表示時間複雜度。 Asymptotic Not">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-04T00:51:31.526Z">
+<meta property="og:image" content="https://i.imgur.com/KdyjYI5.png">
+<meta property="og:updated_time" content="2020-12-23T13:12:33.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="internship-Day2">
-<meta name="twitter:description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
+<meta name="twitter:title" content="Time Complexity">
+<meta name="twitter:description" content="在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。   Time Complexity 時間複雜度隨著輸入資料量的增加，執行時間的變化使用Asymptotic Notation表示時間複雜度。 Asymptotic Not">
+<meta name="twitter:image" content="https://i.imgur.com/KdyjYI5.png">
 
 
 
@@ -134,78 +136,67 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            internship-Day2
+            Time Complexity
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-07-02T23:07:02.000Z" itemprop="datePublished">Jul 3 2019</time>
+            <time datetime="2020-12-23T11:48:38.000Z" itemprop="datePublished">Dec 23 2020</time>
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Front-end/">Front-end</a>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            a few seconds read (About 105 words)
+            3 minutes read (About 478 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h3 id="Javascript-in-Pug"><a href="#Javascript-in-Pug" class="headerlink" title="Javascript in Pug"></a>Javascript in Pug</h3><ul>
-<li><p>Buffered Code <code>-</code></p>
-<ul>
-<li>no direct output, but value may be used in Pug<br><figure class="highlight h hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="hljs-keyword">for</span>(var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)</span><br></pre></td></tr></table></figure></li>
+        <p>在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。  </p>
+<h1 id="Time-Complexity-時間複雜度"><a href="#Time-Complexity-時間複雜度" class="headerlink" title="Time Complexity 時間複雜度"></a>Time Complexity 時間複雜度</h1><p>隨著輸入資料量的增加，執行時間的變化<br>使用Asymptotic Notation表示時間複雜度。</p>
+<h2 id="Asymptotic-Notation-漸近符號"><a href="#Asymptotic-Notation-漸近符號" class="headerlink" title="Asymptotic Notation 漸近符號"></a>Asymptotic Notation 漸近符號</h2><ul>
+<li>Big-O ( Ο ): 以<code>Ο()</code>表示演算法所需執行時間的最<strong>壞</strong>情況</li>
+<li>Omega ( Ω ): 以<code>Ω()</code>表示演算法所需執行時間的最<strong>佳</strong>情況</li>
+<li>Theta ( θ ): 以<code>θ()</code>表示演算法所需執行時間的<strong>範圍</strong>，包含了最壞與最佳情況</li>
 </ul>
-</li>
-<li><p>Unbuffered Code <code>=</code></p>
-<ul>
-<li><p>evaluates JavaScript expression and outputs the result.<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p= <span class="hljs-string">'Two to the power of ten is: '</span> + <span class="hljs-number">2</span>**<span class="hljs-number">10</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Two to the power of ten is: 1024<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-</li>
-</ul>
+<p>時間複雜度所需執行時間，由短到長:<br><code>1(常數)</code> &lt; <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n^2</code> &lt; <code>2^n</code> &lt; <code>n!</code></p>
 <a id="more"></a>
 
-<h3 id="export-export-default"><a href="#export-export-default" class="headerlink" title="export / export default"></a>export / export default</h3><ul>
-<li><a href="https://www.itread01.com/content/1542084847.html" target="_blank" rel="noopener">https://www.itread01.com/content/1542084847.html</a></li>
-<li>export<ul>
-<li>import { }</li>
-</ul>
-</li>
-<li>export default<ul>
-<li>only one </li>
-<li>import</li>
-</ul>
-</li>
-</ul>
-<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul>
-<li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_es6.asp</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10206587" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10206587</a></li>
-<li><h4 id="解構賦值-宣告-來源"><a href="#解構賦值-宣告-來源" class="headerlink" title="解構賦值 (宣告 = 來源)"></a>解構賦值 (宣告 = 來源)</h4><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a> <br><ul>
-<li>陣列</li>
-<li>物件</li>
-</ul>
-</li>
-</ul>
-<!-- flag of hidden posts -->
+<h2 id="以Big-O表示時間複雜度的四種常見類型"><a href="#以Big-O表示時間複雜度的四種常見類型" class="headerlink" title="以Big-O表示時間複雜度的四種常見類型"></a>以Big-O表示時間複雜度的四種常見類型</h2><h3 id="1-Constant-Run-Time-O-1"><a href="#1-Constant-Run-Time-O-1" class="headerlink" title="1. Constant Run Time (O(1))"></a>1. Constant Run Time (O(1))</h3><p>不管資料量大小，執行時間都一樣。</p>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]</span><br><span class="line"><span class="hljs-keyword">var</span> arr2 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">constant</span>(<span class="hljs-params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(arr[<span class="hljs-number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 不管資料量大小，執行次數皆為一次。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-Logarithmic-Run-Time-O-log-n"><a href="#2-Logarithmic-Run-Time-O-log-n" class="headerlink" title="2. Logarithmic Run Time (O(log n))"></a>2. Logarithmic Run Time (O(log n))</h3><p>隨著資料量增加，執行時間趨緩。<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span>(n &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">  n = n / <span class="hljs-number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/** var n = 10  </span></span><br><span class="line"><span class="hljs-comment">  * n -&gt; 10, 5, 2, 1, 0  </span></span><br><span class="line"><span class="hljs-comment">  * var n = 15  </span></span><br><span class="line"><span class="hljs-comment">  * n -&gt; 7, 3, 1, 0</span></span><br><span class="line"><span class="hljs-comment">  **/</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-Linear-Run-Time-O-n"><a href="#3-Linear-Run-Time-O-n" class="headerlink" title="3. Linear Run Time (O(n))"></a>3. Linear Run Time (O(n))</h3><p>隨著資料量增加，執行時間成線性等比例成長。<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(int i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 執行次數為n次</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-Exponential-Run-Time-O-n-2"><a href="#4-Exponential-Run-Time-O-n-2" class="headerlink" title="4. Exponential Run Time (O(n^2))"></a>4. Exponential Run Time (O(n^2))</h3><p>隨著資料量增加，執行時間成指數成長。<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(int i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(int j = <span class="hljs-number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 執行次數為n*n次</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/KdyjYI5.png" alt="Big O Notation"></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://medium.com/@yunyubee/%E6%BC%94%E7%AE%97%E6%B3%95-big-o-and-time-complexity-65f2dfafe9d1" target="_blank" rel="noopener">[演算法] Big O and Time Complexity</a><br><a href="https://pjchender.blogspot.com/2017/09/big-o-notation-time-complexity.html" target="_blank" rel="noopener">[演算法] Big O Notation &amp; Time Complexity</a></p>
+
     
     </div>
     
     <div class="columns is-variable is-1 is-multiline is-mobile">
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Vue-js/">#Vue.js</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/internship/">#internship</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/algorithm/">#algorithm</a></span>
     
     </div>
     
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/12/20/oo-dp-factory/">Design pattern - Factory method</a>
+            
+        </span>
+    </div>
     
 </article>
 
@@ -224,8 +215,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://InkyChew.github.io/2019/07/03/internship-day2/';
-        this.page.identifier = '2019/07/03/internship-day2/';
+        this.page.url = 'https://InkyChew.github.io/2020/12/23/algo-timeComplexity/';
+        this.page.identifier = '2020/12/23/algo-timeComplexity/';
         
         this.language = 'en';
         

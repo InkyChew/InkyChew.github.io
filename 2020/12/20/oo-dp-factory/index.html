@@ -19,7 +19,7 @@
 
 
     <meta name="description" content="Factory method Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.   一間工廠(creator)只專門生產一種產品">
-<meta name="keywords" content="Design pattern,OOSE">
+<meta name="keywords" content="Design pattern">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Design pattern - Factory method">
 <meta property="og:url" content="https://InkyChew.github.io/2020/12/20/oo-dp-factory/index.html">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="Factory method Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.   一間工廠(creator)只專門生產一種產品">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload.cc/i1/2020/12/23/oZfYJH.jpg">
-<meta property="og:updated_time" content="2020-12-23T02:45:53.906Z">
+<meta property="og:updated_time" content="2020-12-23T11:34:10.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Design pattern - Factory method">
 <meta name="twitter:description" content="Factory method Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.   一間工廠(creator)只專門生產一種產品">
@@ -146,14 +146,14 @@
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            3 minutes read (About 485 words)
+            3 minutes read (About 484 words)
         </span>
         
     </div>
@@ -180,7 +180,7 @@
 
 </li>
 </ol>
-<p>在<a href="https://inkychew.github.io/2020/12/17/oo-dp-observer/#more">observer</a>中提到spreadsheet create chart可以使用factory method。</p>
+<p>在<a href="https://inkychew.github.io/2020/12/17/oo-dp-observer">observer</a>中提到spreadsheet create chart可以使用factory method。</p>
 <p>spreadsheet不需要綁定特定的chart<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line">  <span class="hljs-keyword">private</span> chartFactory factory;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    factory = configure(); <span class="hljs-comment">// 要使用哪間工廠</span></span><br><span class="line">    Chart chart = factory.createChart(type);</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// Creator</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">chartFactory</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">barChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">lineChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> lineChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>缺點:</p>
 <ol>
@@ -198,13 +198,13 @@
     
         <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Design-pattern/">#Design pattern</a></span>
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/OOSE/">#OOSE</a></span>
-    
     </div>
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2020/12/23/algo-timeComplexity/">Time Complexity</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">

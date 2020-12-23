@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>internship-Day2 - Becomegood Code World</title><meta name="robots" content="noindex">
+<title>Tag: algorithm - Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,18 +18,17 @@
 
 
 
-    <meta name="description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
-<meta name="keywords" content="Vue.js,internship">
-<meta property="og:type" content="article">
-<meta property="og:title" content="internship-Day2">
-<meta property="og:url" content="https://InkyChew.github.io/2019/07/03/internship-day2/index.html">
+    <meta name="description" content="Inky&apos;s coding, reading notes and experience.">
+<meta name="keywords" content="engineer,code,reflection">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Becomegood Code World">
+<meta property="og:url" content="https://InkyChew.github.io/tags/algorithm/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
-<meta property="og:description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
+<meta property="og:description" content="Inky&apos;s coding, reading notes and experience.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-04T00:51:31.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="internship-Day2">
-<meta name="twitter:description" content="Javascript in Pug Buffered Code -  no direct output, but value may be used in Pug9   Unbuffered Code =  evaluates JavaScript expression and outputs the result.10 11">
+<meta name="twitter:title" content="Becomegood Code World">
+<meta name="twitter:description" content="Inky&apos;s coding, reading notes and experience.">
 
 
 
@@ -129,80 +128,53 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+        <div class="content">
+            <h5>#algorithm</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            internship-Day2
+            <a href="/2020/12/23/algo-timeComplexity/" itemprop="url">Time Complexity</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-07-02T23:07:02.000Z" itemprop="datePublished">Jul 3 2019</time>
+            <time datetime="2020-12-23T11:48:38.000Z" itemprop="datePublished">Dec 23 2020</time>
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Front-end/">Front-end</a>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            a few seconds read (About 105 words)
+            3 minutes read (About 478 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h3 id="Javascript-in-Pug"><a href="#Javascript-in-Pug" class="headerlink" title="Javascript in Pug"></a>Javascript in Pug</h3><ul>
-<li><p>Buffered Code <code>-</code></p>
-<ul>
-<li>no direct output, but value may be used in Pug<br><figure class="highlight h hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="hljs-keyword">for</span>(var i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)</span><br></pre></td></tr></table></figure></li>
+        <p>在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。  </p>
+<h1 id="Time-Complexity-時間複雜度"><a href="#Time-Complexity-時間複雜度" class="headerlink" title="Time Complexity 時間複雜度"></a>Time Complexity 時間複雜度</h1><p>隨著輸入資料量的增加，執行時間的變化<br>使用Asymptotic Notation表示時間複雜度。</p>
+<h2 id="Asymptotic-Notation-漸近符號"><a href="#Asymptotic-Notation-漸近符號" class="headerlink" title="Asymptotic Notation 漸近符號"></a>Asymptotic Notation 漸近符號</h2><ul>
+<li>Big-O ( Ο ): 以<code>Ο()</code>表示演算法所需執行時間的最<strong>壞</strong>情況</li>
+<li>Omega ( Ω ): 以<code>Ω()</code>表示演算法所需執行時間的最<strong>佳</strong>情況</li>
+<li>Theta ( θ ): 以<code>θ()</code>表示演算法所需執行時間的<strong>範圍</strong>，包含了最壞與最佳情況</li>
 </ul>
-</li>
-<li><p>Unbuffered Code <code>=</code></p>
-<ul>
-<li><p>evaluates JavaScript expression and outputs the result.<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p= <span class="hljs-string">'Two to the power of ten is: '</span> + <span class="hljs-number">2</span>**<span class="hljs-number">10</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Two to the power of ten is: 1024<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-
-<h3 id="export-export-default"><a href="#export-export-default" class="headerlink" title="export / export default"></a>export / export default</h3><ul>
-<li><a href="https://www.itread01.com/content/1542084847.html" target="_blank" rel="noopener">https://www.itread01.com/content/1542084847.html</a></li>
-<li>export<ul>
-<li>import { }</li>
-</ul>
-</li>
-<li>export default<ul>
-<li>only one </li>
-<li>import</li>
-</ul>
-</li>
-</ul>
-<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul>
-<li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank" rel="noopener">https://www.w3schools.com/js/js_es6.asp</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10206587" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10206587</a></li>
-<li><h4 id="解構賦值-宣告-來源"><a href="#解構賦值-宣告-來源" class="headerlink" title="解構賦值 (宣告 = 來源)"></a>解構賦值 (宣告 = 來源)</h4><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a> <br><ul>
-<li>陣列</li>
-<li>物件</li>
-</ul>
-</li>
-</ul>
-<!-- flag of hidden posts -->
-    
-    </div>
-    
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Vue-js/">#Vue.js</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/internship/">#internship</a></span>
+<p>時間複雜度所需執行時間，由短到長:<br><code>1(常數)</code> &lt; <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n^2</code> &lt; <code>2^n</code> &lt; <code>n!</code></p>
+        <p class="article-more-link">
+            <a href="/2020/12/23/algo-timeComplexity/#more">Read More</a>
+        </p>
     
     </div>
     
@@ -210,40 +182,10 @@
 </article>
 
 
-<div class="sharebox" style="display: flex; justify-content:center">
+
+
     
-<div class="addthis_inline_share_toolbox"></div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
-
-</div>
-
-
-
-<div class="comments">
-    <h3 class="title is-4">Comments</h3>
     
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://InkyChew.github.io/2019/07/03/internship-day2/';
-        this.page.identifier = '2019/07/03/internship-day2/';
-        
-        this.language = 'en';
-        
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</div>
-
     </div>
 </section>
     <footer class="footer">
