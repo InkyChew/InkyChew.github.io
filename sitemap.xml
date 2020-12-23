@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://InkyChew.github.io/2020/12/20/oo-dp-factory/</loc>
+    
+    <lastmod>2020-12-23T02:43:21.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/02/engineer-3types/</loc>
+    
+    <lastmod>2020-12-21T06:54:38.062Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://InkyChew.github.io/2020/12/17/oo-dp-observer/</loc>
     
     <lastmod>2020-12-20T00:55:24.219Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://InkyChew.github.io/2020/12/09/oo-basic/</loc>
     
     <lastmod>2020-12-10T02:34:22.368Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://InkyChew.github.io/2020/12/02/engineer-3types/</loc>
-    
-    <lastmod>2020-12-07T03:39:56.494Z</lastmod>
     
   </url>
   
