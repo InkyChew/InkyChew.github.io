@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://InkyChew.github.io/2020/12/24/algo-sort-bubble/</loc>
+    
+    <lastmod>2020-12-25T01:47:53.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/24/algo/</loc>
+    
+    <lastmod>2020-12-24T10:24:07.707Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://InkyChew.github.io/2020/12/23/algo-timeComplexity/</loc>
     
-    <lastmod>2020-12-23T13:12:33.394Z</lastmod>
+    <lastmod>2020-12-24T09:53:09.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/20/oo-dp-factory/</loc>
+    
+    <lastmod>2020-12-24T09:49:07.399Z</lastmod>
     
   </url>
   
@@ -24,13 +45,6 @@
   
   <url>
     <loc>https://InkyChew.github.io/2020/12/10/oo-principle/</loc>
-    
-    <lastmod>2020-12-23T11:34:10.605Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://InkyChew.github.io/2020/12/20/oo-dp-factory/</loc>
     
     <lastmod>2020-12-23T11:34:10.605Z</lastmod>
     
