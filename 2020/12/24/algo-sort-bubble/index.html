@@ -14,7 +14,7 @@
 
 
 
-<meta name="keywords" content="engineer,code,reflection">
+<meta name="keywords" content="soft engineer,code,reflection">
 
 
 
@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/02/bubble-sort1.png">
 <meta property="og:image" content="https://upload.cc/i1/2020/12/24/lv8WzX.jpg">
 <meta property="og:image" content="https://upload.cc/i1/2020/12/25/qdKZOe.jpg">
-<meta property="og:updated_time" content="2020-12-25T01:47:53.933Z">
+<meta property="og:updated_time" content="2020-12-25T01:55:08.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bubble sort">
 <meta name="twitter:description" content="Bubble sort 氣泡排序法 每一次比較兩個相鄰數值，如果前面的數值大於後面的數值就交換位置，以確保最大的數值在最後一個位置。因為已經確保最大數值的位置，因此下一次需要比較的數值會少一個。">
@@ -155,7 +155,7 @@
         <span class="column is-narrow">
             
             
-            4 minutes read (About 630 words)
+            4 minutes read (About 647 words)
         </span>
         
     </div>
@@ -180,7 +180,7 @@
 <h2 id="Optimized-implementation"><a href="#Optimized-implementation" class="headerlink" title="Optimized implementation"></a>Optimized implementation</h2><p>如何知道所有的元素已經排序完成?<br>當兩相鄰元素的交換不再發生時，即完成所有元素的排序</p>
 <p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length-<span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">boolean</span> swapped = <span class="hljs-keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr.length-i-<span class="hljs-number">1</span>; j++) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (arr[j] &lt; arr[j+<span class="hljs-number">1</span>]) &#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> temp = arr[j];</span><br><span class="line">      arr[j] = arr[j+<span class="hljs-number">1</span>];</span><br><span class="line">      arr[j+<span class="hljs-number">1</span>] = temp;</span><br><span class="line"></span><br><span class="line">      <span class="hljs-comment">// 當有交換發生時，將swapped設成true</span></span><br><span class="line">      swapped = <span class="hljs-keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 當兩相鄰元素的交換不再發生時</span></span><br><span class="line">  <span class="hljs-comment">// 所有元素排序完成</span></span><br><span class="line">  <span class="hljs-keyword">if</span> (swapped == <span class="hljs-keyword">false</span>)</span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n*n)<br>所需執行時間的最壞情況，發生在陣列當中的元素以反向排序時<br>Best case: O(n)<br>所需執行時間的最佳情況，發生在陣列當中的元素已經排序好時</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank" rel="noopener">geeksforgeeks-Bubble sort</a></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank" rel="noopener">geeksforgeeks-Bubble sort</a><br><a href="https://pjchender.blogspot.com/2017/09/bubble-sort.html" target="_blank" rel="noopener">[演算法] 氣泡排序法 Bubble Sort</a></p>
 
     
     </div>
@@ -249,7 +249,7 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 &copy; 2020 InkyChew&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos" rel="external nofollow">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
