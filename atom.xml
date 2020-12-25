@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Becomegood Code World</title>
   
-  <subtitle>Inky</subtitle>
+  <subtitle>Inky's sharing</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
@@ -14,7 +14,7 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="http://hexo.io/">Becomegood Code World</generator>
   
   <entry>
     <title>Bubble sort</title>
