@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: algorithm - 靠我變得更好</title>
+<title>Merge sort - 靠我變得更好</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,17 +18,21 @@
 
 
 
-    <meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
-<meta name="keywords" content="soft engineer,code,reflection">
-<meta property="og:type" content="website">
-<meta property="og:title" content="靠我變得更好">
-<meta property="og:url" content="https://InkyChew.github.io/tags/algorithm/index.html">
+    <meta name="description" content="Merge sort  重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素 由小到大合併左右兩半 新增左右兩半兩個陣列 比較左右兩半元素的大小，進行合併">
+<meta name="keywords" content="algorithm,sorting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merge sort">
+<meta property="og:url" content="https://InkyChew.github.io/2020/12/26/algo-sort-merge/index.html">
 <meta property="og:site_name" content="靠我變得更好">
-<meta property="og:description" content="Inky的技術學習筆記與閱讀心得分享">
+<meta property="og:description" content="Merge sort  重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素 由小到大合併左右兩半 新增左右兩半兩個陣列 比較左右兩半元素的大小，進行合併">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png">
+<meta property="og:image" content="https://upload.cc/i1/2020/12/26/35VJ1g.jpg">
+<meta property="og:updated_time" content="2020-12-26T07:08:47.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="靠我變得更好">
-<meta name="twitter:description" content="Inky的技術學習筆記與閱讀心得分享">
+<meta name="twitter:title" content="Merge sort">
+<meta name="twitter:description" content="Merge sort  重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素 由小到大合併左右兩半 新增左右兩半兩個陣列 比較左右兩半元素的大小，進行合併">
+<meta name="twitter:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png">
 
 
 
@@ -128,20 +132,12 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5>#algorithm</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2020/12/26/algo-sort-merge/" itemprop="url">Merge sort</a>
+            Merge sort
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -169,204 +165,74 @@
 <li>重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素</li>
 <li>由小到大合併左右兩半<ul>
 <li>新增左右兩半兩個陣列</li>
-<li>比較左右兩半元素的大小，進行合併</li></ul></li></ol>
-        <p class="article-more-link">
-            <a href="/2020/12/26/algo-sort-merge/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/12/25/algo-sort-insertion/" itemprop="url">Insertion sort</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-25T06:15:04.000Z" itemprop="datePublished">Dec 25 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 minutes read (About 289 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="Insertion-sort-插入排序法"><a href="#Insertion-sort-插入排序法" class="headerlink" title="Insertion sort 插入排序法"></a>Insertion sort 插入排序法</h1><p><img src="https://upload.cc/i1/2020/12/25/sJpNzc.jpg" alt="Insertion sort"><br>將資料分成已排序(sorted)與未排序(unsorted)兩部分，依序取出未排序部分的第一個數值(目標值)，將其插入到已排序部分當中的正確位置。將目標值由右向左依序與已排序部分中的數值進行比較，當已排序部分中的數值大於目標值則往右移一個位置，否則將目標值插入。</p>
-        <p class="article-more-link">
-            <a href="/2020/12/25/algo-sort-insertion/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/12/24/algo-sort-bubble/" itemprop="url">Bubble sort</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-24T14:19:30.000Z" itemprop="datePublished">Dec 24 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 minutes read (About 647 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="Bubble-sort-氣泡排序法"><a href="#Bubble-sort-氣泡排序法" class="headerlink" title="Bubble sort 氣泡排序法"></a>Bubble sort 氣泡排序法</h1><p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/02/bubble-sort1.png" alt></p>
-<p>每一次比較兩個相鄰數值，如果前面的數值大於後面的數值就交換位置，以確保最大的數值在最後一個位置。因為已經確保最大數值的位置，因此下一次需要比較的數值會少一個。</p>
-        <p class="article-more-link">
-            <a href="/2020/12/24/algo-sort-bubble/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/12/24/algo/" itemprop="url">Algorithm</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-24T09:56:54.000Z" itemprop="datePublished">Dec 24 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            a few seconds read (About 99 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>Algorithm演算法系列文章<br><a href="https://inkychew.github.io/2020/12/23/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p>
-<ol>
-<li>資料結構的各項操作</li>
-<li>排序（Sorting）：<ul>
-<li><a href="http://localhost:4000/2020/12/24/algo-sort-bubble/" target="_blank" rel="noopener">Bubble sort</a>  O(n*n) </li>
-<li>Insertion sort  O(n*2) </li>
-<li>Quick sort</li>
-<li>Merge sort</li>
-</ul>
-</li>
-<li>搜尋（Searching）<ul>
-<li>Depth-first-search</li>
-<li>Breadth-first-search</li>
-<li>Binary search  </li>
+<li>比較左右兩半元素的大小，進行合併<a id="more"></a>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">divide(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">divide</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = (l+r) / <span class="hljs-number">2</span>;</span><br><span class="line">    divide(arr, l, mid);</span><br><span class="line">    divide(arr, mid+<span class="hljs-number">1</span>, r);</span><br><span class="line">    merge(arr, l, mid, r);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 新增左右兩半兩個陣列</span></span><br><span class="line">  l_size = m-l+<span class="hljs-number">1</span>;</span><br><span class="line">  r_size = r-m;</span><br><span class="line">  <span class="hljs-keyword">int</span> L[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[l_size];</span><br><span class="line">  <span class="hljs-keyword">int</span> R[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[r_size];</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 將原陣列中的元素複製到左右陣列中</span></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; l_size; i++)</span><br><span class="line">    L[i] = arr[l+i];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; r_size; i++)</span><br><span class="line">    R[i] = arr[m+<span class="hljs-number">1</span>+i];</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-comment">// 比較左右兩半元素的大小，進行合併</span></span><br><span class="line">  <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> k = l;</span><br><span class="line">  <span class="hljs-comment">// 當&lt;左右兩半&gt;或&lt;其中一半&gt;沒有元素時，跳出迴圈</span></span><br><span class="line">  <span class="hljs-keyword">while</span> (i &lt; l_size &amp;&amp; r &lt; r_size) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(L[i] &lt; R[j]) &#123;</span><br><span class="line">      arr[k] = L[i];</span><br><span class="line">      i++;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">      arr[k] = R[j];</span><br><span class="line">      j++;</span><br><span class="line">    &#125;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 當左半還有元素時，將元素加入至合併陣列中</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(i &lt; l_size) &#123;</span><br><span class="line">    arr[k] = L[i];</span><br><span class="line">    i++;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 當右半還有元素時，將元素加入至合併陣列中</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(j &lt; r_size) &#123;</span><br><span class="line">    arr[k] = R[j];</span><br><span class="line">    j++;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ol>
-<p><a href="https://inkychew.github.io/2020/12/11/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>
+<p><img src="https://upload.cc/i1/2020/12/26/35VJ1g.jpg" alt="merge sort"></p>
+<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n logn)<br>Best case: O(n logn)<br>divide() = log n ; merge() = n</p>
 
     
     </div>
     
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/algorithm/">#algorithm</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/sorting/">#sorting</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/12/25/algo-sort-insertion/">Insertion sort</a>
+            
+        </span>
+    </div>
     
 </article>
 
 
+<div class="sharebox" style="display: flex; justify-content:center">
+    
+<div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
 
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/12/23/algo-timeComplexity/" itemprop="url">Time Complexity</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-23T11:48:38.000Z" itemprop="datePublished">Dec 23 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 minutes read (About 478 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。  </p>
-<h1 id="Time-Complexity-時間複雜度"><a href="#Time-Complexity-時間複雜度" class="headerlink" title="Time Complexity 時間複雜度"></a>Time Complexity 時間複雜度</h1><p><strong>隨著輸入資料量的增加，執行時間的變化</strong><br>使用Asymptotic Notation表示時間複雜度。</p>
-<h2 id="Asymptotic-Notation-漸近符號"><a href="#Asymptotic-Notation-漸近符號" class="headerlink" title="Asymptotic Notation 漸近符號"></a>Asymptotic Notation 漸近符號</h2><ul>
-<li>Big-O ( Ο ): 以<code>Ο()</code>表示演算法所需執行時間的最<strong>壞</strong>情況</li>
-<li>Omega ( Ω ): 以<code>Ω()</code>表示演算法所需執行時間的最<strong>佳</strong>情況</li>
-<li>Theta ( θ ): 以<code>θ()</code>表示演算法所需執行時間的<strong>範圍</strong>，包含了最壞與最佳情況</li>
-</ul>
-<p>時間複雜度所需執行時間，由短到長:<br><code>1(常數)</code> &lt; <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n^2</code> &lt; <code>2^n</code> &lt; <code>n!</code></p>
-        <p class="article-more-link">
-            <a href="/2020/12/23/algo-timeComplexity/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+</div>
 
 
 
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://InkyChew.github.io/2020/12/26/algo-sort-merge/';
+        this.page.identifier = '2020/12/26/algo-sort-merge/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
+<div id="disqus_thread">
     
-    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
     </div>
 </section>
     <footer class="footer">

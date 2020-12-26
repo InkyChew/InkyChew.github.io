@@ -21,6 +21,8 @@ a.tag.article-tag {
     font-weight: 600; }
   .navbar-main .navbar-item {
     text-align: center; }
+  .navbar-main a.navbar-item:hover {
+    color: #ffdd57; }
   .navbar-main a.navbar-item.is-active {
     color: #23d160; }
   .navbar-main .toc .navbar-dropdown {

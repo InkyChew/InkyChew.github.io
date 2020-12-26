@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2020-12-25T01:55:08.909Z</updated>
+  <updated>2020-12-26T07:08:47.977Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Merge sort</title>
+    <link href="https://InkyChew.github.io/2020/12/26/algo-sort-merge/"/>
+    <id>https://InkyChew.github.io/2020/12/26/algo-sort-merge/</id>
+    <published>2020-12-26T02:47:42.000Z</published>
+    <updated>2020-12-26T07:08:47.977Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h1><p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png" alt="Merge sort"></p><ol><li>重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素</li><li>由小到大合併左右兩半<ul><li>新增左右兩半兩個陣列</li><li>比較左右兩半元素的大小，進行合併<a id="more"></a><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">divide(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">divide</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = (l+r) / <span class="hljs-number">2</span>;</span><br><span class="line">    divide(arr, l, mid);</span><br><span class="line">    divide(arr, mid+<span class="hljs-number">1</span>, r);</span><br><span class="line">    merge(arr, l, mid, r);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 新增左右兩半兩個陣列</span></span><br><span class="line">  l_size = m-l+<span class="hljs-number">1</span>;</span><br><span class="line">  r_size = r-m;</span><br><span class="line">  <span class="hljs-keyword">int</span> L[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[l_size];</span><br><span class="line">  <span class="hljs-keyword">int</span> R[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[r_size];</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 將原陣列中的元素複製到左右陣列中</span></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; l_size; i++)</span><br><span class="line">    L[i] = arr[l+i];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; r_size; i++)</span><br><span class="line">    R[i] = arr[m+<span class="hljs-number">1</span>+i];</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-comment">// 比較左右兩半元素的大小，進行合併</span></span><br><span class="line">  <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> k = l;</span><br><span class="line">  <span class="hljs-comment">// 當&lt;左右兩半&gt;或&lt;其中一半&gt;沒有元素時，跳出迴圈</span></span><br><span class="line">  <span class="hljs-keyword">while</span> (i &lt; l_size &amp;&amp; r &lt; r_size) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(L[i] &lt; R[j]) &#123;</span><br><span class="line">      arr[k] = L[i];</span><br><span class="line">      i++;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">      arr[k] = R[j];</span><br><span class="line">      j++;</span><br><span class="line">    &#125;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 當左半還有元素時，將元素加入至合併陣列中</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(i &lt; l_size) &#123;</span><br><span class="line">    arr[k] = L[i];</span><br><span class="line">    i++;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 當右半還有元素時，將元素加入至合併陣列中</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(j &lt; r_size) &#123;</span><br><span class="line">    arr[k] = R[j];</span><br><span class="line">    j++;</span><br><span class="line">    k++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul></li></ol><p><img src="https://upload.cc/i1/2020/12/26/35VJ1g.jpg" alt="merge sort"></p><h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n logn)<br>Best case: O(n logn)<br>divide() = log n ; merge() = n</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Merge-sort&quot;&gt;&lt;a href=&quot;#Merge-sort&quot; class=&quot;headerlink&quot; title=&quot;Merge sort&quot;&gt;&lt;/a&gt;Merge sort&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png&quot; alt=&quot;Merge sort&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素&lt;/li&gt;
+&lt;li&gt;由小到大合併左右兩半&lt;ul&gt;
+&lt;li&gt;新增左右兩半兩個陣列&lt;/li&gt;
+&lt;li&gt;比較左右兩半元素的大小，進行合併&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+      <category term="Algorithm" scheme="https://InkyChew.github.io/categories/Notes/Algorithm/"/>
+    
+    
+      <category term="algorithm" scheme="https://InkyChew.github.io/tags/algorithm/"/>
+    
+      <category term="sorting" scheme="https://InkyChew.github.io/tags/sorting/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Insertion sort</title>
+    <link href="https://InkyChew.github.io/2020/12/25/algo-sort-insertion/"/>
+    <id>https://InkyChew.github.io/2020/12/25/algo-sort-insertion/</id>
+    <published>2020-12-25T06:15:04.000Z</published>
+    <updated>2020-12-26T02:48:14.335Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Insertion-sort-插入排序法"><a href="#Insertion-sort-插入排序法" class="headerlink" title="Insertion sort 插入排序法"></a>Insertion sort 插入排序法</h1><p><img src="https://upload.cc/i1/2020/12/25/sJpNzc.jpg" alt="Insertion sort"><br>將資料分成已排序(sorted)與未排序(unsorted)兩部分，依序取出未排序部分的第一個數值(目標值)，將其插入到已排序部分當中的正確位置。將目標值由右向左依序與已排序部分中的數值進行比較，當已排序部分中的數值大於目標值則往右移一個位置，否則將目標值插入。</p><a id="more"></a><p>將以上的敘述拆解:</p><ol><li>依序取出未排序部分的第一個數值(目標值)</li><li>將目標值由右向左依序與已排序部分中的數值進行比較</li><li>當已排序部分中的數值大於目標值則往右移，否則將目標值插入。</li></ol><p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) &#123;  <span class="hljs-comment">// 1.</span></span><br><span class="line">  <span class="hljs-keyword">int</span> target = arr[i];</span><br><span class="line">  <span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span>;                          <span class="hljs-comment">// 2.</span></span><br><span class="line">  <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; target) &#123;   <span class="hljs-comment">// 3.</span></span><br><span class="line">    arr[j+<span class="hljs-number">1</span>] = arr[j];</span><br><span class="line">    j--;</span><br><span class="line">  &#125;</span><br><span class="line">  arr[j+<span class="hljs-number">1</span>] = target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n*2)<br>Best case: O(n)  </p><p>適合在資料<strong>幾乎已經排序</strong>完成或<strong>資料量很小</strong>的時候使用</p><!-- ## Insertion Sort for Singly Linked List --><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.geeksforgeeks.org/insertion-sort/" target="_blank" rel="noopener">geeksforgeeks-Insertion sort</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Insertion-sort-插入排序法&quot;&gt;&lt;a href=&quot;#Insertion-sort-插入排序法&quot; class=&quot;headerlink&quot; title=&quot;Insertion sort 插入排序法&quot;&gt;&lt;/a&gt;Insertion sort 插入排序法&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://upload.cc/i1/2020/12/25/sJpNzc.jpg&quot; alt=&quot;Insertion sort&quot;&gt;&lt;br&gt;將資料分成已排序(sorted)與未排序(unsorted)兩部分，依序取出未排序部分的第一個數值(目標值)，將其插入到已排序部分當中的正確位置。將目標值由右向左依序與已排序部分中的數值進行比較，當已排序部分中的數值大於目標值則往右移一個位置，否則將目標值插入。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+      <category term="Algorithm" scheme="https://InkyChew.github.io/categories/Notes/Algorithm/"/>
+    
+    
+      <category term="algorithm" scheme="https://InkyChew.github.io/tags/algorithm/"/>
+    
+      <category term="sorting" scheme="https://InkyChew.github.io/tags/sorting/"/>
+    
+  </entry>
   
   <entry>
     <title>Bubble sort</title>
@@ -44,13 +101,13 @@
   </entry>
   
   <entry>
-    <title>algo</title>
+    <title>Algorithm</title>
     <link href="https://InkyChew.github.io/2020/12/24/algo/"/>
     <id>https://InkyChew.github.io/2020/12/24/algo/</id>
     <published>2020-12-24T09:56:54.000Z</published>
-    <updated>2020-12-25T01:52:39.047Z</updated>
+    <updated>2020-12-25T07:32:24.809Z</updated>
     
-    <content type="html"><![CDATA[<p>Algorithm演算法系列文章<br><a href="https://inkychew.github.io/2020/12/23/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p><ol><li>資料結構的各項操作</li><li>排序（Sorting）：<ul><li><a href="http://localhost:4000/2020/12/24/algo-sort-bubble/" target="_blank" rel="noopener">Bubble sort</a></li><li>Insertion sort</li><li>Quick sort</li><li>Merge sort</li></ul></li><li>搜尋（Searching）<ul><li>Depth-first-search</li><li>Breadth-first-search</li><li>Binary search  </li></ul></li></ol><p><a href="https://inkychew.github.io/2020/12/11/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>]]></content>
+    <content type="html"><![CDATA[<p>Algorithm演算法系列文章<br><a href="https://inkychew.github.io/2020/12/23/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p><ol><li>資料結構的各項操作</li><li>排序（Sorting）：<ul><li><a href="http://localhost:4000/2020/12/24/algo-sort-bubble/" target="_blank" rel="noopener">Bubble sort</a>  O(n*n) </li><li>Insertion sort  O(n*2) </li><li>Quick sort</li><li>Merge sort</li></ul></li><li>搜尋（Searching）<ul><li>Depth-first-search</li><li>Breadth-first-search</li><li>Binary search  </li></ul></li></ol><p><a href="https://inkychew.github.io/2020/12/11/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>]]></content>
     
     <summary type="html">
     

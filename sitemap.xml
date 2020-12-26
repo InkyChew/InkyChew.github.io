@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://InkyChew.github.io/2020/12/24/algo-sort-bubble/</loc>
+    <loc>https://InkyChew.github.io/2020/12/26/algo-sort-merge/</loc>
     
-    <lastmod>2020-12-25T01:55:08.909Z</lastmod>
+    <lastmod>2020-12-26T07:08:47.977Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/25/algo-sort-insertion/</loc>
+    
+    <lastmod>2020-12-26T02:48:14.335Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://InkyChew.github.io/2020/12/24/algo/</loc>
     
-    <lastmod>2020-12-25T01:52:39.047Z</lastmod>
+    <lastmod>2020-12-25T07:32:24.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/2020/12/24/algo-sort-bubble/</loc>
+    
+    <lastmod>2020-12-25T01:55:08.909Z</lastmod>
     
   </url>
   
@@ -37,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/2020/12/17/oo-dp-observer/</loc>
+    <loc>https://InkyChew.github.io/2020/12/10/oo-principle/</loc>
     
     <lastmod>2020-12-23T11:34:10.605Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/2020/12/10/oo-principle/</loc>
+    <loc>https://InkyChew.github.io/2020/12/17/oo-dp-observer/</loc>
     
     <lastmod>2020-12-23T11:34:10.605Z</lastmod>
     
