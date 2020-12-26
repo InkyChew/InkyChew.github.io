@@ -18,8 +18,8 @@
   
   <entry>
     <title>Merge sort</title>
-    <link href="https://InkyChew.github.io/2020/12/26/algo-sort-merge/"/>
-    <id>https://InkyChew.github.io/2020/12/26/algo-sort-merge/</id>
+    <link href="https://InkyChew.github.io/algo-sort-merge/"/>
+    <id>https://InkyChew.github.io/algo-sort-merge/</id>
     <published>2020-12-26T02:47:42.000Z</published>
     <updated>2020-12-26T08:58:53.217Z</updated>
     
@@ -49,10 +49,10 @@
   
   <entry>
     <title>Insertion sort</title>
-    <link href="https://InkyChew.github.io/2020/12/25/algo-sort-insertion/"/>
-    <id>https://InkyChew.github.io/2020/12/25/algo-sort-insertion/</id>
+    <link href="https://InkyChew.github.io/algo-sort-insertion/"/>
+    <id>https://InkyChew.github.io/algo-sort-insertion/</id>
     <published>2020-12-25T06:15:04.000Z</published>
-    <updated>2020-12-26T02:48:14.335Z</updated>
+    <updated>2020-12-26T08:58:15.205Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Insertion-sort-插入排序法"><a href="#Insertion-sort-插入排序法" class="headerlink" title="Insertion sort 插入排序法"></a>Insertion sort 插入排序法</h1><p><img src="https://upload.cc/i1/2020/12/25/sJpNzc.jpg" alt="Insertion sort"><br>將資料分成已排序(sorted)與未排序(unsorted)兩部分，依序取出未排序部分的第一個數值(目標值)，將其插入到已排序部分當中的正確位置。將目標值由右向左依序與已排序部分中的數值進行比較，當已排序部分中的數值大於目標值則往右移一個位置，否則將目標值插入。</p><a id="more"></a><p>將以上的敘述拆解:</p><ol><li>依序取出未排序部分的第一個數值(目標值)</li><li>將目標值由右向左依序與已排序部分中的數值進行比較</li><li>當已排序部分中的數值大於目標值則往右移，否則將目標值插入。</li></ol><p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) &#123;  <span class="hljs-comment">// 1.</span></span><br><span class="line">  <span class="hljs-keyword">int</span> target = arr[i];</span><br><span class="line">  <span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span>;                          <span class="hljs-comment">// 2.</span></span><br><span class="line">  <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; target) &#123;   <span class="hljs-comment">// 3.</span></span><br><span class="line">    arr[j+<span class="hljs-number">1</span>] = arr[j];</span><br><span class="line">    j--;</span><br><span class="line">  &#125;</span><br><span class="line">  arr[j+<span class="hljs-number">1</span>] = target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n*2)<br>Best case: O(n)  </p><p>適合在資料<strong>幾乎已經排序</strong>完成或<strong>資料量很小</strong>的時候使用</p><!-- ## Insertion Sort for Singly Linked List --><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.geeksforgeeks.org/insertion-sort/" target="_blank" rel="noopener">geeksforgeeks-Insertion sort</a></p>]]></content>
     
@@ -75,8 +75,8 @@
   
   <entry>
     <title>Bubble sort</title>
-    <link href="https://InkyChew.github.io/2020/12/24/algo-sort-bubble/"/>
-    <id>https://InkyChew.github.io/2020/12/24/algo-sort-bubble/</id>
+    <link href="https://InkyChew.github.io/algo-sort-bubble/"/>
+    <id>https://InkyChew.github.io/algo-sort-bubble/</id>
     <published>2020-12-24T14:19:30.000Z</published>
     <updated>2020-12-25T01:55:08.909Z</updated>
     
@@ -102,18 +102,20 @@
   
   <entry>
     <title>Algorithm</title>
-    <link href="https://InkyChew.github.io/2020/12/24/algo/"/>
-    <id>https://InkyChew.github.io/2020/12/24/algo/</id>
+    <link href="https://InkyChew.github.io/algo/"/>
+    <id>https://InkyChew.github.io/algo/</id>
     <published>2020-12-24T09:56:54.000Z</published>
-    <updated>2020-12-26T08:57:38.463Z</updated>
+    <updated>2020-12-26T09:02:14.842Z</updated>
     
-    <content type="html"><![CDATA[<p>Algorithm演算法系列文章<br><a href="https://inkychew.github.io/2020/12/23/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p><ol><li>資料結構的各項操作</li><li>排序（Sorting）：<ul><li><a href="http://localhost:4000/2020/12/24/algo-sort-bubble/" target="_blank" rel="noopener">Bubble sort</a>  O(n*n) </li><li><a href="https://inkychew.github.io/2020/12/26/algo-sort-merge/">Insertion sort</a>  O(n*2) </li><li>Quick sort</li><li><a href="https://inkychew.github.io/2020/12/25/algo-sort-insertion/">Merge sort</a> O(n logn)</li></ul></li><li>搜尋（Searching）<ul><li>Depth-first-search</li><li>Breadth-first-search</li><li>Binary search  </li></ul></li></ol><p><a href="https://inkychew.github.io/2020/12/11/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>]]></content>
+    <content type="html"><![CDATA[<p>Algorithm演算法系列文章<br><a href="https://inkychew.github.io/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p><ol><li>資料結構的各項操作</li><li>排序（Sorting）：<ul><li><a href="http://inkychew.github.io/algo-sort-bubble/">Bubble sort</a>  O(n*n) </li><li><a href="https://inkychew.github.io/algo-sort-merge/">Insertion sort</a>  O(n*2) </li><li>Quick sort</li><li><a href="https://inkychew.github.io/algo-sort-insertion/">Merge sort</a> O(n logn)</li></ul></li><li>搜尋（Searching）<ul><li>Depth-first-search</li><li>Breadth-first-search</li><li>Binary search  </li></ul></li></ol><p><a href="https://inkychew.github.io/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Algorithm演算法系列文章&lt;br&gt;&lt;a href=&quot;https://inkychew.github.io/2020/12/23/algo-timeComplexity/&quot;&gt;時間複雜度（Time Complexity）&amp;amp; big-O&lt;/a&gt;&lt;br&gt;空間複雜度&lt;/
+        &lt;p&gt;Algorithm演算法系列文章&lt;br&gt;&lt;a href=&quot;https://inkychew.github.io/algo-timeComplexity/&quot;&gt;時間複雜度（Time Complexity）&amp;amp; big-O&lt;/a&gt;&lt;br&gt;空間複雜度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li
       
     
     </summary>
@@ -129,8 +131,8 @@
   
   <entry>
     <title>Time Complexity</title>
-    <link href="https://InkyChew.github.io/2020/12/23/algo-timeComplexity/"/>
-    <id>https://InkyChew.github.io/2020/12/23/algo-timeComplexity/</id>
+    <link href="https://InkyChew.github.io/algo-timeComplexity/"/>
+    <id>https://InkyChew.github.io/algo-timeComplexity/</id>
     <published>2020-12-23T11:48:38.000Z</published>
     <updated>2020-12-24T09:53:09.780Z</updated>
     
@@ -160,12 +162,12 @@
   
   <entry>
     <title>Design pattern - Factory method</title>
-    <link href="https://InkyChew.github.io/2020/12/20/oo-dp-factory/"/>
-    <id>https://InkyChew.github.io/2020/12/20/oo-dp-factory/</id>
+    <link href="https://InkyChew.github.io/oo-dp-factory/"/>
+    <id>https://InkyChew.github.io/oo-dp-factory/</id>
     <published>2020-12-20T01:49:48.000Z</published>
-    <updated>2020-12-24T09:49:07.399Z</updated>
+    <updated>2020-12-26T09:02:37.470Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h1><blockquote><p>Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. </p></blockquote><p><img src="https://upload.cc/i1/2020/12/23/oZfYJH.jpg" alt="Factory method"><br>一間工廠(creator)只專門生產一種產品(product)。</p><a id="more"></a><h2 id="Use-when"><a href="#Use-when" class="headerlink" title="Use when"></a>Use when</h2><blockquote><ul><li>a class can’t anticipate the class of objects it must create.</li><li>a class wants its subclasses to specify the objects it creates.</li><li>classes delegate responsibility to one of several helper subclasses, and you want<br>to localize the knowledge of which helper subclass is the delegate.</li></ul></blockquote><p>優點:  </p><ol><li>得以讓被create的product在run time的時候才決定  </li><li>得以明確知道哪一個Creator create 哪一個Product</li><li>得以在superclass建立hooks，為subclass提供default method  </li><li>Connects parallel class hierarchies，creator delegate some of its responsibility to its product.<br>例如:長條圖與折線圖都會用到getData()，但繪製的方式不同。長條圖以棒狀呈現，折線圖以線呈現，這時候creator就可以委託product做變化。<hr></li></ol><p>在<a href="https://inkychew.github.io/2020/12/17/oo-dp-observer">observer</a>中提到spreadsheet create chart可以使用factory method。</p><p>spreadsheet不需要綁定特定的chart<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line">  <span class="hljs-keyword">private</span> chartFactory factory;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    factory = configure(); <span class="hljs-comment">// 要使用哪間工廠</span></span><br><span class="line">    Chart chart = factory.createChart(type);</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// Creator</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">chartFactory</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">barChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">lineChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> lineChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>缺點:</p><ol><li>有很多的creator，只是為了create product</li><li>client必須判斷要使用哪一個creator</li></ol><p>Factory method與<a href>Abstract factory</a>很像，但Abstract factory強調組合的關係。通常在使用Abstract factory的同時，會使用Factory method。</p><h1 id="Simple-factory"><a href="#Simple-factory" class="headerlink" title="Simple factory"></a>Simple factory</h1><p>只有一間工廠，客戶指定要什麼就生產什麼。<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">(String type)</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(String type)</span> </span>&#123;</span><br><span class="line">    Chart chart = chartFactory.createChart(type);</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">chartFactory</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">(String type)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">switch</span>(type) &#123;</span><br><span class="line">      <span class="hljs-keyword">case</span> <span class="hljs-string">"bar"</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">      <span class="hljs-keyword">case</span> <span class="hljs-string">"line"</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> lineChart();</span><br><span class="line">      <span class="hljs-keyword">default</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><a href="https://stackoverflow.com/questions/53372254/simple-factory-vs-factory-method" target="_blank" rel="noopener">Simple factory vs Factory method</a><br>Use SimpleFactory when the types of Objects are <strong>not fixed.</strong><br>Use Factory method when the types of Objects are fixed.<br>當決定好class的數量，使用Factory method。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h1><blockquote><p>Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. </p></blockquote><p><img src="https://upload.cc/i1/2020/12/23/oZfYJH.jpg" alt="Factory method"><br>一間工廠(creator)只專門生產一種產品(product)。</p><a id="more"></a><h2 id="Use-when"><a href="#Use-when" class="headerlink" title="Use when"></a>Use when</h2><blockquote><ul><li>a class can’t anticipate the class of objects it must create.</li><li>a class wants its subclasses to specify the objects it creates.</li><li>classes delegate responsibility to one of several helper subclasses, and you want<br>to localize the knowledge of which helper subclass is the delegate.</li></ul></blockquote><p>優點:  </p><ol><li>得以讓被create的product在run time的時候才決定  </li><li>得以明確知道哪一個Creator create 哪一個Product</li><li>得以在superclass建立hooks，為subclass提供default method  </li><li>Connects parallel class hierarchies，creator delegate some of its responsibility to its product.<br>例如:長條圖與折線圖都會用到getData()，但繪製的方式不同。長條圖以棒狀呈現，折線圖以線呈現，這時候creator就可以委託product做變化。<hr></li></ol><p>在<a href="https://inkychew.github.io/oo-dp-observer">observer</a>中提到spreadsheet create chart可以使用factory method。</p><p>spreadsheet不需要綁定特定的chart<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line">  <span class="hljs-keyword">private</span> chartFactory factory;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    factory = configure(); <span class="hljs-comment">// 要使用哪間工廠</span></span><br><span class="line">    Chart chart = factory.createChart(type);</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// Creator</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">chartFactory</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">barChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">lineChartFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> lineChart();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>缺點:</p><ol><li>有很多的creator，只是為了create product</li><li>client必須判斷要使用哪一個creator</li></ol><p>Factory method與<a href>Abstract factory</a>很像，但Abstract factory強調組合的關係。通常在使用Abstract factory的同時，會使用Factory method。</p><h1 id="Simple-factory"><a href="#Simple-factory" class="headerlink" title="Simple factory"></a>Simple factory</h1><p>只有一間工廠，客戶指定要什麼就生產什麼。<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">(String type)</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(String type)</span> </span>&#123;</span><br><span class="line">    Chart chart = chartFactory.createChart(type);</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">chartFactory</span> </span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Chart <span class="hljs-title">createChart</span><span class="hljs-params">(String type)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">switch</span>(type) &#123;</span><br><span class="line">      <span class="hljs-keyword">case</span> <span class="hljs-string">"bar"</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">      <span class="hljs-keyword">case</span> <span class="hljs-string">"line"</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> lineChart();</span><br><span class="line">      <span class="hljs-keyword">default</span>:</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> barChart();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><a href="https://stackoverflow.com/questions/53372254/simple-factory-vs-factory-method" target="_blank" rel="noopener">Simple factory vs Factory method</a><br>Use SimpleFactory when the types of Objects are <strong>not fixed.</strong><br>Use Factory method when the types of Objects are fixed.<br>當決定好class的數量，使用Factory method。</p>]]></content>
     
     <summary type="html">
     
@@ -187,8 +189,8 @@
   
   <entry>
     <title>Design pattern - Observer</title>
-    <link href="https://InkyChew.github.io/2020/12/17/oo-dp-observer/"/>
-    <id>https://InkyChew.github.io/2020/12/17/oo-dp-observer/</id>
+    <link href="https://InkyChew.github.io/oo-dp-observer/"/>
+    <id>https://InkyChew.github.io/oo-dp-observer/</id>
     <published>2020-12-17T12:52:34.000Z</published>
     <updated>2020-12-23T11:34:10.605Z</updated>
     
@@ -215,8 +217,8 @@
   
   <entry>
     <title>遞迴與迴圈</title>
-    <link href="https://InkyChew.github.io/2020/12/11/recursion/"/>
-    <id>https://InkyChew.github.io/2020/12/11/recursion/</id>
+    <link href="https://InkyChew.github.io/recursion/"/>
+    <id>https://InkyChew.github.io/recursion/</id>
     <published>2020-12-11T04:29:27.000Z</published>
     <updated>2020-12-14T14:12:55.933Z</updated>
     
@@ -241,8 +243,8 @@
   
   <entry>
     <title>物件導向的五大原則</title>
-    <link href="https://InkyChew.github.io/2020/12/10/oo-principle/"/>
-    <id>https://InkyChew.github.io/2020/12/10/oo-principle/</id>
+    <link href="https://InkyChew.github.io/oo-principle/"/>
+    <id>https://InkyChew.github.io/oo-principle/</id>
     <published>2020-12-10T01:32:08.000Z</published>
     <updated>2020-12-23T11:34:10.605Z</updated>
     
@@ -267,8 +269,8 @@
   
   <entry>
     <title>物件導向的三大特性和抽象化</title>
-    <link href="https://InkyChew.github.io/2020/12/09/oo-basic/"/>
-    <id>https://InkyChew.github.io/2020/12/09/oo-basic/</id>
+    <link href="https://InkyChew.github.io/oo-basic/"/>
+    <id>https://InkyChew.github.io/oo-basic/</id>
     <published>2020-12-09T13:21:01.000Z</published>
     <updated>2020-12-10T02:34:22.368Z</updated>
     
@@ -293,8 +295,8 @@
   
   <entry>
     <title>軟體工程師有三種，你是哪一種?</title>
-    <link href="https://InkyChew.github.io/2020/12/02/engineer-3types/"/>
-    <id>https://InkyChew.github.io/2020/12/02/engineer-3types/</id>
+    <link href="https://InkyChew.github.io/engineer-3types/"/>
+    <id>https://InkyChew.github.io/engineer-3types/</id>
     <published>2020-12-02T07:36:55.000Z</published>
     <updated>2020-12-23T11:36:02.753Z</updated>
     
@@ -319,8 +321,8 @@
   
   <entry>
     <title>2020新加坡商鈦坦科技台北實習生面試</title>
-    <link href="https://InkyChew.github.io/2020/11/26/interview-Taitan/"/>
-    <id>https://InkyChew.github.io/2020/11/26/interview-Taitan/</id>
+    <link href="https://InkyChew.github.io/interview-Taitan/"/>
+    <id>https://InkyChew.github.io/interview-Taitan/</id>
     <published>2020-11-26T11:25:27.000Z</published>
     <updated>2020-12-04T00:55:07.153Z</updated>
     
@@ -356,8 +358,8 @@
   
   <entry>
     <title>TodoList</title>
-    <link href="https://InkyChew.github.io/2019/06/29/TodoList/"/>
-    <id>https://InkyChew.github.io/2019/06/29/TodoList/</id>
+    <link href="https://InkyChew.github.io/TodoList/"/>
+    <id>https://InkyChew.github.io/TodoList/</id>
     <published>2019-06-29T02:36:40.000Z</published>
     <updated>2019-06-29T11:51:16.340Z</updated>
     
@@ -380,8 +382,8 @@
   
   <entry>
     <title>weatherMap</title>
-    <link href="https://InkyChew.github.io/2019/06/29/weatherMap/"/>
-    <id>https://InkyChew.github.io/2019/06/29/weatherMap/</id>
+    <link href="https://InkyChew.github.io/weatherMap/"/>
+    <id>https://InkyChew.github.io/weatherMap/</id>
     <published>2019-06-29T00:27:39.000Z</published>
     <updated>2019-06-30T08:36:37.035Z</updated>
     
@@ -412,8 +414,8 @@
   
   <entry>
     <title>Hello Hexo</title>
-    <link href="https://InkyChew.github.io/2019/06/28/hello-world/"/>
-    <id>https://InkyChew.github.io/2019/06/28/hello-world/</id>
+    <link href="https://InkyChew.github.io/hello-world/"/>
+    <id>https://InkyChew.github.io/hello-world/</id>
     <published>2019-06-28T14:03:07.240Z</published>
     <updated>2019-06-29T03:48:25.457Z</updated>
     
