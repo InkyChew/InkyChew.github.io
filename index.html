@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>InkyChew</title>
+<title>Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -21,13 +21,13 @@
     <meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
 <meta name="keywords" content="soft engineer,code,reflection">
 <meta property="og:type" content="website">
-<meta property="og:title" content="InkyChew">
+<meta property="og:title" content="Becomegood Code World">
 <meta property="og:url" content="https://InkyChew.github.io/index.html">
-<meta property="og:site_name" content="InkyChew">
+<meta property="og:site_name" content="Becomegood Code World">
 <meta property="og:description" content="Inky的技術學習筆記與閱讀心得分享">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="InkyChew">
+<meta name="twitter:title" content="Becomegood Code World">
 <meta name="twitter:description" content="Inky的技術學習筆記與閱讀心得分享">
 
 
@@ -130,6 +130,55 @@
 
     <section class="section">
     <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/oo-dp-visitor/" itemprop="url">Design pattern - Visitor</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-27T08:57:17.000Z" itemprop="datePublished">Dec 27 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            6 minutes read (About 874 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Visitor"><a href="#Visitor" class="headerlink" title="Visitor"></a>Visitor</h1><blockquote>
+<p><strong>Represent an operation</strong> to be performed on an object structure. Visitor lets you <strong>define a new operation without changing the classes</strong> of the elements on which it operates.</p>
+</blockquote>
+<h2 id="Use-when"><a href="#Use-when" class="headerlink" title="Use when"></a>Use when</h2><ul>
+<li><strong>Object structure固定不變，但方法需要不斷擴充時</strong><br>當Object structure中的concrete classes有許多不同且不相關的方法，使用Visitor pattern，讓concrete classes在需要擴充新方法時，不需要進行改變。</li>
+<li>不同的concrete class執行方法不同</li>
+</ul>
+<p>想像有一個公園，裡面有樹，草皮，長椅，步道。有工人與民眾這兩個角色可以到這個公園裡面從事活動。<br>工人修剪樹木、整理草皮、維護長椅、清理步道；民眾坐在樹下、躺在草皮上、坐在長椅上、在步道上散步。</p>
+<p><img src="https://upload.cc/i1/2020/12/28/bi7Bwp.jpg" alt="Visitor"></p>
+<p><em>此處的Object structure 為 Composite，也可以是Collection(list / set)</em></p>
+        <p class="article-more-link">
+            <a href="/oo-dp-visitor/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
     
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
@@ -312,53 +361,6 @@
 
 
     
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/algo-timeComplexity/" itemprop="url">Time Complexity</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-23T11:48:38.000Z" itemprop="datePublished">Dec 23 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 minutes read (About 478 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。  </p>
-<h1 id="Time-Complexity-時間複雜度"><a href="#Time-Complexity-時間複雜度" class="headerlink" title="Time Complexity 時間複雜度"></a>Time Complexity 時間複雜度</h1><p><strong>隨著輸入資料量的增加，執行時間的變化</strong><br>使用Asymptotic Notation表示時間複雜度。</p>
-<h2 id="Asymptotic-Notation-漸近符號"><a href="#Asymptotic-Notation-漸近符號" class="headerlink" title="Asymptotic Notation 漸近符號"></a>Asymptotic Notation 漸近符號</h2><ul>
-<li>Big-O ( Ο ): 以<code>Ο()</code>表示演算法所需執行時間的最<strong>壞</strong>情況</li>
-<li>Omega ( Ω ): 以<code>Ω()</code>表示演算法所需執行時間的最<strong>佳</strong>情況</li>
-<li>Theta ( θ ): 以<code>θ()</code>表示演算法所需執行時間的<strong>範圍</strong>，包含了最壞與最佳情況</li>
-</ul>
-<p>時間複雜度所需執行時間，由短到長:<br><code>1(常數)</code> &lt; <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n^2</code> &lt; <code>2^n</code> &lt; <code>n!</code></p>
-        <p class="article-more-link">
-            <a href="/algo-timeComplexity/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
     
         
 <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
@@ -375,6 +377,8 @@
         <li><a class="pagination-link" href="/page/2/">2</a></li>
         
         <li><a class="pagination-link" href="/page/3/">3</a></li>
+        
+        <li><a class="pagination-link" href="/page/4/">4</a></li>
         
     </ul>
 </nav>
