@@ -141,6 +141,142 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/oo-dp-visitor/" itemprop="url">Design pattern - Visitor</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-27T08:57:17.000Z" itemprop="datePublished">Dec 27 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            6 minutes read (About 879 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Visitor"><a href="#Visitor" class="headerlink" title="Visitor"></a>Visitor</h1><blockquote>
+<p><strong>Represent an operation</strong> to be performed on an object structure. Visitor lets you <strong>define a new operation without changing the classes</strong> of the elements on which it operates.</p>
+</blockquote>
+<h2 id="Use-when"><a href="#Use-when" class="headerlink" title="Use when"></a>Use when</h2><ul>
+<li><strong>Object structure固定不變，但方法需要不斷擴充時</strong><br>當Object structure中的concrete classes有許多不同且不相關的方法，使用Visitor pattern，讓concrete classes在需要擴充新方法時，不需要進行改變。</li>
+<li>不同的concrete class執行方法不同</li>
+</ul>
+<p>想像有一個公園，裡面有樹，草皮，長椅，步道。有工人與民眾這兩個角色可以到這個公園裡面從事活動。<br>工人修剪樹木、整理草皮、維護長椅、清理步道；民眾坐在樹下、躺在草皮上、坐在長椅上、在步道上散步。</p>
+<p><img src="https://upload.cc/i1/2020/12/28/bi7Bwp.jpg" alt="Visitor"></p>
+<p><em>此處的 Object structure 為 <a href>Composite</a>，也可以是Collection(list / set)</em></p>
+        <p class="article-more-link">
+            <a href="/oo-dp-visitor/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/oo-dp-factory/" itemprop="url">Design pattern - Factory method</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-20T01:49:48.000Z" itemprop="datePublished">Dec 20 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3 minutes read (About 486 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h1><blockquote>
+<p>Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. </p>
+</blockquote>
+<p><img src="https://upload.cc/i1/2020/12/23/oZfYJH.jpg" alt="Factory method"><br>一間工廠(creator)只專門生產一種產品(product)。</p>
+        <p class="article-more-link">
+            <a href="/oo-dp-factory/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/oo-dp-observer/" itemprop="url">Design pattern - Observer</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-17T12:52:34.000Z" itemprop="datePublished">Dec 17 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            5 minutes read (About 699 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Observer"><a href="#Observer" class="headerlink" title="Observer"></a>Observer</h1><blockquote>
+<p>Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.</p>
+</blockquote>
+<p>maintain consistency without tightly coupled to increase reusablity.<br>當兩個object間的資訊需要同步更新的時候，透過observer pattern維護資訊的一致性，並降低之間的coupling。</p>
+<p><img src="https://upload.cc/i1/2020/12/20/2ZVvLd.jpg" alt="Observer"></p>
+        <p class="article-more-link">
+            <a href="/oo-dp-observer/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/recursion/" itemprop="url">遞迴與迴圈</a>
         
     </h1>
