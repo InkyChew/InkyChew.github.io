@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://InkyChew.github.io/"/>
-  <updated>2021-02-05T08:55:27.865Z</updated>
+  <updated>2021-04-24T16:34:26.530Z</updated>
   <id>https://InkyChew.github.io/</id>
   
   <author>
@@ -15,6 +15,113 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AWS Core Services - Storage</title>
+    <link href="https://InkyChew.github.io/aws-storage/"/>
+    <id>https://InkyChew.github.io/aws-storage/</id>
+    <published>2021-04-24T16:29:31.000Z</published>
+    <updated>2021-04-24T16:34:26.530Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/6lBAugA.png" alt></p><a id="more"></a><p><strong>Block storage V.S. Object storage</strong></p><ul><li>Block storage將資料儲存在一個個區塊(Block)中。當更改檔案中的某一個字元時，會找到該字元儲存的區塊進行修改，也就是說只修改檔案中的某一個區塊。</li><li>Object storage以Object為單位儲存。當更改檔案中的某一個字元時，會將整個檔案重新覆寫，修改整個檔案。一個檔案就是一個Object。</li></ul><h2 id="EBS"><a href="#EBS" class="headerlink" title="EBS"></a>EBS</h2><p>Elastic Block Storage，儲存方式為<strong>Block</strong> storage，提供<strong>一個</strong>EC2 Instance個別的儲存空間。</p><p><strong>Volume Types</strong><br><img src="https://i.imgur.com/IWG9GOX.png" alt><br><em>IOPS: Input Output Operations per Second</em></p><p><strong>Snapshots</strong><br>使用快照以建立一個新的EBS volume types</p><h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><p>Simple Storage Service，儲存方式為<strong>Object</strong> storage，可以無縫地立即地縮放資料，並可以觸發(trigger)事件。</p><p><strong>Storage Classes</strong></p><ol><li>Standard</li><li>Standard-IA</li><li>One Zone-IA</li><li>Glacier</li></ol><p><em>IA: Infrequence Access</em></p><p><img src="https://i.imgur.com/43ZeEU3.png" alt></p><p>在Region中建立一個<strong>獨一無二</strong>的Bucket name，並將資料上傳到這個Bucket當中，AWS會自動備份資料到三個不同的Availability zone。</p><h3 id="Glacier"><a href="#Glacier" class="headerlink" title="Glacier"></a>Glacier</h3><p>提供典藏的(有價值不能丟需要保存很久的)資料儲存的服務，安全可靠且低成本。</p><p><strong>Lifecycle policies</strong><br>隨著時間移動資料到成本低的儲存類別<br><img src="https://i.imgur.com/mIRIN1D.png" alt></p><h2 id="EFS"><a href="#EFS" class="headerlink" title="EFS"></a>EFS</h2><p>Elastic File System，儲存方式為<strong>File</strong> storage。儲存的資料可以共享，可提供<strong>多個</strong>EC2 Instances存取。</p><p><em>EBS 在建立 Volume後必須選擇 File system. ex: Linux, Windows…</em><br><img src="https://i.imgur.com/8jQKcdj.png" alt></p><p><strong>Mount target</strong><br>一個File system可以有多個Mount target，存在於同一個VPC中，且一個Subnet與一個Avaliability zone中只存在一個Mount target。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/6lBAugA.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+    
+      <category term="AWS" scheme="https://InkyChew.github.io/tags/AWS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AWS Core Services - Network</title>
+    <link href="https://InkyChew.github.io/aws-network/"/>
+    <id>https://InkyChew.github.io/aws-network/</id>
+    <published>2021-04-23T16:25:46.000Z</published>
+    <updated>2021-04-24T16:34:26.530Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h2><p><strong>Virtual Private Network</strong>，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過<strong>Subnet</strong>切割VPC，以允許VPC跨越多個Availability Zone。</p><img src="https://i.imgur.com/90H1rkL.png" height="400px"><a id="more"></a><h3 id="Network-configuration"><a href="#Network-configuration" class="headerlink" title="Network configuration"></a>Network configuration</h3><ol><li><p><strong>IP address range</strong><br>每一個VPC都有一個特定的IPv4位址(32bit)。ex: 10.0.0.0/<code>x</code> (16&lt;=x&lt;=28 bit)<br><code>/16</code> 32-16=16，有2<sup>16</sup>個IP位址可使用<br><code>/20</code> 32-20=12，有2<sup>12</sup>個IP位址可使用<br><code>/28</code> 32-28=4，有2<sup>4</sup>個IP位址可使用</p><ul><li>EIP (Elastic IP) Address: 將一個EIP Address與一個EC2 Instance連結(綁在一起)，VPC(為Private IP)即可使用此<strong>Public</strong> IP address對<strong>外</strong>連接。</li></ul></li><li><p><strong>Subnet</strong><br>切割VPC的IP address range。ex: 10.0.0.0/20 (default)</p><ul><li>一個Availability zone當中可以有多個Subnets。也就是，一個Subnet對應一個Avaliability Zone，但不可以橫跨Availability Zone。</li><li>Types<ul><li>public : 透過Internet的連接使Subnet彼此互相連通</li><li>private : Subnet彼此不互相連通</li><li>VPN only (Virtual Private Network) : 完全只使用公司內部的網路連接</li></ul></li></ul></li><li><p><strong>Route table</strong><br>控制<strong>流出</strong>Subnet的流量，控制Subnet的流向。ex: 禁止Subnet通往Internet。</p></li><li><p><strong>Network gateway</strong></p><ul><li>IGW (Internet Gateway) : 允許VPC與Internet連接。讓外面的Network透過Internet連進VPC，讓外面連進來。</li><li>NAT (Network Address Translation) Instances &amp; Gateway<br>不想讓外面連進來，但想連出去，透過NAT將Private轉成Public。<br>由自己管理的服務稱為Instances，由AWS管理的服務的稱為Gateway。</li><li>Endpoint<br>當不想使用IGE或NAT時，可以使用Endpoint<strong>直接</strong>與AWS的服務連接。</li><li>Peering<br>允許兩個不同Region的<strong>VPC</strong>互相連接。</li></ul></li><li><p><strong>Security</strong></p><ul><li>Security groups : EC2 Instances的虛擬防火牆，有狀態的</li><li>ACLs (Network Access Control Lists) : Subnets的防火牆，控制<strong>Sebnet</strong>的存取，無狀態的</li></ul></li></ol><h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ol><li>Hardware VPN</li><li>Direct Connect : 專用的私有連接</li><li>VPN CloudHub : 透過VPC，與多個VPN連接，多個VPN彼此可以互相連通。</li><li>Software VPN</li></ol><p><img src="https://upload.cc/i1/2021/03/07/Hvf6IX.png" alt></p><h2 id="Security-groups"><a href="#Security-groups" class="headerlink" title="Security groups"></a>Security groups</h2><p>Security groups是一個虛擬的防火牆(virtual firewall)。一個Security group可以有多個EC2 Instances，也就是說，多個EC2 Instances可以共用一個防火牆的設定。Security group可以跨Subnets，不同的Subnets中的EC2 Instances可以共用同一個防火牆設定。</p><p><strong>Key pairs</strong>為從Firewall外部連接進來時，加解密login資訊的密碼學技術。<br><em>Linux : SSH<br>Windows : RDP (Remote Desktop)</em></p><p><img src="https://i.imgur.com/1V2mMcF.png" alt></p><h2 id="Cloud-Front"><a href="#Cloud-Front" class="headerlink" title="Cloud Front"></a>Cloud Front</h2><p>連線先後順序 : Edge Location &lt; Edge Location Cache &lt; VPC<br>若先前連線的位置<strong>有</strong>資源時，即取得；若<strong>無</strong>資源，則從後一個位置取得資源。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;VPC&quot;&gt;&lt;a href=&quot;#VPC&quot; class=&quot;headerlink&quot; title=&quot;VPC&quot;&gt;&lt;/a&gt;VPC&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Virtual Private Network&lt;/strong&gt;，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過&lt;strong&gt;Subnet&lt;/strong&gt;切割VPC，以允許VPC跨越多個Availability Zone。&lt;/p&gt;
+&lt;img src=&quot;https://i.imgur.com/90H1rkL.png&quot; height=&quot;400px&quot;&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+    
+      <category term="AWS" scheme="https://InkyChew.github.io/tags/AWS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AWS Core Services - Compute</title>
+    <link href="https://InkyChew.github.io/aws-compute/"/>
+    <id>https://InkyChew.github.io/aws-compute/</id>
+    <published>2021-04-22T16:25:35.000Z</published>
+    <updated>2021-04-24T16:34:26.530Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="EC2"><a href="#EC2" class="headerlink" title="EC2"></a>EC2</h2><p>Elastic Compute Cloud，在雲端上提供虛擬的<strong>Computing環境</strong>。此虛擬環境稱為<strong>Instances</strong>。</p><p><img src="https://i.imgur.com/jpsaOid.png" alt><br>依照對資源不同的需求區分成四種方案:</p><ol><li><p>On-Demand<br>適合短期的、高峰的或不可預測的工作量，例如應用程式的測試與開發。成本高(3)，資源最少要使用60秒。</p></li><li><p>Spot Instances<br>Amazon釋出閒置資源，讓顧客以競標的方式取得，因此取得資源的成本低(1)。但是資源有隨時被Amazon收回的風險，適合起始與結束時間彈性的應用。透過<strong>Hibernation</strong>在資源被取回時暫時休眠，並在取回資源時重啟Instances。</p></li><li><p>Reserved Instance<br>向Amazon預定1年或3年的資源，成本較低(2)。適合清楚資源需求的應用或災難發生時的預備資源。</p></li><li><p>Dedicated Host<br>向Amazon取得一台專用的主機，以遵守商業、政府的規定。</p></li></ol><a id="more"></a><p><strong>Cost optimization</strong></p><ol><li>Right sizing<br>選擇適合的Instance type，並透過CloudWatch監管以衡量流量，縮減Instances的數量。</li><li>Reserved Instances</li><li>Increase elasticity<br>使用<strong>流量小</strong>的Instances，可以增加彈性。由下圖可以了解，流量大的Instances會在需求不多時造成浪費。<br><img src="https://i.imgur.com/sY0Rhx5.png" alt></li><li>Monitor &amp; Improve</li></ol><h3 id="AMI"><a href="#AMI" class="headerlink" title="AMI"></a>AMI</h3><p>Amazon Machine Image，為<strong>初始化</strong>Instance的<strong>軟體</strong>。當Instance啟用的時候，AMI將佈署使用EC2提供的服務並定義作業系統，修補程式的初始狀態和應用/系統軟體。</p><p>AMI lifecycle and uses<br><img src="https://i.imgur.com/HNloNBa.png" alt="AMI lifecycle and uses"></p><h3 id="ELB"><a href="#ELB" class="headerlink" title="ELB"></a>ELB</h3><p>Elastic Load Balancer (Balancing)，可以做為流量流入的單一窗口(single access point)，分散<strong>進入</strong>EC2 Instances的流量以提高容錯程度(fault tolerance)與可用性(availability)，增加彈性與可擴充性，且可以decouple application environement。<br><img src="https://i.imgur.com/jDnh5FS.png" alt><br>Type:</p><ol><li>ALB (Application Load Balancer)<br>掌管應用層(HTTP, HTTPs)的流量。<ul><li>routing<ul><li>path-based </li></ul></li></ul></li></ol><p><em><a href="https://webapp.yuntech.edu.tw/`YunTechSSO`" target="_blank" rel="noopener">https://webapp.yuntech.edu.tw/`YunTechSSO`</a></em><br><em><a href="https://webapp.yuntech.edu.tw/`WebNewCAS`" target="_blank" rel="noopener">https://webapp.yuntech.edu.tw/`WebNewCAS`</a></em><br>        - host-based<br><em>https://<code>webapp</code>.yuntech.edu.tw/</em><br><em>https://<code>webmail</code>.yuntech.edu.tw/</em><br>    - Dynamic port: 若有多個相同的port，會動態分配流量至閒置的port中。</p><p><img src="https://i.imgur.com/n5nPPLe.png" alt></p><ol start="2"><li>NLB (Network Load Balancer)<br>掌管傳輸層(TCP)的流量，分派速度快，適合在立即與變化快速的流量模式下使用。NLB可以跨AZ，每一個AZ會有一個static IP address。</li></ol><h3 id="Auto-Scaling"><a href="#Auto-Scaling" class="headerlink" title="Auto Scaling"></a>Auto Scaling</h3><p>依照需求啟動/終止EC2 Instances，以調整EC2 Instances的數量，並自動地向ELB登記。當增加/減少EC2 Instances時，ELB必須知道，如此ELB才能正確的分派流量給各個Instances。</p><p><em>可以Scaling的資源包含: EC2 Instances、Spot Fleets、DynamoDB tables indexes、Aurora replicas</em><br><em>Spot Fleets (競標艦隊): spot + on-demand</em></p><p><strong>Components</strong><br>以EC2 Instances為例<br><img src="https://i.imgur.com/svWsZzR.png" alt><br><img src="https://i.imgur.com/nJbae92.png" alt></p><h3 id="CloudWatch"><a href="#CloudWatch" class="headerlink" title="CloudWatch"></a>CloudWatch</h3><ul><li>用來追蹤資源的效能，監控EC2 Instances的流量。</li><li>蒐集log files加以分析做為資源方案選擇，條件設定時的依據。</li><li>當條件被觸發時透過alarm/event的通知採取行動。<br><img src="https://i.imgur.com/nArGMlb.png" alt></li></ul><p><strong>ELB、CloudWatch、Auto Scaling 間的關係與互動</strong><br>Cloud watch蒐集流量資料加以衡量，達到特定條件出發alarm啟動Auto Scaling以增減EC2 Instances，並告知ELB，EC2 Instances的增減變化。<br><img src="https://i.imgur.com/8FQGfFH.png" alt></p><h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>完全不須管理伺服器，以0.1秒計價，執行時間不得超過5分鐘。<br><img src="https://i.imgur.com/pg4xXzb.png" alt></p><h2 id="Elastic-Beanstalk"><a href="#Elastic-Beanstalk" class="headerlink" title="Elastic Beanstalk"></a>Elastic Beanstalk</h2><p>Platform as a Service，快速佈署、縮放、管理 web apps。<br><img src="https://i.imgur.com/6e1AWLx.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;EC2&quot;&gt;&lt;a href=&quot;#EC2&quot; class=&quot;headerlink&quot; title=&quot;EC2&quot;&gt;&lt;/a&gt;EC2&lt;/h2&gt;&lt;p&gt;Elastic Compute Cloud，在雲端上提供虛擬的&lt;strong&gt;Computing環境&lt;/strong&gt;。此虛擬環境稱為&lt;strong&gt;Instances&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/jpsaOid.png&quot; alt&gt;&lt;br&gt;依照對資源不同的需求區分成四種方案:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On-Demand&lt;br&gt;適合短期的、高峰的或不可預測的工作量，例如應用程式的測試與開發。成本高(3)，資源最少要使用60秒。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spot Instances&lt;br&gt;Amazon釋出閒置資源，讓顧客以競標的方式取得，因此取得資源的成本低(1)。但是資源有隨時被Amazon收回的風險，適合起始與結束時間彈性的應用。透過&lt;strong&gt;Hibernation&lt;/strong&gt;在資源被取回時暫時休眠，並在取回資源時重啟Instances。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reserved Instance&lt;br&gt;向Amazon預定1年或3年的資源，成本較低(2)。適合清楚資源需求的應用或災難發生時的預備資源。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dedicated Host&lt;br&gt;向Amazon取得一台專用的主機，以遵守商業、政府的規定。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+    
+      <category term="AWS" scheme="https://InkyChew.github.io/tags/AWS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloud computing</title>
+    <link href="https://InkyChew.github.io/cloudComputing/"/>
+    <id>https://InkyChew.github.io/cloudComputing/</id>
+    <published>2021-04-21T16:21:09.000Z</published>
+    <updated>2021-04-24T16:34:26.530Z</updated>
+    
+    <content type="html"><![CDATA[<p>Cloud computing是可以<strong>根據需求</strong>使用資訊科技服務的能力<br>根據NIST(National Institute of Standards and Technology)的定義，<strong>Cloud computing</strong>必須符合下列5項條件:</p><ol><li>On-demand self-serviced<br>可以根據需求自行取用服務。</li><li>Broad network access<br>資源與服務可得的範圍很廣。</li><li>Resource pooling<br>資源必須獨立區隔。例如公司A不能看到且不能存取公司B的資料，公司B也不能看到且不能存取公司A的資料。</li><li>Rapid elasticity<br>可以立即增加或減少資源。</li><li>Measured service<br>可衡量資源使用量(capacity)與提供資源的表現。</li></ol><a id="more"></a><h2 id="Delivery-Models"><a href="#Delivery-Models" class="headerlink" title="Delivery Models"></a>Delivery Models</h2><p>NIST依照<u>服務如何被使用</u>也就是<u>使用者需要與多少層級的基礎計算服務互動</u>定義3種cloud service <strong>Delivery Models</strong>:</p><ol><li>IaaS (Infrastructure as a Service)<br>當需要符合特殊的政府、行業<strong>規定</strong>，或需要<strong>控制</strong>環境的各方面時使用。ex: virtual machine instances, block storage, virtual private network segments, virtual function network device (router, firewall…)</li><li>PaaS (Platform as a Service)<br>降低基礎設備的維護與複雜性。ex: database, email…</li><li>SaaS (Software as a Service)<br>ex: web browser, mobile, IoT applications</li></ol><p><img src="https://i.imgur.com/eUNls2C.png" alt></p><h3 id="Shared-responsibility-model"><a href="#Shared-responsibility-model" class="headerlink" title="Shared responsibility model"></a>Shared responsibility model</h3><p>區分provider與consumer間的責任<br><img src="https://i.imgur.com/aQlX6oP.png" alt></p><h2 id="Deployment-types"><a href="#Deployment-types" class="headerlink" title="Deployment types"></a>Deployment types</h2><p>Cloud <strong>Deployment types</strong>:</p><ol><li>Public</li><li>Private<br>可以自行架設或供應商提供組織內部自用的雲端環境，以遵守特殊的政府或行業規定。</li><li>Hybrid<br>public + private</li><li>Community<br>在特定社群中共享資源，多用在學術、政府、開源專案。</li></ol><p><img src="https://i.imgur.com/hqe1FAv.png" alt></p><p>不同的Service Delivery Models可以源自不同的Deployment types，但必須符合Essential characteristics才能被視為Cloud computing。</p><p>在市場我們交易有形的產品或無形的服務，Cloud即為市場上的服務，可以大致區分成2種方案:</p><ol><li><strong>rental</strong> on-demand 短租<br>短期且需求有較高的不確定性時使用的方案</li><li><strong>leasing</strong> reserved 長租<br>長期且了解需求量時使用的方案</li></ol><h2 id="Virtualization-and-Containers"><a href="#Virtualization-and-Containers" class="headerlink" title="Virtualization and Containers"></a>Virtualization and Containers</h2><p>Cloud computing高度仰賴<strong>Resource pooling</strong>，但現實中實體可得的硬體為一個大單位，因此必須透過<strong>Virtualization</strong>將一個硬體切割成多個邏輯單位，以<strong>獨立</strong>地提供不同的個別使用者在同一個資源上使用。因此我們說Virtualization是驅動Cloud computing的引擎。</p><p>一個virtual machine一定會有一個<u>作業系統</u>，透過<strong>Hypervisor</strong>區隔多個作業系統(多個<u>tenants</u>個別使用者)，且每一個作業系統會確保只有該tenants有對virtual machine instances內容的存取權。</p><p><strong>Containers</strong>的概念與Virtualization相同，只是Containers比較<strong>小</strong>比較<strong>精實</strong>。Containers是一個package，包含一個application與其依賴的dependencies和configurations，但不包含作業系統。Containers並不包含作業系統，而是作業系統包含Containers，並透過<strong>Container engine</strong> (Manager)區隔多個Containers (App)。Containers間彼此獨立，但可以共享作業系統中的所有資源。</p><p><img src="https://i.imgur.com/j6zAsJ2.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Cloud computing是可以&lt;strong&gt;根據需求&lt;/strong&gt;使用資訊科技服務的能力&lt;br&gt;根據NIST(National Institute of Standards and Technology)的定義，&lt;strong&gt;Cloud computing&lt;/strong&gt;必須符合下列5項條件:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On-demand self-serviced&lt;br&gt;可以根據需求自行取用服務。&lt;/li&gt;
+&lt;li&gt;Broad network access&lt;br&gt;資源與服務可得的範圍很廣。&lt;/li&gt;
+&lt;li&gt;Resource pooling&lt;br&gt;資源必須獨立區隔。例如公司A不能看到且不能存取公司B的資料，公司B也不能看到且不能存取公司A的資料。&lt;/li&gt;
+&lt;li&gt;Rapid elasticity&lt;br&gt;可以立即增加或減少資源。&lt;/li&gt;
+&lt;li&gt;Measured service&lt;br&gt;可衡量資源使用量(capacity)與提供資源的表現。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
+    
+    
+      <category term="AWS" scheme="https://InkyChew.github.io/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>Data Structure - Graph &amp; Network</title>
@@ -480,56 +587,6 @@
     
     
       <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>weatherMap</title>
-    <link href="https://InkyChew.github.io/weatherMap/"/>
-    <id>https://InkyChew.github.io/weatherMap/</id>
-    <published>2019-06-29T00:27:39.000Z</published>
-    <updated>2021-04-22T11:00:08.991Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://images.pexels.com/photos/226664/pexels-photo-226664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800%22/" alt="WeatherMap-Vue.js"><br>A Taiwan weather map create by Vue.js.</p><a id="more"></a><h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><!-- - https://s.codepen.io/becomegood0308/debug/GbyNVM/NjMYzqbKOjDr --><ul><li>codepen: <a href="https://codepen.io/becomegood0308/pen/GbyNVM" target="_blank" rel="noopener">https://codepen.io/becomegood0308/pen/GbyNVM</a></li></ul><h3 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h3><ul><li>name and get id/data-name</li></ul><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><ul><li>regular expressions</li><li>json data array</li></ul><h3 id="Vue-js-jQuery"><a href="#Vue-js-jQuery" class="headerlink" title="Vue.js / jQuery"></a>Vue.js / jQuery</h3><p><img src="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png" alt="https://ithelp.ithome.com.tw/upload/images/20190628/20111666gMD6yanT6B.png"></p><ul><li>vobj = vm</li><li>vm.filter = <code>&lt;p id=&quot;&quot;&gt;</code></li></ul><hr><p>參考資料<br><a href="https://www.youtube.com/watch?v=eHrGB5EHtF4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=eHrGB5EHtF4</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.pexels.com/photos/226664/pexels-photo-226664.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=800%22/&quot; alt=&quot;WeatherMap-Vue.js&quot;&gt;&lt;br&gt;A Taiwan weather map create by Vue.js.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://InkyChew.github.io/categories/Notes/"/>
-    
-      <category term="Front-end" scheme="https://InkyChew.github.io/categories/Notes/Front-end/"/>
-    
-    
-      <category term="Vue.js" scheme="https://InkyChew.github.io/tags/Vue-js/"/>
-    
-      <category term="jQuery" scheme="https://InkyChew.github.io/tags/jQuery/"/>
-    
-      <category term="sass" scheme="https://InkyChew.github.io/tags/sass/"/>
-    
-      <category term="svg" scheme="https://InkyChew.github.io/tags/svg/"/>
-    
-      <category term="json" scheme="https://InkyChew.github.io/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo</title>
-    <link href="https://InkyChew.github.io/hexo/"/>
-    <id>https://InkyChew.github.io/hexo/</id>
-    <published>2019-06-28T14:03:07.240Z</published>
-    <updated>2021-04-03T06:23:19.161Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure></p><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><p><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   

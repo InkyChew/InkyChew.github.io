@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://InkyChew.github.io/aws-network/</loc>
+    
+    <lastmod>2021-04-24T16:34:26.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/aws-compute/</loc>
+    
+    <lastmod>2021-04-24T16:34:26.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/cloudComputing/</loc>
+    
+    <lastmod>2021-04-24T16:34:26.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://InkyChew.github.io/aws-storage/</loc>
+    
+    <lastmod>2021-04-24T16:34:26.530Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://InkyChew.github.io/weatherMap/</loc>
     
     <lastmod>2021-04-22T11:00:08.991Z</lastmod>
@@ -16,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/oo-dp-observer/</loc>
+    <loc>https://InkyChew.github.io/oo-dp-factory/</loc>
     
     <lastmod>2021-04-22T10:54:38.599Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/oo-dp-factory/</loc>
+    <loc>https://InkyChew.github.io/oo-dp-observer/</loc>
     
     <lastmod>2021-04-22T10:54:38.599Z</lastmod>
     
@@ -79,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/algo-sort-merge/</loc>
+    <loc>https://InkyChew.github.io/algo-sort-insertion/</loc>
     
     <lastmod>2020-12-29T03:58:26.231Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://InkyChew.github.io/algo-sort-insertion/</loc>
+    <loc>https://InkyChew.github.io/algo-sort-merge/</loc>
     
     <lastmod>2020-12-29T03:58:26.231Z</lastmod>
     

@@ -141,6 +141,182 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/c-program/" itemprop="url">C語言的那些事</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-01-30T01:02:36.000Z" itemprop="datePublished">Jan 30 2021</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            2 minutes read (About 275 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="指標-Poiter"><a href="#指標-Poiter" class="headerlink" title="指標 Poiter"></a>指標 Poiter</h1><p>指標存<strong>記憶體位址</strong><br>透過指標變數提取記憶位址<br>宣告指標變數 <code>型態 *名稱</code></p>
+<p><figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> *num_p; <span class="hljs-comment">/*宣告指標變數*/</span></span><br><span class="line"><span class="hljs-keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">num_p = &amp;num; <span class="hljs-comment">/*讓指標變數num_p指向變數num的記憶體位址*/</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"># Call by value</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">5</span>, y = <span class="hljs-number">10</span>;</span><br><span class="line">  swap(x, y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> temp;</span><br><span class="line">  temp = a;</span><br><span class="line">  a = b;</span><br><span class="line">  b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>將變數x、y的<strong>值</strong>傳給變數a、b。進行swap()之後，變數a、b的值改變，但變數x與y的值不變。</p>
+<h1 id="Call-by-reference"><a href="#Call-by-reference" class="headerlink" title="Call by reference"></a>Call by reference</h1><p><code>&amp;</code> 表變數的位址<br><code>*</code> 指標變數中，儲存位址所指向的值<br><figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> x = <span class="hljs-number">5</span>, y = <span class="hljs-number">10</span>;</span><br><span class="line">  swap(&amp;x, &amp;y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> temp;</span><br><span class="line">  temp = *a;</span><br><span class="line">  *a = *b;</span><br><span class="line">  *b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>將變數x、y的<strong>記憶體位址</strong>傳給指標變數a、b。也就是說，使用指標變數a、b，儲存變數x、y的記憶體位址。進行swap()之後，指標變數a、b儲存的記憶體位址互換，因此變數x與y的值改變。</p>
+
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/oo-dp-visitor/" itemprop="url">Design pattern - Visitor</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-27T08:57:17.000Z" itemprop="datePublished">Dec 27 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            6 minutes read (About 879 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Visitor"><a href="#Visitor" class="headerlink" title="Visitor"></a>Visitor</h1><blockquote>
+<p><strong>Represent an operation</strong> to be performed on an object structure. Visitor lets you <strong>define a new operation without changing the classes</strong> of the elements on which it operates.</p>
+</blockquote>
+<h2 id="Use-when"><a href="#Use-when" class="headerlink" title="Use when"></a>Use when</h2><ul>
+<li><strong>Object structure固定不變，但方法需要不斷擴充時</strong><br>當Object structure中的concrete classes有許多不同且不相關的方法，使用Visitor pattern，讓concrete classes在需要擴充新方法時，不需要進行改變。</li>
+<li>不同的concrete class執行方法不同</li>
+</ul>
+<p>想像有一個公園，裡面有樹，草皮，長椅，步道。有工人與民眾這兩個角色可以到這個公園裡面從事活動。<br>工人修剪樹木、整理草皮、維護長椅、清理步道；民眾坐在樹下、躺在草皮上、坐在長椅上、在步道上散步。</p>
+<p><img src="https://upload.cc/i1/2020/12/28/bi7Bwp.jpg" alt="Visitor"></p>
+<p><em>此處的 Object structure 為 <a href>Composite</a>，也可以是Collection(list / set)</em></p>
+        <p class="article-more-link">
+            <a href="/oo-dp-visitor/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/algo-sort-merge/" itemprop="url">Sorting algorithm - Merge sort</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-26T02:47:42.000Z" itemprop="datePublished">Dec 26 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            2 minutes read (About 364 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h1><p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png" alt="Merge sort"></p>
+<ol>
+<li>重複將資料從中間切成左右兩半，直到切出來的每一半只剩下一個元素</li>
+<li>由小到大合併左右兩半<ul>
+<li>新增左右兩半兩個陣列</li>
+<li>比較左右兩半元素的大小，進行合併</li></ul></li></ol>
+        <p class="article-more-link">
+            <a href="/algo-sort-merge/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/algo-sort-insertion/" itemprop="url">Sorting algorithm - Insertion sort</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-25T06:15:04.000Z" itemprop="datePublished">Dec 25 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            2 minutes read (About 289 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <h1 id="Insertion-sort-插入排序法"><a href="#Insertion-sort-插入排序法" class="headerlink" title="Insertion sort 插入排序法"></a>Insertion sort 插入排序法</h1><p><img src="https://upload.cc/i1/2020/12/25/sJpNzc.jpg" alt="Insertion sort"><br>將資料分成已排序(sorted)與未排序(unsorted)兩部分，依序取出未排序部分的第一個數值(目標值)，將其插入到已排序部分當中的正確位置。將目標值由右向左依序與已排序部分中的數值進行比較，當已排序部分中的數值大於目標值則往右移一個位置，否則將目標值插入。</p>
+        <p class="article-more-link">
+            <a href="/algo-sort-insertion/#more">Read More</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/algo-sort-bubble/" itemprop="url">Sorting algorithm - Bubble sort</a>
         
     </h1>
@@ -179,211 +355,6 @@
 
 
     
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/algo/" itemprop="url">Algorithm</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-24T09:56:54.000Z" itemprop="datePublished">Dec 24 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            a minute read (About 192 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="演算法-Algorithm"><a href="#演算法-Algorithm" class="headerlink" title="演算法 (Algorithm)"></a>演算法 (Algorithm)</h1><ul>
-<li>解決問題的流程</li>
-<li>滿足五條件<ol>
-<li>輸入 可有可無</li>
-<li>輸出 至少要有一個</li>
-<li>有限性 有限步驟內解決問題</li>
-<li>明確性 步驟清楚明確、條理分明</li>
-<li>有效性 必須能夠解決問題</li>
-</ol>
-</li>
-<li>表示方式<ol>
-<li>Psuedo code</li>
-<li>Flow chart</li>
-</ol>
-</li>
-</ul>
-<h2 id="演算法系列文章"><a href="#演算法系列文章" class="headerlink" title="演算法系列文章"></a>演算法系列文章</h2><p><a href="https://inkychew.github.io/algo-timeComplexity/">時間複雜度（Time Complexity）&amp; big-O</a><br>空間複雜度</p>
-<ol>
-<li>資料結構的各項操作</li>
-<li>排序（Sorting）：<ul>
-<li><a href="http://inkychew.github.io/algo-sort-bubble/">Bubble sort</a>  O(n*n) </li>
-<li><a href="https://inkychew.github.io/algo-sort-merge/">Insertion sort</a>  O(n*2) </li>
-<li>Quick sort</li>
-<li><a href="https://inkychew.github.io/algo-sort-insertion/">Merge sort</a> O(n logn)</li>
-</ul>
-</li>
-<li>搜尋（Searching）<ul>
-<li>Depth-first-search</li>
-<li>Breadth-first-search</li>
-<li>Binary search  </li>
-</ul>
-</li>
-</ol>
-<p><a href="https://inkychew.github.io/recursion/">遞迴（recursive）</a><br>分治法（divide and conquer）<br>迭代（iteration）</p>
-
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/algo-timeComplexity/" itemprop="url">Time Complexity</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-23T11:48:38.000Z" itemprop="datePublished">Dec 23 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Algorithm/">Algorithm</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 minutes read (About 478 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>在寫程式時，同一個問題，可以有多個不同的解法，因此我們需要衡量不同方法的時間與空間複雜度，以找到最佳的解法。在現代，儲存空間已經不是太大的問題，因此我們關注程式的效率，也就是演算法的時間複雜度(Time Complexity)。  </p>
-<h1 id="Time-Complexity-時間複雜度"><a href="#Time-Complexity-時間複雜度" class="headerlink" title="Time Complexity 時間複雜度"></a>Time Complexity 時間複雜度</h1><p><strong>隨著輸入資料量的增加，執行時間的變化</strong><br>使用Asymptotic Notation表示時間複雜度。</p>
-<h2 id="Asymptotic-Notation-漸近符號"><a href="#Asymptotic-Notation-漸近符號" class="headerlink" title="Asymptotic Notation 漸近符號"></a>Asymptotic Notation 漸近符號</h2><ul>
-<li>Big-O ( Ο ): 以<code>Ο()</code>表示演算法所需執行時間的最<strong>壞</strong>情況</li>
-<li>Omega ( Ω ): 以<code>Ω()</code>表示演算法所需執行時間的最<strong>佳</strong>情況</li>
-<li>Theta ( θ ): 以<code>θ()</code>表示演算法所需執行時間的<strong>範圍</strong>，包含了最壞與最佳情況</li>
-</ul>
-<p>時間複雜度所需執行時間，由短到長:<br><code>1(常數)</code> &lt; <code>log n</code> &lt; <code>n</code> &lt; <code>n log n</code> &lt; <code>n^2</code> &lt; <code>2^n</code> &lt; <code>n!</code></p>
-        <p class="article-more-link">
-            <a href="/algo-timeComplexity/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/oo-dp-factory/" itemprop="url">Design pattern - Factory method</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-20T01:49:48.000Z" itemprop="datePublished">Dec 20 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 minutes read (About 486 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="Factory-method"><a href="#Factory-method" class="headerlink" title="Factory method"></a>Factory method</h1><blockquote>
-<p>Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. </p>
-</blockquote>
-<p><img src="https://upload.cc/i1/2020/12/23/oZfYJH.jpg" alt="Factory method"><br>一間工廠(creator)只專門生產一種產品(product)。</p>
-        <p class="article-more-link">
-            <a href="/oo-dp-factory/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/oo-dp-observer/" itemprop="url">Design pattern - Observer</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-17T12:52:34.000Z" itemprop="datePublished">Dec 17 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 minutes read (About 699 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="Observer"><a href="#Observer" class="headerlink" title="Observer"></a>Observer</h1><blockquote>
-<p>Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.</p>
-</blockquote>
-<p>maintain consistency without tightly coupled to increase reusablity.<br>當兩個object間的資訊需要同步更新的時候，透過observer pattern維護資訊的一致性，並降低之間的coupling。</p>
-<p><img src="https://upload.cc/i1/2020/12/20/2ZVvLd.jpg" alt="Observer"></p>
-        <p class="article-more-link">
-            <a href="/oo-dp-observer/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
     
         
 <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
@@ -400,6 +371,8 @@
         <li><a class="pagination-link is-current" href="/categories/Notes/page/2/">2</a></li>
         
         <li><a class="pagination-link" href="/categories/Notes/page/3/">3</a></li>
+        
+        <li><a class="pagination-link" href="/categories/Notes/page/4/">4</a></li>
         
     </ul>
 </nav>

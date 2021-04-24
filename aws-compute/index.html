@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Becomegood Code World</title>
+<title>AWS Core Services - Compute - Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,17 +18,30 @@
 
 
 
-    <meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
-<meta name="keywords" content="soft engineer,code,reflection">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Becomegood Code World">
-<meta property="og:url" content="https://InkyChew.github.io/index.html">
+    <meta name="description" content="EC2Elastic Compute Cloud，在雲端上提供虛擬的Computing環境。此虛擬環境稱為Instances。 依照對資源不同的需求區分成四種方案:  On-Demand適合短期的、高峰的或不可預測的工作量，例如應用程式的測試與開發。成本高(3)，資源最少要使用60秒。  Spot InstancesAmazon釋出閒置資源，讓顧客以競標的方式取得，因此取得資源的成本低(1)。但是">
+<meta name="keywords" content="AWS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS Core Services - Compute">
+<meta property="og:url" content="https://InkyChew.github.io/aws-compute/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
-<meta property="og:description" content="Inky的技術學習筆記與閱讀心得分享">
+<meta property="og:description" content="EC2Elastic Compute Cloud，在雲端上提供虛擬的Computing環境。此虛擬環境稱為Instances。 依照對資源不同的需求區分成四種方案:  On-Demand適合短期的、高峰的或不可預測的工作量，例如應用程式的測試與開發。成本高(3)，資源最少要使用60秒。  Spot InstancesAmazon釋出閒置資源，讓顧客以競標的方式取得，因此取得資源的成本低(1)。但是">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/jpsaOid.png">
+<meta property="og:image" content="https://i.imgur.com/sY0Rhx5.png">
+<meta property="og:image" content="https://i.imgur.com/HNloNBa.png">
+<meta property="og:image" content="https://i.imgur.com/jDnh5FS.png">
+<meta property="og:image" content="https://i.imgur.com/n5nPPLe.png">
+<meta property="og:image" content="https://i.imgur.com/svWsZzR.png">
+<meta property="og:image" content="https://i.imgur.com/nJbae92.png">
+<meta property="og:image" content="https://i.imgur.com/nArGMlb.png">
+<meta property="og:image" content="https://i.imgur.com/8FQGfFH.png">
+<meta property="og:image" content="https://i.imgur.com/pg4xXzb.png">
+<meta property="og:image" content="https://i.imgur.com/6e1AWLx.png">
+<meta property="og:updated_time" content="2021-04-24T16:34:26.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Becomegood Code World">
-<meta name="twitter:description" content="Inky的技術學習筆記與閱讀心得分享">
+<meta name="twitter:title" content="AWS Core Services - Compute">
+<meta name="twitter:description" content="EC2Elastic Compute Cloud，在雲端上提供虛擬的Computing環境。此虛擬環境稱為Instances。 依照對資源不同的需求區分成四種方案:  On-Demand適合短期的、高峰的或不可預測的工作量，例如應用程式的測試與開發。成本高(3)，資源最少要使用60秒。  Spot InstancesAmazon釋出閒置資源，讓顧客以競標的方式取得，因此取得資源的成本低(1)。但是">
+<meta name="twitter:image" content="https://i.imgur.com/jpsaOid.png">
 
 
 
@@ -130,92 +143,10 @@
 
     <section class="section">
     <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/aws-storage/" itemprop="url">AWS Core Services - Storage</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-04-24T16:29:31.000Z" itemprop="datePublished">Apr 25 2021</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 minutes read (About 440 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p><img src="https://i.imgur.com/6lBAugA.png" alt></p>
-        <p class="article-more-link">
-            <a href="/aws-storage/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/aws-network/" itemprop="url">AWS Core Services - Network</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-04-23T16:25:46.000Z" itemprop="datePublished">Apr 24 2021</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 minutes read (About 640 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h2><p><strong>Virtual Private Network</strong>，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過<strong>Subnet</strong>切割VPC，以允許VPC跨越多個Availability Zone。</p>
-<img src="https://i.imgur.com/90H1rkL.png" height="400px">
-        <p class="article-more-link">
-            <a href="/aws-network/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/aws-compute/" itemprop="url">AWS Core Services - Compute</a>
+            AWS Core Services - Compute
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -250,139 +181,104 @@
 <li><p>Dedicated Host<br>向Amazon取得一台專用的主機，以遵守商業、政府的規定。</p>
 </li>
 </ol>
-        <p class="article-more-link">
-            <a href="/aws-compute/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+<a id="more"></a>
 
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/cloudComputing/" itemprop="url">Cloud computing</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-04-21T16:21:09.000Z" itemprop="datePublished">Apr 22 2021</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 minutes read (About 774 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>Cloud computing是可以<strong>根據需求</strong>使用資訊科技服務的能力<br>根據NIST(National Institute of Standards and Technology)的定義，<strong>Cloud computing</strong>必須符合下列5項條件:</p>
+<p><strong>Cost optimization</strong></p>
 <ol>
-<li>On-demand self-serviced<br>可以根據需求自行取用服務。</li>
-<li>Broad network access<br>資源與服務可得的範圍很廣。</li>
-<li>Resource pooling<br>資源必須獨立區隔。例如公司A不能看到且不能存取公司B的資料，公司B也不能看到且不能存取公司A的資料。</li>
-<li>Rapid elasticity<br>可以立即增加或減少資源。</li>
-<li>Measured service<br>可衡量資源使用量(capacity)與提供資源的表現。</li>
+<li>Right sizing<br>選擇適合的Instance type，並透過CloudWatch監管以衡量流量，縮減Instances的數量。</li>
+<li>Reserved Instances</li>
+<li>Increase elasticity<br>使用<strong>流量小</strong>的Instances，可以增加彈性。由下圖可以了解，流量大的Instances會在需求不多時造成浪費。<br><img src="https://i.imgur.com/sY0Rhx5.png" alt></li>
+<li>Monitor &amp; Improve</li>
 </ol>
-        <p class="article-more-link">
-            <a href="/cloudComputing/#more">Read More</a>
-        </p>
+<h3 id="AMI"><a href="#AMI" class="headerlink" title="AMI"></a>AMI</h3><p>Amazon Machine Image，為<strong>初始化</strong>Instance的<strong>軟體</strong>。當Instance啟用的時候，AMI將佈署使用EC2提供的服務並定義作業系統，修補程式的初始狀態和應用/系統軟體。</p>
+<p>AMI lifecycle and uses<br><img src="https://i.imgur.com/HNloNBa.png" alt="AMI lifecycle and uses"></p>
+<h3 id="ELB"><a href="#ELB" class="headerlink" title="ELB"></a>ELB</h3><p>Elastic Load Balancer (Balancing)，可以做為流量流入的單一窗口(single access point)，分散<strong>進入</strong>EC2 Instances的流量以提高容錯程度(fault tolerance)與可用性(availability)，增加彈性與可擴充性，且可以decouple application environement。<br><img src="https://i.imgur.com/jDnh5FS.png" alt><br>Type:</p>
+<ol>
+<li>ALB (Application Load Balancer)<br>掌管應用層(HTTP, HTTPs)的流量。<ul>
+<li>routing<ul>
+<li>path-based </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><em><a href="https://webapp.yuntech.edu.tw/`YunTechSSO`" target="_blank" rel="noopener">https://webapp.yuntech.edu.tw/`YunTechSSO`</a></em><br><em><a href="https://webapp.yuntech.edu.tw/`WebNewCAS`" target="_blank" rel="noopener">https://webapp.yuntech.edu.tw/`WebNewCAS`</a></em><br>        - host-based<br><em>https://<code>webapp</code>.yuntech.edu.tw/</em><br><em>https://<code>webmail</code>.yuntech.edu.tw/</em><br>    - Dynamic port: 若有多個相同的port，會動態分配流量至閒置的port中。</p>
+<p><img src="https://i.imgur.com/n5nPPLe.png" alt></p>
+<ol start="2">
+<li>NLB (Network Load Balancer)<br>掌管傳輸層(TCP)的流量，分派速度快，適合在立即與變化快速的流量模式下使用。NLB可以跨AZ，每一個AZ會有一個static IP address。</li>
+</ol>
+<h3 id="Auto-Scaling"><a href="#Auto-Scaling" class="headerlink" title="Auto Scaling"></a>Auto Scaling</h3><p>依照需求啟動/終止EC2 Instances，以調整EC2 Instances的數量，並自動地向ELB登記。當增加/減少EC2 Instances時，ELB必須知道，如此ELB才能正確的分派流量給各個Instances。</p>
+<p><em>可以Scaling的資源包含: EC2 Instances、Spot Fleets、DynamoDB tables indexes、Aurora replicas</em><br><em>Spot Fleets (競標艦隊): spot + on-demand</em></p>
+<p><strong>Components</strong><br>以EC2 Instances為例<br><img src="https://i.imgur.com/svWsZzR.png" alt><br><img src="https://i.imgur.com/nJbae92.png" alt></p>
+<h3 id="CloudWatch"><a href="#CloudWatch" class="headerlink" title="CloudWatch"></a>CloudWatch</h3><ul>
+<li>用來追蹤資源的效能，監控EC2 Instances的流量。</li>
+<li>蒐集log files加以分析做為資源方案選擇，條件設定時的依據。</li>
+<li>當條件被觸發時透過alarm/event的通知採取行動。<br><img src="https://i.imgur.com/nArGMlb.png" alt></li>
+</ul>
+<p><strong>ELB、CloudWatch、Auto Scaling 間的關係與互動</strong><br>Cloud watch蒐集流量資料加以衡量，達到特定條件出發alarm啟動Auto Scaling以增減EC2 Instances，並告知ELB，EC2 Instances的增減變化。<br><img src="https://i.imgur.com/8FQGfFH.png" alt></p>
+<h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>完全不須管理伺服器，以0.1秒計價，執行時間不得超過5分鐘。<br><img src="https://i.imgur.com/pg4xXzb.png" alt></p>
+<h2 id="Elastic-Beanstalk"><a href="#Elastic-Beanstalk" class="headerlink" title="Elastic Beanstalk"></a>Elastic Beanstalk</h2><p>Platform as a Service，快速佈署、縮放、管理 web apps。<br><img src="https://i.imgur.com/6e1AWLx.png" alt></p>
+
     
     </div>
     
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/AWS/">#AWS</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/aws-network/">AWS Core Services - Network</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/cloudComputing/">Cloud computing</a>
+            
+        </span>
+    </div>
     
 </article>
 
 
-
-
+<div class="sharebox" style="display: flex; justify-content:center">
     
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/ds-graph/" itemprop="url">Data Structure - Graph &amp; Network</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-02-05T09:18:32.000Z" itemprop="datePublished">Feb 5 2021</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/Data-Structure/">Data Structure</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            8 minutes read (About 1214 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <h1 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h1><p>圖形(Graph)由<strong>頂點(Vertics/Nodes)集合</strong>與<strong>邊(Edges)集合</strong>組成。<code>G=(V,E)</code><br>透過<strong>頂點</strong>儲存資料，透過<strong>邊</strong>表示頂點間的連通關係，依照有無方向性區分成<code>&lt;有向圖&gt;</code>與<code>(無向圖)</code>。  </p>
-<p>完全圖: 圖形中的每一個頂點皆與其他頂點相互連接。<br>無向完全圖: |E| = N(N-1) / 2<br>有向完全圖: |E| = N(N-1)</p>
-<div class="columns is-multiline">
-  <div class="column is-half is-12-mobile">
-  有向圖 (Directed Graph)
-  <img src="https://upload.cc/i1/2021/01/26/6C89HF.jpg">
-  </div>
-  <div class="column is-half is-12-mobile">
-  無向圖 (Undirected Graph)
-  <img src="https://upload.cc/i1/2021/01/27/IbPtoV.jpg">
-  </div>
+<div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
+
 </div>
-        <p class="article-more-link">
-            <a href="/ds-graph/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
 
 
 
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://InkyChew.github.io/aws-compute/';
+        this.page.identifier = 'aws-compute/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
+<div id="disqus_thread">
     
-    
-        
-<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-    <div class="pagination-previous is-invisible is-hidden-mobile">
-        <a href="/page/0/">Prev</a>
-    </div>
-    <div class="pagination-next">
-        <a href="/page/2/">Next</a>
-    </div>
-    <ul class="pagination-list is-hidden-mobile">
-        
-        <li><a class="pagination-link is-current" href="/">1</a></li>
-        
-        <li><a class="pagination-link" href="/page/2/">2</a></li>
-        
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        
-        <li><a class="pagination-link" href="/page/5/">5</a></li>
-        
-    </ul>
-</nav>
-    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
     </div>
 </section>
     <footer class="footer">

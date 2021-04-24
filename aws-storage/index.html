@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Categories - Becomegood Code World</title>
+<title>AWS Core Services - Storage - Becomegood Code World</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -18,17 +18,21 @@
 
 
 
-    <meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
-<meta name="keywords" content="algorithm,sorting,Vue.js,vue-cli,C,pointer,AWS,internship,Data Structure,Graph,reflection,interview,AJAX,Design pattern,OOSE,Java,jQuery,sass,svg,json">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Becomegood Code World">
-<meta property="og:url" content="https://InkyChew.github.io/categories/index.html">
+    <meta name="keywords" content="AWS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS Core Services - Storage">
+<meta property="og:url" content="https://InkyChew.github.io/aws-storage/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
-<meta property="og:description" content="Inky的技術學習筆記與閱讀心得分享">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/6lBAugA.png">
+<meta property="og:image" content="https://i.imgur.com/IWG9GOX.png">
+<meta property="og:image" content="https://i.imgur.com/43ZeEU3.png">
+<meta property="og:image" content="https://i.imgur.com/mIRIN1D.png">
+<meta property="og:image" content="https://i.imgur.com/8jQKcdj.png">
+<meta property="og:updated_time" content="2021-04-24T16:34:26.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Becomegood Code World">
-<meta name="twitter:description" content="Inky的技術學習筆記與閱讀心得分享">
+<meta name="twitter:title" content="AWS Core Services - Storage">
+<meta name="twitter:image" content="https://i.imgur.com/6lBAugA.png">
 
 
 
@@ -101,7 +105,7 @@
             
             <a class="navbar-item " href="/categories/Notes">Notes</a>
             
-            <a class="navbar-item is-active" href="/categories">Categories</a>
+            <a class="navbar-item " href="/categories">Categories</a>
             
             <a class="navbar-item " href="/tags">Tags</a>
             
@@ -128,46 +132,120 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5><i class="far fa-folder"></i>Categories</h5>
-        </div>
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            AWS Core Services - Storage
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-04-24T16:29:31.000Z" itemprop="datePublished">Apr 25 2021</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Notes/">Notes</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3 minutes read (About 440 words)
+        </span>
+        
     </div>
-</section>
-<section class="section">
-    <div class="container">
-        <div class="columns is-variable is-1 is-multiline is-mobile">
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p><img src="https://i.imgur.com/6lBAugA.png" alt></p>
+<a id="more"></a>
+
+<p><strong>Block storage V.S. Object storage</strong></p>
+<ul>
+<li>Block storage將資料儲存在一個個區塊(Block)中。當更改檔案中的某一個字元時，會找到該字元儲存的區塊進行修改，也就是說只修改檔案中的某一個區塊。</li>
+<li>Object storage以Object為單位儲存。當更改檔案中的某一個字元時，會將整個檔案重新覆寫，修改整個檔案。一個檔案就是一個Object。</li>
+</ul>
+<h2 id="EBS"><a href="#EBS" class="headerlink" title="EBS"></a>EBS</h2><p>Elastic Block Storage，儲存方式為<strong>Block</strong> storage，提供<strong>一個</strong>EC2 Instance個別的儲存空間。</p>
+<p><strong>Volume Types</strong><br><img src="https://i.imgur.com/IWG9GOX.png" alt><br><em>IOPS: Input Output Operations per Second</em></p>
+<p><strong>Snapshots</strong><br>使用快照以建立一個新的EBS volume types</p>
+<h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><p>Simple Storage Service，儲存方式為<strong>Object</strong> storage，可以無縫地立即地縮放資料，並可以觸發(trigger)事件。</p>
+<p><strong>Storage Classes</strong></p>
+<ol>
+<li>Standard</li>
+<li>Standard-IA</li>
+<li>One Zone-IA</li>
+<li>Glacier</li>
+</ol>
+<p><em>IA: Infrequence Access</em></p>
+<p><img src="https://i.imgur.com/43ZeEU3.png" alt></p>
+<p>在Region中建立一個<strong>獨一無二</strong>的Bucket name，並將資料上傳到這個Bucket當中，AWS會自動備份資料到三個不同的Availability zone。</p>
+<h3 id="Glacier"><a href="#Glacier" class="headerlink" title="Glacier"></a>Glacier</h3><p>提供典藏的(有價值不能丟需要保存很久的)資料儲存的服務，安全可靠且低成本。</p>
+<p><strong>Lifecycle policies</strong><br>隨著時間移動資料到成本低的儲存類別<br><img src="https://i.imgur.com/mIRIN1D.png" alt></p>
+<h2 id="EFS"><a href="#EFS" class="headerlink" title="EFS"></a>EFS</h2><p>Elastic File System，儲存方式為<strong>File</strong> storage。儲存的資料可以共享，可提供<strong>多個</strong>EC2 Instances存取。</p>
+<p><em>EBS 在建立 Volume後必須選擇 File system. ex: Linux, Windows…</em><br><img src="https://i.imgur.com/8jQKcdj.png" alt></p>
+<p><strong>Mount target</strong><br>一個File system可以有多個Mount target，存在於同一個VPC中，且一個Subnet與一個Avaliability zone中只存在一個Mount target。</p>
+
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/AWS/">#AWS</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Notes/">Notes&nbsp;(19)</a>
-            </span>
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Notes/Front-end/">Front-end&nbsp;(2)</a>
-            </span>
+            <a href="/aws-network/">AWS Core Services - Network</a>
             
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Notes/Algorithm/">Algorithm&nbsp;(5)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Notes/Data-Structure/">Data Structure&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Reflection/">Reflection&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Interview/">Interview&nbsp;(1)</a>
-            </span>
-            
-            <span class="column is-narrow">
-                <a class="tag is-light article-tag" href="/categories/Notes/OOSE/">OOSE&nbsp;(4)</a>
-            </span>
-            
-        </div>
+        </span>
+    </div>
+    
+</article>
+
+
+<div class="sharebox" style="display: flex; justify-content:center">
+    
+<div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
+
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://InkyChew.github.io/aws-storage/';
+        this.page.identifier = 'aws-storage/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
     </div>
 </section>
     <footer class="footer">
