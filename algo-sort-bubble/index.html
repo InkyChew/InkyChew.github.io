@@ -27,9 +27,9 @@
 <meta property="og:description" content="Bubble sort 氣泡排序法 每一次比較兩個相鄰數值，如果前面的數值大於後面的數值就交換位置，以確保最大的數值在最後一個位置。因為已經確保最大數值的位置，因此下一次需要比較的數值會少一個。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/02/bubble-sort1.png">
-<meta property="og:image" content="https://upload.cc/i1/2020/12/24/lv8WzX.jpg">
-<meta property="og:image" content="https://upload.cc/i1/2020/12/25/qdKZOe.jpg">
-<meta property="og:updated_time" content="2020-12-29T03:58:26.231Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3eNYWpkdsPVS6ZY0uU-IqwmSPLBsA-dObTqsmqVKoGGSgiyCgZneErULqAEoxGXBnEv9XotQgDb_1gx9WURp-uUc-4rcE44zkZmAtz7neHkAlIivhCvz6aemDvXdBc4rzjphXNMoCOaCxeph5-tTkg=w163-h81-no?authuser=1">
+<meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3e5qKBV0HclSwZ1SPanKcFmM-DkNNliNTyu9wMfzCkZjTVIL3jJPeR17NEywfMvZi3bxsbE_lWOkIQe55JYNTeQnv0kL4BuAYpLzcApeDIFB70GwMdQptHysPvrZznQFBelJQ3fZ2mTgY05xs3ZUXo=w554-h267-no?authuser=1">
+<meta property="og:updated_time" content="2021-05-03T12:24:54.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sorting algorithm - Bubble sort">
 <meta name="twitter:description" content="Bubble sort 氣泡排序法 每一次比較兩個相鄰數值，如果前面的數值大於後面的數值就交換位置，以確保最大的數值在最後一個位置。因為已經確保最大數值的位置，因此下一次需要比較的數值會少一個。">
@@ -155,7 +155,7 @@
         <span class="column is-narrow">
             
             
-            4 minutes read (About 647 words)
+            5 minutes read (About 687 words)
         </span>
         
     </div>
@@ -167,7 +167,7 @@
 
 <p>將以上的敘述拆解:</p>
 <ol>
-<li><p>每一次比較兩個相鄰元素<br>思考要比較幾次?<br>假設有五個數值，兩兩相比需比較四次。我們可以用<code>arr.length-1</code>表示。<br> <img src="https://upload.cc/i1/2020/12/24/lv8WzX.jpg" alt="兩相鄰元素比較次數"><br> 兩相鄰元素比較次數 = 總元素數量-1 </p>
+<li><p>每一次比較兩個相鄰元素<br>思考要比較幾次?<br>假設有五個數值，兩兩相比需比較四次。我們可以用<code>arr.length-1</code>表示。<br> <img src="https://lh3.googleusercontent.com/pw/ACtC-3eNYWpkdsPVS6ZY0uU-IqwmSPLBsA-dObTqsmqVKoGGSgiyCgZneErULqAEoxGXBnEv9XotQgDb_1gx9WURp-uUc-4rcE44zkZmAtz7neHkAlIivhCvz6aemDvXdBc4rzjphXNMoCOaCxeph5-tTkg=w163-h81-no?authuser=1" alt="兩相鄰元素比較次數"><br> 兩相鄰元素比較次數 = 總元素數量-1 </p>
 </li>
 <li><p>下一次需要比較的元素會少一個<br>第0次比較兩個相鄰元素，( 總元素數量-0 )-1個數值<br>第1次比較兩個相鄰元素，( 總元素數量-1 )-1個數值<br>第2次比較兩個相鄰元素，( 總元素數量-2 )-1個數值<br>…<br>第<code>i</code>次比較兩個相鄰元素，<code>arr.length-i-1</code>個數值  </p>
 </li>
@@ -176,7 +176,7 @@
 </ol>
 <p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length-<span class="hljs-number">1</span>; i++) &#123;        <span class="hljs-comment">// 1.</span></span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr.length-i-<span class="hljs-number">1</span>; j++) &#123;    <span class="hljs-comment">// 2.</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (arr[j] &gt; arr[j+<span class="hljs-number">1</span>]) &#123;                    <span class="hljs-comment">// 3.</span></span><br><span class="line">      <span class="hljs-keyword">int</span> temp = arr[j];</span><br><span class="line">      arr[j] = arr[j+<span class="hljs-number">1</span>];</span><br><span class="line">      arr[j+<span class="hljs-number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Time complexity: O(n*n)<br>上述的程式碼缺乏效率，儘管陣列中所有的元素都已經排序完成，程式依然執行<code>n*n</code>次。  </p>
-<p>觀察下方的圖片幫助理解<br><img src="https://upload.cc/i1/2020/12/25/qdKZOe.jpg" alt="缺乏效率的bubble sort"><br>我們可以發現執行第6次時就已經完成排序，但卻執行了10次</p>
+<p>觀察下方的圖片幫助理解<br><img src="https://lh3.googleusercontent.com/pw/ACtC-3e5qKBV0HclSwZ1SPanKcFmM-DkNNliNTyu9wMfzCkZjTVIL3jJPeR17NEywfMvZi3bxsbE_lWOkIQe55JYNTeQnv0kL4BuAYpLzcApeDIFB70GwMdQptHysPvrZznQFBelJQ3fZ2mTgY05xs3ZUXo=w554-h267-no?authuser=1" alt="缺乏效率的bubble sort"><br>我們可以發現執行第6次時就已經完成排序，但卻執行了10次</p>
 <h2 id="Optimized-implementation"><a href="#Optimized-implementation" class="headerlink" title="Optimized implementation"></a>Optimized implementation</h2><p>如何知道所有的元素已經排序完成?<br>當兩相鄰元素的交換不再發生時，即完成所有元素的排序</p>
 <p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length-<span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">boolean</span> swapped = <span class="hljs-keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr.length-i-<span class="hljs-number">1</span>; j++) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (arr[j] &lt; arr[j+<span class="hljs-number">1</span>]) &#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> temp = arr[j];</span><br><span class="line">      arr[j] = arr[j+<span class="hljs-number">1</span>];</span><br><span class="line">      arr[j+<span class="hljs-number">1</span>] = temp;</span><br><span class="line"></span><br><span class="line">      <span class="hljs-comment">// 當有交換發生時，將swapped設成true</span></span><br><span class="line">      swapped = <span class="hljs-keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">// 當兩相鄰元素的交換不再發生時</span></span><br><span class="line">  <span class="hljs-comment">// 所有元素排序完成</span></span><br><span class="line">  <span class="hljs-keyword">if</span> (swapped == <span class="hljs-keyword">false</span>)</span><br><span class="line">    <span class="hljs-keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>Worst case: O(n*n)<br>所需執行時間的最壞情況，發生在陣列當中的元素以反向排序時<br>Best case: O(n)<br>所需執行時間的最佳情況，發生在陣列當中的元素已經排序好時</p>

@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="Becomegood Code World">
 <meta property="og:description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/90H1rkL.png">
-<meta property="og:image" content="https://upload.cc/i1/2021/03/07/Hvf6IX.png">
-<meta property="og:image" content="https://i.imgur.com/1V2mMcF.png">
-<meta property="og:updated_time" content="2021-04-24T16:34:26.530Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1">
+<meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3cfmTFn-A03ftAqKRhxPsL01MD3HcpY2EKHmOPVXBja26-_eOs_7IK7Fj_RCrhhIhoh7snFhFIAxQklTz30aZMXSflFMlS1epXpjwlX-SKfL8dM0ju-4qqpQYdVGi1dDi_9qIEKoXRGCRKtxUGZdys=w1427-h881-no?authuser=1">
+<meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3f-LgoPA-dLBkhPm6O0Sb12hV8Utt3En2Y1RsXS1VIDxu6uS_37m8SP6Cpytkf7-Ad17E7tonu2ndKkf9P2QmFlS9A2jQVdBjq-aWErmosv2G74G9-dgRZk6YkMBel1Zsau6tawboyMWjAaQeL30_U=w1735-h804-no?authuser=1">
+<meta property="og:updated_time" content="2021-05-03T12:41:21.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Core Services - Network">
 <meta name="twitter:description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
-<meta name="twitter:image" content="https://i.imgur.com/90H1rkL.png">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1">
 
 
 
@@ -155,14 +155,14 @@
         <span class="column is-narrow">
             
             
-            4 minutes read (About 640 words)
+            5 minutes read (About 696 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h2><p><strong>Virtual Private Network</strong>，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過<strong>Subnet</strong>切割VPC，以允許VPC跨越多個Availability Zone。</p>
-<img src="https://i.imgur.com/90H1rkL.png" height="400px">
+<img src="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1" height="400px">
 
 <a id="more"></a>
 
@@ -206,10 +206,10 @@
 <li>VPN CloudHub : 透過VPC，與多個VPN連接，多個VPN彼此可以互相連通。</li>
 <li>Software VPN</li>
 </ol>
-<p><img src="https://upload.cc/i1/2021/03/07/Hvf6IX.png" alt></p>
+<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cfmTFn-A03ftAqKRhxPsL01MD3HcpY2EKHmOPVXBja26-_eOs_7IK7Fj_RCrhhIhoh7snFhFIAxQklTz30aZMXSflFMlS1epXpjwlX-SKfL8dM0ju-4qqpQYdVGi1dDi_9qIEKoXRGCRKtxUGZdys=w1427-h881-no?authuser=1" alt></p>
 <h2 id="Security-groups"><a href="#Security-groups" class="headerlink" title="Security groups"></a>Security groups</h2><p>Security groups是一個虛擬的防火牆(virtual firewall)。一個Security group可以有多個EC2 Instances，也就是說，多個EC2 Instances可以共用一個防火牆的設定。Security group可以跨Subnets，不同的Subnets中的EC2 Instances可以共用同一個防火牆設定。</p>
 <p><strong>Key pairs</strong>為從Firewall外部連接進來時，加解密login資訊的密碼學技術。<br><em>Linux : SSH<br>Windows : RDP (Remote Desktop)</em></p>
-<p><img src="https://i.imgur.com/1V2mMcF.png" alt></p>
+<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3f-LgoPA-dLBkhPm6O0Sb12hV8Utt3En2Y1RsXS1VIDxu6uS_37m8SP6Cpytkf7-Ad17E7tonu2ndKkf9P2QmFlS9A2jQVdBjq-aWErmosv2G74G9-dgRZk6YkMBel1Zsau6tawboyMWjAaQeL30_U=w1735-h804-no?authuser=1" alt></p>
 <h2 id="Cloud-Front"><a href="#Cloud-Front" class="headerlink" title="Cloud Front"></a>Cloud Front</h2><p>連線先後順序 : Edge Location &lt; Edge Location Cache &lt; VPC<br>若先前連線的位置<strong>有</strong>資源時，即取得；若<strong>無</strong>資源，則從後一個位置取得資源。</p>
 
     
