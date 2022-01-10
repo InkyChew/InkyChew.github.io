@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>資料庫優化 -  正規化與反正規化 - Becomegood Code World</title>
+<title>資料庫優化 -  正規化與反正規化 - Becomegood Code World</title><meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/rqZpDXmeBB80GU2pMgnubFFNkBmx5KGkyWL-cNBmS-XU7LT_9LlvCDo4xkXMubkYEOQ-JattfvoKz6eAN7gEU-JOBkoLLH38Ber_zU-2u2IuvKuOhdtQiem6glbd0C42C4EbUIIPuZOeU9EpiiCyrrtheYuSna2RrYlQsFlj47ezvzDbPsIwCIk8NTp4e_ReJznt5EY1llHBEHVgZ1aoUxJGI5P7wnqUuVdmgBIIjq0SdF3_P0-ZitREUjvxbhzmQkWJcTy__uR54KVKy2v-cRFmuvUeEyW6QJ1FrBw30HK2hlTLrBo6YQttJx1eqr5kqnIFdi-oh6s5eJrt075KCw7BHJyUDDsTvQkvKBuEcL569R1NKuI5HHohCCE6CVk6Q7-XbxNi0dyJLTZjskfLL67dqgUv7UCk8tOas4ZRx3yCrnWXNcGGZfUkVbJhdw_GQuLZIgzV4V531qXKrKp5Hf0zoO1y61Si1ptg5B7lIB_PQKSZgsL1gG1sx8dT9d6BwJipd6bagCHT-iFHJ1xAiPKq-1vDjfw3pAiecqyL0SZWKBjtVu_txKUIkgXCQlTvE1Qgnz4H01NPFD-MlatwVl5vA5AD7QpFjSCpZkxJO53aj6HSP5GJWmLH_Czi-a9xC74c_6ZwnyS4ObqLsBPQlSTAng6Sgkmqr4b5a-b82Bgn7pSDgt0c4EwQaeMfK1X_pTMX1zemK_NINeoB2wFfxA=w707-h231-no?authuser=1">
 <meta property="og:image" content="https://lh3.googleusercontent.com/IFOebURxHrafp3qkWxfNJsKrbHDJIQZnq4MliCmCCX91TJRzr6AzOwQrJ0bxKRMapcSp7D0BoyjM_zI_o9e-tD9uqRtQp_OGijJ314gcoginwW1fkTQXrr5W8U8ntQQpJryQI6kS2cyo7fAcp2_oGnXntJomG4wkh5Wyb-l211P9VrmvFSMjFwcc80DWK_OnR9q0mqQAGnc_ZR9Ux8Z4AglZ97h_KI67zlikD46GcRu1uV7zK6opbLlm_qgAYKyHQXeHQ1vkBuuyHu_arjwcS07aA39OlLqm1a1Ju_J-Z0eS6ut3rZFEs1lxYYGUo8W1PAfSQJcO21c7RN1fKtZD6sLU-RkByD8ybbDCexc3EW3hells9uJ4qEXmHz84Y1HtfbEPhm1qsi_opYk7BgXdrUieL4T8V-aa3y7HjAV5mKEevjUjgILsSsjiFJFbz-yoyLeygOYjuMY29aP022XHzotuWdjRdpLAY-Iy6hv6bkJ6d06cwtSTlW_s2CaxlFF57-m8p2BsvYT4NosUBo7AYaZIfhI_t2RIJrI3t1uXeklF5DOTZYcEC0htbids6GPGoMsVmL_5fj-cR3gZdRrO5Z2GKcrQseaYevmH6VPDA1VvZYCP0WMMkae5agRXgBK2lSKcpJ5U73Pjb2tWUNafhn5PwjMo8GUFwSBMqn7187jQ09mKJqxRaGUpZqiLdjM1_rUDU-8BDZkeolB7oFInlQ=w1451-h552-no?authuser=1">
 <meta property="og:image" content="https://lh3.googleusercontent.com/N06R5LElXLZgUqTVsFPn1huurB-ztAZD_vT7E-UXRNnohyJONfvc8HNsxAQO6HzBg2zSQzVFsQU6oBnqcywBS04ukM6QuaFMPQPNENOoh5zjtDcTzTS3TrudaT3I7WzF8VCXvNEpD_w6_Z8qELqkMHKTv1DLP_ezE-qLkWM1S2UR5gIniOKepmXBkjcAhfM_1DT_3scuPgy7muGA4SNxMFu51vReiN65WKg6wXkzqWWyBpQQk7S-A7A4qdUpUQLU7muYTJ80-J6FqAcfcCrXYLZ1rIiA8sIfktyeJGwXfASsiUC_6rSNLulSowfJL7CiXNJBfw-IvAmftc6v78KlbgGklDsTyBkH3azuP0REHLeC9RTAyzqD-dbpkgrTfwXoB7IXztRc2toCV0gT08GG1nyTOZ3H0TzMDeDN8z7Z57MN3qP2hO9UBCG4pAaMn6DDFgCZ83uH0JZizkVfDEeoUaMrDmMxVoUzSuzKkX58ZcxnnfVHaTzwc8r36s-CqblbZznZ1Ebt0RWLPdAWJ8LXxCqLAh6HF5l0IXrv71wW1glWeQcrqm_jtSqunCXlMTsKlANLur6fCdnUoXZUZeM9Vul0PribPOAQWhe2AkcXLBmSTsRKVrsWP-cS-s8jLkqlD_2AuepjgjcfbuGsvpwhgkhxPMNLxooEf3ZeiaJs0ETfENCir2w_7Hx8M55r_WhIDQZ0kI5rH7rsYMjaCrvnHg=w1920-h828-no?authuser=1">
-<meta property="og:updated_time" content="2021-05-10T04:57:05.784Z">
+<meta property="og:updated_time" content="2022-01-10T13:17:56.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="資料庫優化 -  正規化與反正規化">
 <meta name="twitter:description" content="Normalization將Table切分成多個，以減少儲存空間浪費，提升儲存效能(storage efficiency)">
@@ -173,23 +173,10 @@
 <h1 id="Denormalization"><a href="#Denormalization" class="headerlink" title="Denormalization"></a>Denormalization</h1><p>將Table合併，以提高存取速度(speed up access)<br>當table A的資料被讀取時，常常需得到table B的資料，且此資料不須經常更新，即可將table B的資料加入table A中，以減少表格間的join，提高讀取速度。</p>
 <p>當Order Table被讀取時，常常需得到Cust Table中Last Name的資料，即可將Cust Last Name加入Order Table中，以提高效能。</p>
 <p>若兩Table為<code>1..1</code>的關係，可將兩Table合併<br>每筆訂單必有運送資訊，可將運送資訊加入訂單當中，提升效能。</p>
-
+<!-- flag of hidden posts -->
     
     </div>
     
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/js-30challenge/">JavaScript 30 days challenges</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/aws-storage/">AWS Core Services - Storage</a>
-            
-        </span>
-    </div>
     
 </article>
 
