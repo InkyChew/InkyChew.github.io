@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://InkyChew.github.io/about/index.html</loc>
+    
+    <lastmod>2022-01-11T12:30:53.722Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://InkyChew.github.io/aws-network/</loc>
     
     <lastmod>2021-05-03T12:41:21.928Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>https://InkyChew.github.io/weatherMap/</loc>
     
     <lastmod>2021-04-22T11:00:08.991Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://InkyChew.github.io/about/index.html</loc>
-    
-    <lastmod>2021-04-22T10:57:56.125Z</lastmod>
     
   </url>
   
