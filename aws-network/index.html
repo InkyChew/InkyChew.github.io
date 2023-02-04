@@ -1,179 +1,130 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-<title>AWS Core Services - Network - Becomegood Code World</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-
-
-
-<meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
-
-
-
-<meta name="keywords" content="soft engineer,code,reflection">
-
-
-
-    <meta name="description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
-<meta name="keywords" content="AWS">
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>AWS Core Services - Network | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS Core Services - Network">
-<meta property="og:url" content="https://InkyChew.github.io/aws-network/index.html">
+<meta property="og:url" content="https://inkychew.github.io/aws-network/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
 <meta property="og:description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3cfmTFn-A03ftAqKRhxPsL01MD3HcpY2EKHmOPVXBja26-_eOs_7IK7Fj_RCrhhIhoh7snFhFIAxQklTz30aZMXSflFMlS1epXpjwlX-SKfL8dM0ju-4qqpQYdVGi1dDi_9qIEKoXRGCRKtxUGZdys=w1427-h881-no?authuser=1">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3f-LgoPA-dLBkhPm6O0Sb12hV8Utt3En2Y1RsXS1VIDxu6uS_37m8SP6Cpytkf7-Ad17E7tonu2ndKkf9P2QmFlS9A2jQVdBjq-aWErmosv2G74G9-dgRZk6YkMBel1Zsau6tawboyMWjAaQeL30_U=w1735-h804-no?authuser=1">
-<meta property="og:updated_time" content="2021-05-03T12:41:21.928Z">
+<meta property="article:published_time" content="2021-04-23T16:25:46.000Z">
+<meta property="article:modified_time" content="2021-05-03T12:41:22.000Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content="AWS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AWS Core Services - Network">
-<meta name="twitter:description" content="VPCVirtual Private Network，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過Subnet切割VPC，以允許VPC跨越多個Availability Zone。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-
-
-
-
-<link rel="icon" href="/favicon.png">
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-
+  
+  
 <link rel="stylesheet" href="/css/style.css">
 
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+  
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143037516-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-    gtag('config', 'UA-143037516-1');
-</script>
-
-
-    
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172" crossorigin="anonymous"></script>
-</head>
 <body>
-    
-<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-logo" href="/">
-                
-                    
-                    Becomegood
-                    
-                
-            </a>
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <div class="navbar-menu navbar-start">
-            
-            <a class="navbar-item " href="/archives">Archives</a>
-            
-            <a class="navbar-item " href="/categories/Notes">Notes</a>
-            
-            <a class="navbar-item " href="/categories">Categories</a>
-            
-            <a class="navbar-item " href="/tags">Tags</a>
-            
-            <a class="navbar-item " href="/about">About</a>
-            
-        </div>
-        
-        <div class="navbar-menu navbar-end">
-            
-            <a class="navbar-item search" title="Search" href="javascript:;">
-                <i class="fas fa-search"></i>
-            </a>
-            
-            
-            
-            <a class="navbar-item" title="GitHub" href="https://github.com/InkyChew">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
-        </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
     </div>
-</nav>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section class="section">
-    <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            AWS Core Services - Network
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-04-23T16:25:46.000Z" itemprop="datePublished">Apr 24 2021</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 minutes read (About 696 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+      <div class="outer">
+        <section id="main"><article id="post-aws-network" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/aws-network/" class="article-date">
+  <time class="dt-published" datetime="2021-04-23T16:25:46.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      AWS Core Services - Network
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         <h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h2><p><strong>Virtual Private Network</strong>，必定架構在一個Region當中，一個帳戶可以擁有多個VPC，多個VPC之間彼此獨立。透過<strong>Subnet</strong>切割VPC，以允許VPC跨越多個Availability Zone。</p>
 <img src="https://lh3.googleusercontent.com/pw/ACtC-3fqMU_ZKbHeQQs4JYZzS7JY-YSWSVBKjOnslAXywabnzed_dPjlk2erVO_DzlBDPkpQMYhzjP4rxwVGq_37Lzvxacv33LLClHIAUdNxaiGo75QwEY8Co5--XegNpFS3fyeoXKYgInHaPKbHJl00mfo=w1008-h784-no?authuser=1" height="400px">
 
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="Network-configuration"><a href="#Network-configuration" class="headerlink" title="Network configuration"></a>Network configuration</h3><ol>
-<li><p><strong>IP address range</strong><br>每一個VPC都有一個特定的IPv4位址(32bit)。ex: 10.0.0.0/<code>x</code> (16&lt;=x&lt;=28 bit)<br><code>/16</code> 32-16=16，有2<sup>16</sup>個IP位址可使用<br><code>/20</code> 32-20=12，有2<sup>12</sup>個IP位址可使用<br><code>/28</code> 32-28=4，有2<sup>4</sup>個IP位址可使用</p>
+<li><p><strong>IP address range</strong><br>每一個VPC都有一個特定的IPv4位址(32bit)。ex: 10.0.0.0&#x2F;<code>x</code> (16&lt;&#x3D;x&lt;&#x3D;28 bit)<br><code>/16</code> 32-16&#x3D;16，有2<sup>16</sup>個IP位址可使用<br><code>/20</code> 32-20&#x3D;12，有2<sup>12</sup>個IP位址可使用<br><code>/28</code> 32-28&#x3D;4，有2<sup>4</sup>個IP位址可使用</p>
 <ul>
 <li>EIP (Elastic IP) Address: 將一個EIP Address與一個EC2 Instance連結(綁在一起)，VPC(為Private IP)即可使用此<strong>Public</strong> IP address對<strong>外</strong>連接。</li>
 </ul>
 </li>
-<li><p><strong>Subnet</strong><br>切割VPC的IP address range。ex: 10.0.0.0/20 (default)</p>
+<li><p><strong>Subnet</strong><br>切割VPC的IP address range。ex: 10.0.0.0&#x2F;20 (default)</p>
 <ul>
 <li>一個Availability zone當中可以有多個Subnets。也就是，一個Subnet對應一個Avaliability Zone，但不可以橫跨Availability Zone。</li>
 <li>Types<ul>
@@ -189,9 +140,9 @@
 <li><p><strong>Network gateway</strong></p>
 <ul>
 <li>IGW (Internet Gateway) : 允許VPC與Internet連接。讓外面的Network透過Internet連進VPC，讓外面連進來。</li>
-<li>NAT (Network Address Translation) Instances &amp; Gateway<br>不想讓外面連進來，但想連出去，透過NAT將Private轉成Public。<br>由自己管理的服務稱為Instances，由AWS管理的服務的稱為Gateway。</li>
-<li>Endpoint<br>當不想使用IGE或NAT時，可以使用Endpoint<strong>直接</strong>與AWS的服務連接。</li>
-<li>Peering<br>允許兩個不同Region的<strong>VPC</strong>互相連接。</li>
+<li>NAT (Network Address Translation) Instances &amp; Gateway<br> 不想讓外面連進來，但想連出去，透過NAT將Private轉成Public。<br> 由自己管理的服務稱為Instances，由AWS管理的服務的稱為Gateway。</li>
+<li>Endpoint<br> 當不想使用IGE或NAT時，可以使用Endpoint<strong>直接</strong>與AWS的服務連接。</li>
+<li>Peering<br> 允許兩個不同Region的<strong>VPC</strong>互相連接。</li>
 </ul>
 </li>
 <li><p><strong>Security</strong></p>
@@ -207,274 +158,145 @@
 <li>VPN CloudHub : 透過VPC，與多個VPN連接，多個VPN彼此可以互相連通。</li>
 <li>Software VPN</li>
 </ol>
-<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cfmTFn-A03ftAqKRhxPsL01MD3HcpY2EKHmOPVXBja26-_eOs_7IK7Fj_RCrhhIhoh7snFhFIAxQklTz30aZMXSflFMlS1epXpjwlX-SKfL8dM0ju-4qqpQYdVGi1dDi_9qIEKoXRGCRKtxUGZdys=w1427-h881-no?authuser=1" alt></p>
+<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cfmTFn-A03ftAqKRhxPsL01MD3HcpY2EKHmOPVXBja26-_eOs_7IK7Fj_RCrhhIhoh7snFhFIAxQklTz30aZMXSflFMlS1epXpjwlX-SKfL8dM0ju-4qqpQYdVGi1dDi_9qIEKoXRGCRKtxUGZdys=w1427-h881-no?authuser=1"></p>
 <h2 id="Security-groups"><a href="#Security-groups" class="headerlink" title="Security groups"></a>Security groups</h2><p>Security groups是一個虛擬的防火牆(virtual firewall)。一個Security group可以有多個EC2 Instances，也就是說，多個EC2 Instances可以共用一個防火牆的設定。Security group可以跨Subnets，不同的Subnets中的EC2 Instances可以共用同一個防火牆設定。</p>
 <p><strong>Key pairs</strong>為從Firewall外部連接進來時，加解密login資訊的密碼學技術。<br><em>Linux : SSH<br>Windows : RDP (Remote Desktop)</em></p>
-<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3f-LgoPA-dLBkhPm6O0Sb12hV8Utt3En2Y1RsXS1VIDxu6uS_37m8SP6Cpytkf7-Ad17E7tonu2ndKkf9P2QmFlS9A2jQVdBjq-aWErmosv2G74G9-dgRZk6YkMBel1Zsau6tawboyMWjAaQeL30_U=w1735-h804-no?authuser=1" alt></p>
+<p><img src="https://lh3.googleusercontent.com/pw/ACtC-3f-LgoPA-dLBkhPm6O0Sb12hV8Utt3En2Y1RsXS1VIDxu6uS_37m8SP6Cpytkf7-Ad17E7tonu2ndKkf9P2QmFlS9A2jQVdBjq-aWErmosv2G74G9-dgRZk6YkMBel1Zsau6tawboyMWjAaQeL30_U=w1735-h804-no?authuser=1"></p>
 <h2 id="Cloud-Front"><a href="#Cloud-Front" class="headerlink" title="Cloud Front"></a>Cloud Front</h2><p>連線先後順序 : Edge Location &lt; Edge Location Cache &lt; VPC<br>若先前連線的位置<strong>有</strong>資源時，即取得；若<strong>無</strong>資源，則從後一個位置取得資源。</p>
 
-    
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/aws-network/" data-id="cl9i2ri7p000s24vhate305b1" data-title="AWS Core Services - Network" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li></ul>
+
+    </footer>
+  </div>
+  
     
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/AWS/">#AWS</a></span>
-    
-    </div>
-    
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/aws-storage/">AWS Core Services - Storage</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/aws-compute/">AWS Core Services - Compute</a>
-            
-        </span>
-    </div>
-    
+<nav id="article-nav">
+  
+    <a href="/aws-storage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AWS Core Services - Storage
+        
+      </div>
+    </a>
+  
+  
+    <a href="/aws-compute/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AWS Core Services - Compute</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-<div class="sharebox" style="display: flex; justify-content:center">
-    
-<div class="addthis_inline_share_toolbox"></div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
-
-</div>
-
-
-
-<div class="comments">
-    <h3 class="title is-4">Comments</h3>
-    
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://InkyChew.github.io/aws-network/';
-        this.page.identifier = 'aws-network/';
-        
-        this.language = 'en';
-        
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</div>
-
-    </div>
 </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="columns content">
-            <div class="column is-narrow has-text-centered">
-                &copy; 2022 InkyChew&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos" rel="external nofollow">Minos</a>
-            </div>
-            <div class="column is-hidden-mobile"></div>
-
-            
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                
-                    
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/InkyChew">
-                    
-                    GitHub
-                    
-                </a>
-                
-                </div>
-            </div>
-            
-            
-        </div>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
     </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 12.5px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-connectdb/">.Net 6 - Operate database by EFCore</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
-<!-- test if the browser is outdated -->
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // plugin function, place inside DOM ready function
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
-
-<script>
-    window.FontAwesomeConfig = {
-        searchPseudoElements: true
-    }
-    moment.locale("en-AU");
-</script>
-
-
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
-        }
-    });
-</script>
-
-    
-    
-    
-    
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            if (typeof($.fn.lightGallery) === 'function') {
-                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof($.fn.justifiedGallery) === 'function') {
-                $('.justified-gallery').justifiedGallery();
-            }
-        });
-    })(jQuery);
-</script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <style>
-        .hljs {
-            position: relative;
-        }
-
-        .hljs .clipboard-btn {
-            float: right;
-            color: #9a9a9a;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hljs .clipboard-btn:hover {
-          color: #8a8a8a;
-        }
-
-        .hljs > .clipboard-btn {
-            display: none;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-        }
-
-        .hljs:hover > .clipboard-btn {
-            display: inline;
-        }
-
-        .hljs > figcaption > .clipboard-btn {
-            margin-right: 4px;
-        }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('figure.hljs').each(function(i, figure) {
-          var codeId = 'code-' + i;
-          var code = figure.querySelector('.code');
-          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
-          code.id = codeId;
-          copyButton.addClass('clipboard-btn');
-          copyButton.attr('data-clipboard-target-id', codeId);
-
-          var figcaption = figure.querySelector('figcaption');
-
-          if (figcaption) {
-            figcaption.append(copyButton[0]);
-          } else {
-            figure.prepend(copyButton[0]);
-          }
-        })
-
-        var clipboard = new ClipboardJS('.clipboard-btn', {
-          target: function(trigger) {
-            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
-          }
-        });
-        clipboard.on('success', function(e) {
-          e.clearSelection();
-        })
-      })
-    </script>
-
-    
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
     
 
-    
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
 
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-mask"></div>
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js"></script>
-    
+
+
+
+
+  </div>
 </body>
 </html>

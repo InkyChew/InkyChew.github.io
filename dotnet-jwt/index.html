@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>.Net 6 - Authentication and Authorization with JWT | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this article, we will use .Net 6 to authenticate and authorize user with JWT in role based. Design Authenticate user and generate JWT. Pass JWT in each request. Validate JWT。 Authorize。">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".Net 6 - Authentication and Authorization with JWT">
+<meta property="og:url" content="https://inkychew.github.io/dotnet-jwt/index.html">
+<meta property="og:site_name" content="Becomegood Code World">
+<meta property="og:description" content="In this article, we will use .Net 6 to authenticate and authorize user with JWT in role based. Design Authenticate user and generate JWT. Pass JWT in each request. Validate JWT。 Authorize。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/Yag1QQE.png">
+<meta property="og:image" content="https://i.imgur.com/s4cxMps.png">
+<meta property="og:image" content="https://i.imgur.com/An4S9dI.png">
+<meta property="og:image" content="https://i.imgur.com/ewqyrFn.png">
+<meta property="article:published_time" content="2023-02-04T06:52:09.000Z">
+<meta property="article:modified_time" content="2023-02-04T07:33:58.093Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content=".Net">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Yag1QQE.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-dotnet-jwt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/dotnet-jwt/" class="article-date">
+  <time class="dt-published" datetime="2023-02-04T06:52:09.000Z" itemprop="datePublished">2023-02-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>►<a class="article-category-link" href="/categories/Notes/Web-Design/">Web Design</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      .Net 6 - Authentication and Authorization with JWT
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>In this article, we will use .Net 6 to authenticate and authorize user with JWT in role based.</p>
+<h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><ol>
+<li>Authenticate user and generate JWT.</li>
+<li>Pass JWT in each request.</li>
+<li>Validate JWT。</li>
+<li>Authorize。</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="Implementaion"><a href="#Implementaion" class="headerlink" title="Implementaion"></a>Implementaion</h2><h3 id="1-Models"><a href="#1-Models" class="headerlink" title="1. Models"></a>1. Models</h3><ul>
+<li>User  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">User</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> UserId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> UserName &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Password &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> UserRole Role &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span>? Token &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>UserRole  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> UserRole &#123; Admin, User &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-Fakedata"><a href="#2-Fakedata" class="headerlink" title="2. Fakedata"></a>2. Fakedata</h3><ul>
+<li>Package required<br>  <img src="https://i.imgur.com/Yag1QQE.png"></li>
+<li>Encrypt user’s password by <code>HashPassword</code> method in BCrypt.  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UserService.cs</span></span><br><span class="line"><span class="keyword">private</span> List&lt;User&gt; _users = <span class="keyword">new</span> List&lt;User&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">new</span> User &#123; UserId = <span class="number">1</span>, UserName = <span class="string">&quot;admin&quot;</span>, Password = BCrypt.Net.BCrypt.HashPassword(<span class="string">&quot;admin&quot;</span>), Role = UserRole.Admin &#125;,</span><br><span class="line">    <span class="keyword">new</span> User &#123; UserId = <span class="number">2</span>, UserName = <span class="string">&quot;test&quot;</span>, Password = BCrypt.Net.BCrypt.HashPassword(<span class="string">&quot;test&quot;</span>), Role = UserRole.User &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-Authenticate"><a href="#3-Authenticate" class="headerlink" title="3. Authenticate"></a>3. Authenticate</h3><ul>
+<li><p>Verify username and password</p>
+<ul>
+<li>Use <code>Verify</code> method in Bcrypt to verify encrypted password.</li>
+<li>If verfify success, then generate JWT token.<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UserService.cs</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">Authenticate</span>(<span class="params">User model</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    User user = _users.SingleOrDefault(m =&gt; m.UserName == model.UserName);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(user == <span class="literal">null</span> || !BCrypt.Net.BCrypt.Verify(model.Password, user.Password))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">&quot;Username or password is incorrect&quot;</span>);</span><br><span class="line"></span><br><span class="line">    user.Token = _jwtUtils.GenerateJwtToken(user);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Generate JWT token</p>
+<ul>
+<li>Package required<br> <img src="https://i.imgur.com/s4cxMps.png"></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JwtUtil.cs</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">string</span> <span class="title">GenerateJwtToken</span>(<span class="params">User user</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// generate token that is valid for 7 days</span></span><br><span class="line">    <span class="keyword">var</span> tokenHandler = <span class="keyword">new</span> JwtSecurityTokenHandler();</span><br><span class="line">    <span class="keyword">var</span> key = Encoding.ASCII.GetBytes(_config[<span class="string">&quot;JWT:SignKey&quot;</span>]);</span><br><span class="line">    <span class="keyword">var</span> tokenDescriptor = <span class="keyword">new</span> SecurityTokenDescriptor</span><br><span class="line">    &#123;</span><br><span class="line">        Subject = <span class="keyword">new</span> ClaimsIdentity(<span class="keyword">new</span>[] &#123; <span class="keyword">new</span> Claim(<span class="string">&quot;id&quot;</span>, user.UserId.ToString()) &#125;),</span><br><span class="line">        Expires = DateTime.UtcNow.AddDays(<span class="number">7</span>),</span><br><span class="line">        SigningCredentials = <span class="keyword">new</span> SigningCredentials(<span class="keyword">new</span> SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> token = tokenHandler.CreateToken(tokenDescriptor);</span><br><span class="line">    <span class="keyword">return</span> tokenHandler.WriteToken(token);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Request-with-JWT-token-in-Header"><a href="#4-Request-with-JWT-token-in-Header" class="headerlink" title="4. Request with JWT token in Header"></a>4. Request with JWT token in Header</h3><ul>
+<li>Test with swagger, config security in Swagger generator.<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Program.cs</span></span><br><span class="line">builder.Services.AddSwaggerGen(options =&gt; &#123;</span><br><span class="line">    options.AddSecurityDefinition(<span class="string">&quot;Bearer&quot;</span>, <span class="keyword">new</span> OpenApiSecurityScheme</span><br><span class="line">    &#123;</span><br><span class="line">        Name = <span class="string">&quot;Authorization&quot;</span>,</span><br><span class="line">        Type = SecuritySchemeType.ApiKey,</span><br><span class="line">        Scheme = <span class="string">&quot;Bearer&quot;</span>,</span><br><span class="line">        BearerFormat = <span class="string">&quot;JWT&quot;</span>,</span><br><span class="line">        In = ParameterLocation.Header,</span><br><span class="line">        Description = <span class="string">&quot;JWT Authorization header using the Bearer scheme.&quot;</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    options.AddSecurityRequirement(<span class="keyword">new</span> OpenApiSecurityRequirement</span><br><span class="line">    &#123;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> OpenApiSecurityScheme</span><br><span class="line">            &#123;</span><br><span class="line">                Reference = <span class="keyword">new</span> OpenApiReference</span><br><span class="line">                &#123;</span><br><span class="line">                    Type = ReferenceType.SecurityScheme,</span><br><span class="line">                    Id = <span class="string">&quot;Bearer&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="keyword">new</span> <span class="built_in">string</span>[] &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<img src="https://i.imgur.com/An4S9dI.png"><br><img src="https://i.imgur.com/ewqyrFn.png"></li>
+</ul>
+<h3 id="5-Validate-JWT-token"><a href="#5-Validate-JWT-token" class="headerlink" title="5. Validate JWT token"></a>5. Validate JWT token</h3><ul>
+<li><p>Add Middleware for each of the requests to check whether token is valid before executing controller.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Program.cs</span></span><br><span class="line">app.UseMiddleware&lt;JwtMiddleware&gt;();</span><br></pre></td></tr></table></figure></li>
+<li><p>If token is valid, memorize the user in HttpContext for authorization.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JwtMiddleware.cs</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate _next;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    _next = next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task <span class="title">InvokeAsync</span>(<span class="params">HttpContext context, UserService userService, JwtUtil jwtUtil</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> token = context.Request.Headers[<span class="string">&quot;Authorization&quot;</span>].FirstOrDefault();</span><br><span class="line">    <span class="keyword">var</span> userId = jwtUtil.ValidateJwtToken(token);</span><br><span class="line">    <span class="keyword">if</span> (userId != <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// attach user to context on successful jwt validation</span></span><br><span class="line">        context.Items[<span class="string">&quot;User&quot;</span>] = userService.GetUser(userId.Value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> _next(context);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify token by <code>ValidateToken</code> method in JwtSecurityTokenHandler</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JwtUtil.cs</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span>? ValidateJwtToken(<span class="built_in">string</span> token)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (token == <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> tokenHandler = <span class="keyword">new</span> JwtSecurityTokenHandler();</span><br><span class="line">    <span class="keyword">var</span> key = Encoding.ASCII.GetBytes(_config[<span class="string">&quot;JWT:SignKey&quot;</span>]);</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        tokenHandler.ValidateToken(token, <span class="keyword">new</span> TokenValidationParameters</span><br><span class="line">        &#123;</span><br><span class="line">            ValidateIssuerSigningKey = <span class="literal">true</span>,</span><br><span class="line">            IssuerSigningKey = <span class="keyword">new</span> SymmetricSecurityKey(key),</span><br><span class="line">            ValidateIssuer = <span class="literal">false</span>,</span><br><span class="line">            ValidateAudience = <span class="literal">false</span>,</span><br><span class="line">            <span class="comment">// set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)</span></span><br><span class="line">            ClockSkew = TimeSpan.Zero</span><br><span class="line">        &#125;, <span class="keyword">out</span> SecurityToken validatedToken);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> jwtToken = (JwtSecurityToken)validatedToken;</span><br><span class="line">        <span class="keyword">var</span> userId = <span class="built_in">int</span>.Parse(jwtToken.Claims.First(x =&gt; x.Type == <span class="string">&quot;id&quot;</span>).Value);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// return user id from JWT token if validation successful</span></span><br><span class="line">        <span class="keyword">return</span> userId;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// return null if validation fails</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-Authorization"><a href="#6-Authorization" class="headerlink" title="6. Authorization"></a>6. Authorization</h3><ul>
+<li>Customize Attribute<ul>
+<li>AllowAnonymousAttribute  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">AttributeUsage(AttributeTargets.Method)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AllowAnonymousAttribute</span> : <span class="title">Attribute</span> &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>AuthorizeAttribute  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AuthorizeAttribute</span> : <span class="title">Attribute</span>, <span class="title">IAuthorizationFilter</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IList&lt;UserRole&gt; _roles;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AuthorizeAttribute</span>(<span class="params"><span class="keyword">params</span> UserRole[] roles</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        _roles = roles ?? <span class="keyword">new</span> UserRole[] &#123; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnAuthorization</span>(<span class="params">AuthorizationFilterContext context</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// skip authorization if action is decorated with [AllowAnonymous] attribute</span></span><br><span class="line">        <span class="keyword">var</span> allowAnonymous = context.ActionDescriptor.EndpointMetadata.OfType&lt;AllowAnonymousAttribute&gt;().Any();</span><br><span class="line">        <span class="keyword">if</span> (allowAnonymous)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// authorization</span></span><br><span class="line">        <span class="keyword">var</span> user = (User)context.HttpContext.Items[<span class="string">&quot;User&quot;</span>];</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="literal">null</span> || (_roles.Any() &amp;&amp; !_roles.Contains(user.Role)))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// not logged in or role not authorized</span></span><br><span class="line">            context.Result = <span class="keyword">new</span> JsonResult(<span class="keyword">new</span> &#123; message = <span class="string">&quot;Unauthorized&quot;</span> &#125;) &#123; StatusCode = StatusCodes.Status401Unauthorized &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="7-Controller"><a href="#7-Controller" class="headerlink" title="7. Controller"></a>7. Controller</h3><ul>
+<li>Before execute the method, use attibute properties that we customized, such as <code>AllowAnonymous</code> and <code>Authorize</code> to check whether the user can access or not.<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UserController.cs</span></span><br><span class="line">[<span class="meta">AllowAnonymous</span>]</span><br><span class="line">[<span class="meta">HttpPost</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">Login</span>(<span class="params">User user</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> _userService.Authenticate(user);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="meta">Authorize(UserRole.Admin)</span>]</span><br><span class="line">[<span class="meta">HttpGet</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">GetAllUsers</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> _userService.GetAllUsers();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="meta">HttpGet(<span class="string">&quot;&#123;id&#125;&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">GetUser</span>(<span class="params"><span class="built_in">int</span> id</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> _userService.GetUser(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://jasonwatmore.com/post/2022/02/18/net-6-role-based-authorization-tutorial-with-example-api#allow-anonymous-attribute-cs">.NET 6.0 - Role Based Authorization Tutorial with Example API</a><br><a target="_blank" rel="noopener" href="https://igouist.github.io/post/2021/10/swagger-enable-authorize/">在 Swagger UI 加上驗證按鈕，讓 Request Header 傳遞 Authorize Token</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/dotnet-jwt/" data-id="cldppnchq0001dwvh81bnc6p0" data-title=".Net 6 - Authentication and Authorization with JWT" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/" rel="tag">.Net</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/ng-loader/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular - Add loading spinner</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 12.5px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-connectdb/">.Net 6 - Operate database by EFCore</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

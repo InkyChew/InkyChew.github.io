@@ -1,171 +1,123 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-<title>Design pattern - Observer - Becomegood Code World</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-
-
-
-<meta name="description" content="Inky的技術學習筆記與閱讀心得分享">
-
-
-
-<meta name="keywords" content="soft engineer,code,reflection">
-
-
-
-    <meta name="description" content="Observer Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.  maintain consistency without tightly coupled to">
-<meta name="keywords" content="Design pattern,Java">
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Design pattern - Observer | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Observer Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.  maintain consistency without tightly coupled to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Design pattern - Observer">
-<meta property="og:url" content="https://InkyChew.github.io/oo-dp-observer/index.html">
+<meta property="og:url" content="https://inkychew.github.io/oo-dp-observer/index.html">
 <meta property="og:site_name" content="Becomegood Code World">
 <meta property="og:description" content="Observer Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.  maintain consistency without tightly coupled to">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/ACtC-3ckpilg6N0QEziGn84xa_CtczRQ25cgPmXpaSfKEKiaJJGdB0eamsHJUQaF14Z7ENe8xWXoQ_hCrMP3opZY3cGOmYJhy2EIvC0Wwn2iXUXnKdvRjOAG_eM03ohacssv4Udet6lFSyB230yL-jhlJxk=w1250-h937-no?authuser=1">
-<meta property="og:updated_time" content="2021-05-03T12:13:13.746Z">
+<meta property="article:published_time" content="2020-12-17T12:52:34.000Z">
+<meta property="article:modified_time" content="2021-05-03T12:13:14.000Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content="Design pattern">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Design pattern - Observer">
-<meta name="twitter:description" content="Observer Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.  maintain consistency without tightly coupled to">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/ACtC-3ckpilg6N0QEziGn84xa_CtczRQ25cgPmXpaSfKEKiaJJGdB0eamsHJUQaF14Z7ENe8xWXoQ_hCrMP3opZY3cGOmYJhy2EIvC0Wwn2iXUXnKdvRjOAG_eM03ohacssv4Udet6lFSyB230yL-jhlJxk=w1250-h937-no?authuser=1">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-
-
-
-
-<link rel="icon" href="/favicon.png">
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-
+  
+  
 <link rel="stylesheet" href="/css/style.css">
 
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+  
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143037516-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-    gtag('config', 'UA-143037516-1');
-</script>
-
-
-    
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172" crossorigin="anonymous"></script>
-</head>
 <body>
-    
-<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-logo" href="/">
-                
-                    
-                    Becomegood
-                    
-                
-            </a>
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <div class="navbar-menu navbar-start">
-            
-            <a class="navbar-item " href="/archives">Archives</a>
-            
-            <a class="navbar-item " href="/categories/Notes">Notes</a>
-            
-            <a class="navbar-item " href="/categories">Categories</a>
-            
-            <a class="navbar-item " href="/tags">Tags</a>
-            
-            <a class="navbar-item " href="/about">About</a>
-            
-        </div>
-        
-        <div class="navbar-menu navbar-end">
-            
-            <a class="navbar-item search" title="Search" href="javascript:;">
-                <i class="fas fa-search"></i>
-            </a>
-            
-            
-            
-            <a class="navbar-item" title="GitHub" href="https://github.com/InkyChew">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
-        </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
     </div>
-</nav>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section class="section">
-    <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            Design pattern - Observer
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-17T12:52:34.000Z" itemprop="datePublished">Dec 17 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Notes/">Notes</a><span>></span><a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 minutes read (About 725 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+      <div class="outer">
+        <section id="main"><article id="post-oo-dp-observer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/oo-dp-observer/" class="article-date">
+  <time class="dt-published" datetime="2020-12-17T12:52:34.000Z" itemprop="datePublished">2020-12-17</time>
+</a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>►<a class="article-category-link" href="/categories/Notes/OOSE/">OOSE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Design pattern - Observer
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         <h1 id="Observer"><a href="#Observer" class="headerlink" title="Observer"></a>Observer</h1><blockquote>
 <p>Define a one-to-many dependency between objects so that when one object changes state, all its depends are notified and updated automatically.</p>
 </blockquote>
 <p>maintain consistency without tightly coupled to increase reusablity.<br>當兩個object間的資訊需要同步更新的時候，透過observer pattern維護資訊的一致性，並降低之間的coupling。</p>
 <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ckpilg6N0QEziGn84xa_CtczRQ25cgPmXpaSfKEKiaJJGdB0eamsHJUQaF14Z7ENe8xWXoQ_hCrMP3opZY3cGOmYJhy2EIvC0Wwn2iXUXnKdvRjOAG_eM03ohacssv4Udet6lFSyB230yL-jhlJxk=w1250-h937-no?authuser=1" alt="Observer"></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>以Youtube為例<br>使用Youtube時，使用者對喜歡的youtuber按下訂閱，當該Youtuber發布最新的影片時，使用者就可以收到該Youtuber最新的影片。</p>
 <p>When subject changed, notify all observers to update.<br>But… </p>
@@ -174,287 +126,159 @@
 <li>Client call Notify<br>client forgot to call  </li>
 <li>Observer call Notify<br>inefficient</li>
 </ol>
-<h3 id="1-Client-call-Notify"><a href="#1-Client-call-Notify" class="headerlink" title="1. Client call Notify"></a>1. Client call Notify</h3><p>想像使用Youtube時，當使用者對喜歡的youtuber按下訂閱，則觸發addSubscriber將此使用者新增到Youtuber的subscribers List中。<br>當youtuber上傳最新影片時，觸發uploadVideo，通知所有訂閱者(observers)該youtuber(subject)最新的影片。<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Subject</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Youtuber</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> ArrayList&lt;Subscriber&gt; subscribers = <span class="hljs-keyword">new</span> ArrayList&lt;Subscriber&gt;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(Subscriber sub)</span> </span>&#123;</span><br><span class="line">    subscribers.add(sub);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">detach</span><span class="hljs-params">(Subscriber sub)</span> </span>&#123;</span><br><span class="line">    subscribers.remove(sub);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notify</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (sub : subscribers) &#123;</span><br><span class="line">      sub.update(<span class="hljs-keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">concreteYoutuber</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Youtuber</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> Video video;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setVideo</span><span class="hljs-params">(Video v)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.video = v;</span><br><span class="line">    <span class="hljs-keyword">this</span>.notify();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getVideo</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> video;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Observer</span></span><br><span class="line">Interface Subscriber &#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Youtuber ytb)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">concreteSubscriber</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Subscriber</span> </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> Video video;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Youtuber ytb)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.video = ytb.getVideo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Client</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Controller</span> </span>&#123;</span><br><span class="line">  Youtuber rdEnglish = <span class="hljs-keyword">new</span> concreteYoutuber();</span><br><span class="line">  <span class="hljs-comment">// when user click the subscribe button</span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addSubscriber</span><span class="hljs-params">(Subscriber subscriber)</span> </span>&#123;</span><br><span class="line">    rdEnglish.attach(subscriber);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// when youtuber upload video then notify all subscribers</span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">uploadVideo</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    rdEnglish.setVideo(video);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-Observer-call-Notify"><a href="#2-Observer-call-Notify" class="headerlink" title="2. Observer call Notify"></a>2. Observer call Notify</h3><p>想像在Excel中，為一張試算表的資料繪製一張長條圖與折線圖。按下新增圖表，觸發attach方法，以建立圖表。(可以透過<a href="https://inkychew.github.io/oo-dp-factory/">Factory method</a>建立不同的圖表)<br>當改變試算表中的資料時，觸發setData，並呼叫Notify以同步更新其他圖表的資料。<br>當改變圖表中的資料時，觸法setChartData，呼叫sheet的setData方法更新試算表的資料，並呼叫Notify同步更新其他圖表的資料。<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Subject</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="hljs-keyword">new</span> ArrayList&lt;Chart&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    Chart chart = <span class="hljs-keyword">new</span> Chart();</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">detach</span><span class="hljs-params">(Chart chart)</span> </span>&#123;</span><br><span class="line">    charts.remove(chart);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Notify</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(c : charts) &#123;</span><br><span class="line">      c.update(<span class="hljs-keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">concreteSpreadSheet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">spreadSheet</span> </span>&#123;</span><br><span class="line">  Data data = <span class="hljs-keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">setData</span><span class="hljs-params">(Data newData)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.data = newData;</span><br><span class="line">    <span class="hljs-keyword">this</span>.Notify();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> Data <span class="hljs-title">getData</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> data;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Observer</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Chart</span> </span>&#123;</span><br><span class="line">  spreadSheet sheet;</span><br><span class="line">  Data data;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(spreadSheet sheet)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.sheet = sheet;</span><br><span class="line">    <span class="hljs-keyword">this</span>.data = sheet.getData();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setChartData</span> <span class="hljs-params">(Data newData)</span> </span>&#123;</span><br><span class="line">    sheet.setData(newData);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    sheet.detach(<span class="hljs-keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">barChart</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Chart</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">lineChart</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Chart</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-Client-call-Notify"><a href="#1-Client-call-Notify" class="headerlink" title="1. Client call Notify"></a>1. Client call Notify</h3><p>想像使用Youtube時，當使用者對喜歡的youtuber按下訂閱，則觸發addSubscriber將此使用者新增到Youtuber的subscribers List中。<br>當youtuber上傳最新影片時，觸發uploadVideo，通知所有訂閱者(observers)該youtuber(subject)最新的影片。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Subject</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Youtuber</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> ArrayList&lt;Subscriber&gt; subscribers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Subscriber&gt;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">attach</span><span class="params">(Subscriber sub)</span> &#123;</span><br><span class="line">    subscribers.add(sub);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">detach</span><span class="params">(Subscriber sub)</span> &#123;</span><br><span class="line">    subscribers.remove(sub);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">notify</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (sub : subscribers) &#123;</span><br><span class="line">      sub.update(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">concreteYoutuber</span> <span class="keyword">extends</span> <span class="title class_">Youtuber</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> Video video;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setVideo</span><span class="params">(Video v)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.video = v;</span><br><span class="line">    <span class="built_in">this</span>.notify();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getVideo</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> video;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Observer</span></span><br><span class="line">Interface Subscriber &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Youtuber ytb)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">concreteSubscriber</span> <span class="keyword">implements</span> <span class="title class_">Subscriber</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> Video video;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Youtuber ytb)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.video = ytb.getVideo();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Client</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Controller</span> &#123;</span><br><span class="line">  <span class="type">Youtuber</span> <span class="variable">rdEnglish</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">concreteYoutuber</span>();</span><br><span class="line">  <span class="comment">// when user click the subscribe button</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addSubscriber</span><span class="params">(Subscriber subscriber)</span> &#123;</span><br><span class="line">    rdEnglish.attach(subscriber);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// when youtuber upload video then notify all subscribers</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">uploadVideo</span><span class="params">()</span> &#123;</span><br><span class="line">    rdEnglish.setVideo(video);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Observer-call-Notify"><a href="#2-Observer-call-Notify" class="headerlink" title="2. Observer call Notify"></a>2. Observer call Notify</h3><p>想像在Excel中，為一張試算表的資料繪製一張長條圖與折線圖。按下新增圖表，觸發attach方法，以建立圖表。(可以透過<a href="https://inkychew.github.io/oo-dp-factory/">Factory method</a>建立不同的圖表)<br>當改變試算表中的資料時，觸發setData，並呼叫Notify以同步更新其他圖表的資料。<br>當改變圖表中的資料時，觸法setChartData，呼叫sheet的setData方法更新試算表的資料，並呼叫Notify同步更新其他圖表的資料。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Subject</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">spreadSheet</span> &#123;</span><br><span class="line">  ArrayList&lt;chart&gt; charts = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Chart&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">attach</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">Chart</span> <span class="variable">chart</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Chart</span>();</span><br><span class="line">    charts.add(chart);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">detach</span><span class="params">(Chart chart)</span> &#123;</span><br><span class="line">    charts.remove(chart);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Notify</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(c : charts) &#123;</span><br><span class="line">      c.update(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">concreteSpreadSheet</span> <span class="keyword">extends</span> <span class="title class_">spreadSheet</span> &#123;</span><br><span class="line">  <span class="type">Data</span> <span class="variable">data</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">setData</span><span class="params">(Data newData)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = newData;</span><br><span class="line">    <span class="built_in">this</span>.Notify();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> Data <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Observer</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Chart</span> &#123;</span><br><span class="line">  spreadSheet sheet;</span><br><span class="line">  Data data;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(spreadSheet sheet)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.sheet = sheet;</span><br><span class="line">    <span class="built_in">this</span>.data = sheet.getData();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setChartData</span> <span class="params">(Data newData)</span> &#123;</span><br><span class="line">    sheet.setData(newData);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">()</span> &#123;</span><br><span class="line">    sheet.detach(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">barChart</span> <span class="keyword">extends</span> <span class="title class_">Chart</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">lineChart</span> <span class="keyword">extends</span> <span class="title class_">Chart</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h2><p>Pros:</p>
 <ol>
 <li>Coupling between subjects and observers is abstract and minimal. </li>
-<li>Subject and Observer can vary independently. </li>
+<li>Subject and Observer can vary independently.</li>
 </ol>
 <p>Subject不需要知道要更新哪些Observer。兩者可獨立的變化，提高複用性。 </p>
 <p>Cons:</p>
 <ol>
-<li>Unexpected updates.  </li>
+<li>Unexpected updates.</li>
 </ol>
 <p>Observer不需要知道其他的Observer。雖然降低coupling，但可能造成資訊更新難以追蹤，資訊更新錯誤的問題。</p>
 
-    
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/oo-dp-observer/" data-id="cl9i2ri8g002i24vh8f92bwv1" data-title="Design pattern - Observer" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-pattern/" rel="tag">Design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
     
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Design-pattern/">#Design pattern</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Java/">#Java</a></span>
-    
-    </div>
-    
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/oo-dp-factory/">Design pattern - Factory method</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/recursion/">遞迴與迴圈</a>
-            
-        </span>
-    </div>
-    
+<nav id="article-nav">
+  
+    <a href="/oo-dp-factory/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Design pattern - Factory method
+        
+      </div>
+    </a>
+  
+  
+    <a href="/recursion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">遞迴與迴圈</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-<div class="sharebox" style="display: flex; justify-content:center">
-    
-<div class="addthis_inline_share_toolbox"></div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d16faa6acd876d3"></script>
-
-</div>
-
-
-
-<div class="comments">
-    <h3 class="title is-4">Comments</h3>
-    
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://InkyChew.github.io/oo-dp-observer/';
-        this.page.identifier = 'oo-dp-observer/';
-        
-        this.language = 'en';
-        
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'becomegood' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</div>
-
-    </div>
 </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="columns content">
-            <div class="column is-narrow has-text-centered">
-                &copy; 2022 InkyChew&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos" rel="external nofollow">Minos</a>
-            </div>
-            <div class="column is-hidden-mobile"></div>
-
-            
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                
-                    
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/InkyChew">
-                    
-                    GitHub
-                    
-                </a>
-                
-                </div>
-            </div>
-            
-            
-        </div>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
     </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 12.5px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-connectdb/">.Net 6 - Operate database by EFCore</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
-<!-- test if the browser is outdated -->
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // plugin function, place inside DOM ready function
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
-
-<script>
-    window.FontAwesomeConfig = {
-        searchPseudoElements: true
-    }
-    moment.locale("en-AU");
-</script>
-
-
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
-        }
-    });
-</script>
-
-    
-    
-    
-    
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            if (typeof($.fn.lightGallery) === 'function') {
-                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof($.fn.justifiedGallery) === 'function') {
-                $('.justified-gallery').justifiedGallery();
-            }
-        });
-    })(jQuery);
-</script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <style>
-        .hljs {
-            position: relative;
-        }
-
-        .hljs .clipboard-btn {
-            float: right;
-            color: #9a9a9a;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hljs .clipboard-btn:hover {
-          color: #8a8a8a;
-        }
-
-        .hljs > .clipboard-btn {
-            display: none;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-        }
-
-        .hljs:hover > .clipboard-btn {
-            display: inline;
-        }
-
-        .hljs > figcaption > .clipboard-btn {
-            margin-right: 4px;
-        }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('figure.hljs').each(function(i, figure) {
-          var codeId = 'code-' + i;
-          var code = figure.querySelector('.code');
-          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
-          code.id = codeId;
-          copyButton.addClass('clipboard-btn');
-          copyButton.attr('data-clipboard-target-id', codeId);
-
-          var figcaption = figure.querySelector('figcaption');
-
-          if (figcaption) {
-            figcaption.append(copyButton[0]);
-          } else {
-            figure.prepend(copyButton[0]);
-          }
-        })
-
-        var clipboard = new ClipboardJS('.clipboard-btn', {
-          target: function(trigger) {
-            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
-          }
-        });
-        clipboard.on('success', function(e) {
-          e.clearSelection();
-        })
-      })
-    </script>
-
-    
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
     
 
-    
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
 
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-mask"></div>
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js"></script>
-    
+
+
+
+
+  </div>
 </body>
 </html>

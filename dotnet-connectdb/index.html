@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>.Net 6 - Operate database by EFCore | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Operate database by EFCore in .NETThe Entity Framework (ADO.NET Entity Framework) is a set of technologies in ADO.NET.In the following article, I will introduce two methods, Database first and Code fi">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".Net 6 - Operate database by EFCore">
+<meta property="og:url" content="https://inkychew.github.io/dotnet-connectdb/index.html">
+<meta property="og:site_name" content="Becomegood Code World">
+<meta property="og:description" content="Operate database by EFCore in .NETThe Entity Framework (ADO.NET Entity Framework) is a set of technologies in ADO.NET.In the following article, I will introduce two methods, Database first and Code fi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/i05wZNt.png">
+<meta property="og:image" content="https://i.imgur.com/2B9z1o2.png">
+<meta property="og:image" content="https://i.imgur.com/5C222KL.png">
+<meta property="og:image" content="https://i.imgur.com/5C222KL.png">
+<meta property="og:image" content="https://i.imgur.com/Yh3H7uw.png">
+<meta property="og:image" content="https://i.imgur.com/dcRDcpp.png">
+<meta property="og:image" content="https://i.imgur.com/mv0vurA.png">
+<meta property="og:image" content="https://i.imgur.com/a1yh01d.png">
+<meta property="og:image" content="https://i.imgur.com/BcUXfD3.png">
+<meta property="og:image" content="https://i.imgur.com/QdwFx8e.png">
+<meta property="article:published_time" content="2023-01-03T08:06:13.000Z">
+<meta property="article:modified_time" content="2023-02-04T08:08:24.759Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content=".Net">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/i05wZNt.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-dotnet-connectdb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/dotnet-connectdb/" class="article-date">
+  <time class="dt-published" datetime="2023-01-03T08:06:13.000Z" itemprop="datePublished">2023-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>►<a class="article-category-link" href="/categories/Notes/Web-Design/">Web Design</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      .Net 6 - Operate database by EFCore
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Operate-database-by-EFCore-in-NET"><a href="#Operate-database-by-EFCore-in-NET" class="headerlink" title="Operate database by EFCore in .NET"></a>Operate database by EFCore in .NET</h1><p>The Entity Framework (ADO.NET Entity Framework) is a set of technologies in ADO.NET.<br>In the following article, I will introduce two methods, Database first and Code first, to Connect SQL Server DB in ASP.NET6 Web API by Entity Framework Core. Either one can achieve our goal. Let’s start! </p>
+<span id="more"></span>
+
+<h2 id="DB-First"><a href="#DB-First" class="headerlink" title="DB First"></a>DB First</h2><ol>
+<li><p>Add Model</p>
+<ul>
+<li><p>package required<br> <img src="https://i.imgur.com/i05wZNt.png"></p>
+</li>
+<li><p>Open Package Manager Console<br> <img src="https://i.imgur.com/2B9z1o2.png"></p>
+</li>
+<li><p>Use <code>Scaffold-DbContext</code> to generate code for a DbContext and entity types from database.</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scaffold-DbContext &quot;Server=localhost\SQLEXPRESS;Database=AccountingCF;Trusted_Connection=True;&quot; Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models</span><br></pre></td></tr></table></figure>
+<p>  This will create a class which extends <code>DbContext</code></p>
+  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">AccountingCFContext</span> : <span class="title">DbContext</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NorthwindContext</span>()</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NorthwindContext</span>(<span class="params">DbContextOptions&lt;NorthwindContext&gt; options</span>) : <span class="title">base</span>(<span class="params">options</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Record&gt; Records &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="literal">null</span>!;</span><br><span class="line"></span><br><span class="line">    modelBuilder.Entity&lt;Record&gt;(entity =&gt; &#123;...&#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  Also, Entity type <code>Record</code>, which is a table in database.</p>
+  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Record</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> RecordId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Title &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="literal">null</span>!;</span><br><span class="line">    <span class="keyword">public</span> DateTime Date &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Genre &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span>? Description &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Amount &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Add ConnectionStrings</p>
+<ul>
+<li><p>package required<br>  <img src="https://i.imgur.com/5C222KL.png"></p>
+</li>
+<li><p>Add <code>ConnectionStrings</code> in <strong>appsettings.json</strong><br> Set the database’s server location and the database’s name.</p>
+  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;ConnectionStrings&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;DefaultConnection&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Server=localhost\\SQLEXPRESS;Database=AccountingCF;Trusted_Connection=True;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Add db connection in <strong>Program.cs</strong></p>
+  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">builder.Services.AddDbContext&lt;AccountingCFContext&gt;(options =&gt;</span><br><span class="line">       options.UseSqlServer(builder.Configuration.GetConnectionString(<span class="string">&quot;DefaultConnection&quot;</span>)));</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Add Controller</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Route(<span class="string">&quot;api/[controller]&quot;</span>)</span>]</span><br><span class="line">[<span class="meta">ApiController</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">RecordController</span> : <span class="title">ControllerBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> AccountingCFContext _dataContext;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RecordController</span>(<span class="params">AccountingCFContext context</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        _dataContext = context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">HttpGet</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IEnumerable&lt;Record&gt; <span class="title">GetRecords</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> _dataContext.Record.ToList();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Code-First"><a href="#Code-First" class="headerlink" title="Code First"></a>Code First</h2><ol>
+<li><p>Add Models Folder<br> create DbContext and Model class</p>
+<ul>
+<li>Record.cs  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Record</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> RecordId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Title &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="built_in">string</span>.Empty;</span><br><span class="line">    <span class="keyword">public</span> DateTime Date &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = DateTime.Now;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> RecordGenre Genre &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span>? Description &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Amount &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RecordGenre</span><br><span class="line">&#123;</span><br><span class="line">    Income,</span><br><span class="line">    Expense</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Accounting.cs  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Microsoft.EntityFrameworkCore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AccountingContext</span> : <span class="title">DbContext</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AccountingContext</span>(<span class="params">DbContextOptions&lt;AccountingContext&gt; options</span>) : <span class="title">base</span>(<span class="params">options</span>)</span> &#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> DbSet&lt;Record&gt; Record &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ConnectionStrings</p>
+<ul>
+<li><p>package required<br>  <img src="https://i.imgur.com/5C222KL.png"><br>  <img src="https://i.imgur.com/Yh3H7uw.png"></p>
+</li>
+<li><p>Add <code>ConnectionStrings</code> in <strong>appsettings.json</strong><br> Set the database’s server location and the database’s name.</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;ConnectionStrings&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;DefaultConnection&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Server=localhost\\SQLEXPRESS;Database=AccountingCF;Trusted_Connection=True;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Add db connection in <strong>Program.cs</strong></p>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">builder.Services.AddDbContext&lt;NorthwindContext&gt;(options =&gt;</span><br><span class="line">       options.UseSqlServer(builder.Configuration.GetConnectionString(<span class="string">&quot;DefaultConnection&quot;</span>)));</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Add Migration</p>
+<ul>
+<li>package required<br> <img src="https://i.imgur.com/dcRDcpp.png"></li>
+<li><code>Add-Migration InitialCreate</code><br> <img src="https://i.imgur.com/mv0vurA.png"><br> After the command is excuted, a new folder Migrations will be created.<br> <img src="https://i.imgur.com/a1yh01d.png"></li>
+<li>Look into class InitialCreate in <strong>InitialCreate.cs</strong> There is an <code>Up</code> method to create table and a <code>Down</code> method to drop table.  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">InitialCreate</span> : <span class="title">Migration</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Up</span>(<span class="params">MigrationBuilder migrationBuilder</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        migrationBuilder.CreateTable(</span><br><span class="line">            name: <span class="string">&quot;Record&quot;</span>,</span><br><span class="line">            columns: table =&gt; <span class="keyword">new</span></span><br><span class="line">            &#123;</span><br><span class="line">                RecordId = table.Column&lt;<span class="built_in">int</span>&gt;(type: <span class="string">&quot;int&quot;</span>, nullable: <span class="literal">false</span>)</span><br><span class="line">                    .Annotation(<span class="string">&quot;SqlServer:Identity&quot;</span>, <span class="string">&quot;1, 1&quot;</span>),</span><br><span class="line">                Title = table.Column&lt;<span class="built_in">string</span>&gt;(type: <span class="string">&quot;nvarchar(max)&quot;</span>, nullable: <span class="literal">false</span>),</span><br><span class="line">                Date = table.Column&lt;DateTime&gt;(type: <span class="string">&quot;datetime2&quot;</span>, nullable: <span class="literal">false</span>),</span><br><span class="line">                Genre = table.Column&lt;<span class="built_in">int</span>&gt;(type: <span class="string">&quot;int&quot;</span>, nullable: <span class="literal">false</span>),</span><br><span class="line">                Description = table.Column&lt;<span class="built_in">string</span>&gt;(type: <span class="string">&quot;nvarchar(max)&quot;</span>, nullable: <span class="literal">true</span>),</span><br><span class="line">                Amount = table.Column&lt;<span class="built_in">int</span>&gt;(type: <span class="string">&quot;int&quot;</span>, nullable: <span class="literal">false</span>)</span><br><span class="line">            &#125;,</span><br><span class="line">            constraints: table =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                table.PrimaryKey(<span class="string">&quot;PK_Record&quot;</span>, x =&gt; x.RecordId);</span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Down</span>(<span class="params">MigrationBuilder migrationBuilder</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        migrationBuilder.DropTable(</span><br><span class="line">            name: <span class="string">&quot;Record&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Execute <code>Update-Database</code>.</p>
+<ul>
+<li>The command will create the database if it is not exsit.<br><img src="https://i.imgur.com/BcUXfD3.png"></li>
+<li>Open the SQL Server management to see the created database.<br><img src="https://i.imgur.com/QdwFx8e.png"></li>
+</ul>
+</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/ef/core/cli/powershell#scaffold-dbcontext">Entity Framework Core tools reference</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Fbf_ua2t6v4">CRUD with a .NET 6 Web API &amp; Entity Framework Core</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">Migrations Overview</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/dotnet-connectdb/" data-id="cldppnchn0000dwvhd4bm3lf1" data-title=".Net 6 - Operate database by EFCore" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/" rel="tag">.Net</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/dotnet-linenotify/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          .Net 6 - Build Line Notify Web API
+        
+      </div>
+    </a>
+  
+  
+    <a href="/aws-storage/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AWS Core Services - Storage</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 12.5px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-connectdb/">.Net 6 - Operate database by EFCore</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

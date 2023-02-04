@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Angular - Drag data | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文透過DragEvent與Angular MVVM的特性，實現表格資料拖動以變更資料排序。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular - Drag data">
+<meta property="og:url" content="https://inkychew.github.io/ng-drag/index.html">
+<meta property="og:site_name" content="Becomegood Code World">
+<meta property="og:description" content="本文透過DragEvent與Angular MVVM的特性，實現表格資料拖動以變更資料排序。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-04T01:40:56.000Z">
+<meta property="article:modified_time" content="2023-02-04T07:33:58.093Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content="Angular">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ng-drag" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/ng-drag/" class="article-date">
+  <time class="dt-published" datetime="2023-02-04T01:40:56.000Z" itemprop="datePublished">2023-02-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>►<a class="article-category-link" href="/categories/Notes/Web-Design/">Web Design</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Angular - Drag data
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文透過DragEvent與Angular MVVM的特性，實現表格資料拖動以變更資料排序。</p>
+<div style="height: 300px; overflow: hidden;">
+  <video class="gdriveVideo" preload="auto" autoplay loop>
+    <source src="https://drive.google.com/uc?export=download&id=1DgRAwKHejUvzxA1b3ZlDlHfElx_dIXJy" type='video/webm'>
+  </video>
+</div>
+<span id="more"></span>
+
+<ol>
+<li><p>設定資料列<code>tr</code>可拖動<code>draggable=&quot;true&quot;</code>。</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let data of dataSet; let i = index;&quot;</span></span></span><br><span class="line"><span class="tag">  [<span class="attr">ngClass</span>]=<span class="string">&quot;&#123;&#x27;drag-enter&#x27; : targetIndex == i&#125;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">draggable</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">  (<span class="attr">dragstart</span>)=<span class="string">&quot;dragstart(data,i)&quot;</span></span></span><br><span class="line"><span class="tag">  (<span class="attr">dragenter</span>)=<span class="string">&quot;dragenter(data,i)&quot;</span></span></span><br><span class="line"><span class="tag">  (<span class="attr">dragend</span>)=<span class="string">&quot;dragend()&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let field of dataField&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; data[field.value] &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在拖動開始時，紀錄目標移動資料<code>targetData</code>與其索引<code>targetIndex</code>。</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">targetData</span>: <span class="literal">undefined</span>;</span><br><span class="line"><span class="attr">targetIndex</span>: <span class="built_in">number</span> = -<span class="number">1</span>;</span><br><span class="line"><span class="title function_">dragstart</span>(<span class="params">data: <span class="built_in">any</span>, rowIndex: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">targetData</span> = data;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">targetIndex</span> = rowIndex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拖動進行時，取得進入的資料<code>enterData</code>與其索引<code>enterIndex</code>交換目標資料<code>targetData</code>與進入資料，並比較<code>targetIndex</code>與<code>enterIndex</code>的大小，判段目標移動方向。</p>
+</li>
+</ol>
+<ul>
+<li>往下拖動:<code>targetIndex &lt; enterIndex</code>。每當目標往下移動，將前一項資料<code>enterIndex-1</code>替換成進入資料<code>enterData</code>；進入資料<code>enterIndex</code>替換成目標資料<code>targetData</code>。最後紀錄目標資料位置<code>targetIndex</code>為<code>enterIndex</code>。</li>
+<li>往上拖動:<code>targetIndex &gt; enterIndex</code>。每當目標往上移動，將後一項資料<code>enterIndex+1</code>替換成進入資料<code>enterData</code>；進入資料<code>enterIndex</code>替換成目標資料<code>targetData</code>。最後紀錄目標資料位置<code>targetIndex</code>為<code>enterIndex</code>。  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* switch enterData and targetData */</span></span><br><span class="line"><span class="title function_">dragenter</span>(<span class="params">enterData: <span class="built_in">any</span>, enterIndex: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(enterIndex &gt; <span class="variable language_">this</span>.<span class="property">targetIndex</span>) &#123;       <span class="comment">// drag direction: ↓</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dataSet</span>[enterIndex-<span class="number">1</span>] = enterData;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dataSet</span>[enterIndex] = <span class="variable language_">this</span>.<span class="property">targetData</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">targetIndex</span> = enterIndex;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(enterIndex &lt; <span class="variable language_">this</span>.<span class="property">targetIndex</span>) &#123;  <span class="comment">// drag direction: ↑</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dataSet</span>[enterIndex+<span class="number">1</span>] = enterData;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dataSet</span>[enterIndex] = <span class="variable language_">this</span>.<span class="property">targetData</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">targetIndex</span> = enterIndex;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4">
+<li><p>隱藏目標移動資料。</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tr</span><span class="selector-class">.drag-enter</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[ngClass]</span>=&quot;&#123;&#x27;drag-enter&#x27; : targetIndex == i&#125;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>當拖動結束時，顯示該資料。</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">dragend</span>(<span class="params"></span>) &#123; <span class="variable language_">this</span>.<span class="property">targetIndex</span> = -<span class="number">1</span>; &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/ng-drag/" data-id="cldpagxl50000xsvh9iheach5" data-title="Angular - Drag data" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/" rel="tag">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/ng-loader/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Angular - Add loading spinner
+        
+      </div>
+    </a>
+  
+  
+    <a href="/dotnet-linenotify/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.Net 6 - Build Line Notify Web API</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 12.5px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-connectdb/">.Net 6 - Operate database by EFCore</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
