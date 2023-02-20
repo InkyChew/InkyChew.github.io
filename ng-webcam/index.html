@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143037516-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143037516-1');
+</script>
+<!-- End Google Analytics -->
+
+  
+  <title>Angular - 透過網頁開啟相機解析條碼 | Becomegood Code World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本篇文章說明該如何透過網頁開啟相機，並介紹兩種方法解析條碼；分別為影音掃描與圖片檔案解析。影音掃描方法會自動偵測條碼並解析，而圖片解析方法則必須透過相機拍攝或上傳條碼圖片來進行解析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular - 透過網頁開啟相機解析條碼">
+<meta property="og:url" content="https://inkychew.github.io/ng-webcam/index.html">
+<meta property="og:site_name" content="Becomegood Code World">
+<meta property="og:description" content="本篇文章說明該如何透過網頁開啟相機，並介紹兩種方法解析條碼；分別為影音掃描與圖片檔案解析。影音掃描方法會自動偵測條碼並解析，而圖片解析方法則必須透過相機拍攝或上傳條碼圖片來進行解析。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/VdEEy7W.png">
+<meta property="og:image" content="https://i.imgur.com/9N8Qq99.png">
+<meta property="article:published_time" content="2023-02-18T08:34:11.000Z">
+<meta property="article:modified_time" content="2023-02-20T04:30:36.339Z">
+<meta property="article:author" content="InkyChew">
+<meta property="article:tag" content="Angular">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/VdEEy7W.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Becomegood Code World" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675103019378172"
+    crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Becomegood Code World</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Be a better self</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://InkyChew.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ng-webcam" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/ng-webcam/" class="article-date">
+  <time class="dt-published" datetime="2023-02-18T08:34:11.000Z" itemprop="datePublished">2023-02-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Notes/">Notes</a>►<a class="article-category-link" href="/categories/Notes/Web-Design/">Web Design</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Angular - 透過網頁開啟相機解析條碼
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本篇文章說明該如何透過網頁開啟相機，並介紹兩種方法解析條碼；分別為影音掃描與圖片檔案解析。影音掃描方法會自動偵測條碼並解析，而圖片解析方法則必須透過相機拍攝或上傳條碼圖片來進行解析。</p>
+<p><img src="https://i.imgur.com/VdEEy7W.png" alt="透過網頁開啟相機解析條碼"></p>
+<span id="more"></span>
+
+<h2 id="一、-掃描條碼"><a href="#一、-掃描條碼" class="headerlink" title="一、 掃描條碼"></a>一、 掃描條碼</h2><ol>
+<li><p>安裝套件<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@zxing/library">ZXing</a>一維&#x2F;二維條碼圖像處理庫。<br> <code>npm i @zxing/library@0.19.2</code></p>
+</li>
+<li><p>請求相機權限</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="property">mediaDevices</span>.<span class="title function_">getUserMedia</span>(&#123; <span class="attr">audio</span>: <span class="literal">false</span>, <span class="attr">video</span>: <span class="literal">true</span> &#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 權限允許，取得相機資源</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">getAllLens</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取得相機資源<br> <code>listVideoInputDevices</code>方法可取得所有可用鏡頭。一般來說會先取得前置鏡頭，再取得後置鏡頭。</p>
+ <img src="https://i.imgur.com/9N8Qq99.png" alt="取得裝置相機資源" width="500">
+
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getAllLens</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">codeReader</span>.<span class="title function_">listVideoInputDevices</span>().<span class="title function_">then</span>(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">devices</span> = value;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">DeviceId</span> = <span class="variable language_">this</span>.<span class="property">devices</span>[<span class="variable language_">this</span>.<span class="property">devices</span>.<span class="property">length</span>-<span class="number">1</span>].<span class="property">deviceId</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立video嵌入元素以顯示相機影像。</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">&quot;video&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定相機資源<code>deviceId</code>並解析條碼。</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">startScanning</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">codeReader</span>.<span class="title function_">decodeOnceFromVideoDevice</span>(<span class="variable language_">this</span>.<span class="property">_selectedDeviceId</span>, <span class="string">&#x27;video&#x27;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text</span> = result.<span class="title function_">getText</span>();</span><br><span class="line">    &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(err);</span><br><span class="line">    &#125;).<span class="title function_">finally</span>(<span class="function">() =&gt;</span> <span class="variable language_">this</span>.<span class="title function_">resetScanner</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重設相機</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">resetScanner</span>(<span class="params"></span>) &#123;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">codeReader</span>.<span class="title function_">reset</span>();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="二、-解析條碼圖片"><a href="#二、-解析條碼圖片" class="headerlink" title="二、 解析條碼圖片"></a>二、 解析條碼圖片</h2><p>嘗試使用上述套件，並無法正確解析條碼圖片，因此使用套件ZXing browser。<br>錯誤訊息: No MultiFormat Readers were able to detect the code.</p>
+<ol>
+<li><p>安裝套件<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@zxing/browser">ZXing browser</a>。<br> <code>npm i @zxing/browser@0.1.1</code></p>
+</li>
+<li><p>建立檔案輸入元素，加上capture屬性，使該輸入元素能夠在手機上開啟相機拍攝條碼，在電腦上則必須選擇條碼圖片檔案。</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&quot;environment&quot;</span> (<span class="attr">change</span>)=<span class="string">&quot;parseCode($event)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解析條碼圖片<br> 輸入元素偵測到檔案改變後，取得該檔案的url進行解碼。</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">parseCode</span>(<span class="params">e: <span class="built_in">any</span></span>) &#123;    </span><br><span class="line">    <span class="keyword">const</span> file = e.<span class="property">target</span>?.<span class="property">files</span>[<span class="number">0</span>];    </span><br><span class="line">    <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(file);    </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">codeReader</span>.<span class="title function_">decodeFromImageUrl</span>(url)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> <span class="variable language_">this</span>.<span class="property">parsedCode</span> = res.<span class="title function_">getText</span>())</span><br><span class="line">        .<span class="title function_">finally</span>(e.<span class="property">target</span>.<span class="property">value</span> = <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://codepen.io/flobiwankenobi/pen/poJNbEK">ZXing Barcode Scanner</a><br><a target="_blank" rel="noopener" href="https://www.letswrite.tw/html-capture/">用HTML 的capture 屬性，開啟手機鏡頭進行拍照、錄影</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inkychew.github.io/ng-webcam/" data-id="clec59xo80000fgvhglrph7gv" data-title="Angular - 透過網頁開啟相機解析條碼" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/" rel="tag">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/dotnet-linenotify/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.Net 6 - Build Line Notify Web API</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/">Notes</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/OOSE/">OOSE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Notes/Web-Design/">Web Design</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflection/">Reflection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/ng-webcam/">Angular - 透過網頁開啟相機解析條碼</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-linenotify/">.Net 6 - Build Line Notify Web API</a>
+          </li>
+        
+          <li>
+            <a href="/dotnet-jwt/">.Net 6 - Authentication and Authorization with JWT</a>
+          </li>
+        
+          <li>
+            <a href="/ng-drag/">Angular - Drag data</a>
+          </li>
+        
+          <li>
+            <a href="/ng-loader/">Angular - Add loading spinner</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 InkyChew<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
