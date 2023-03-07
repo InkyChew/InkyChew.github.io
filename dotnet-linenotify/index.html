@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://i.imgur.com/pIdgOSN.png">
 <meta property="og:image" content="https://i.imgur.com/0OMQ7nr.png">
 <meta property="article:published_time" content="2023-02-14T07:47:25.000Z">
-<meta property="article:modified_time" content="2023-02-18T08:26:54.536Z">
+<meta property="article:modified_time" content="2023-03-06T03:22:21.236Z">
 <meta property="article:author" content="InkyChew">
 <meta property="article:tag" content=".Net">
 <meta name="twitter:card" content="summary">
@@ -134,7 +134,7 @@
 
 
 <h3 id="2-基本設定"><a href="#2-基本設定" class="headerlink" title="2. 基本設定"></a>2. 基本設定</h3><ul>
-<li><p>在appsetting中，設定<code>client_id</code>、<code>client_secret</code>、<code>redirect_uri</code></p>
+<li><p>在appsettings.json中，設定<code>client_id</code>、<code>client_secret</code>、<code>redirect_uri</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;LineNotifySetting&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;client_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span>      <span class="comment">// Client ID</span></span><br><span class="line">    <span class="attr">&quot;client_secret&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span>  <span class="comment">// Client Secret</span></span><br><span class="line">    <span class="attr">&quot;redirect_uri&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:4200&quot;</span> <span class="comment">// Callback URL</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>建立資料模型(data model)。</p>
@@ -143,7 +143,7 @@
 <li><p>建立服務(service)。</p>
 <ul>
 <li>宣告欲使用的LINE Notify API。</li>
-<li>注入IConfiguration，以取得appsetting中的<code>LineNotifySetting</code>。</li>
+<li>注入IConfiguration，以取得appsettings.json中的<code>LineNotifySetting</code>。</li>
 <li>注入<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-7.0">IHttpClientFactory</a>，並在program.cs中呼叫AddHttpClient方法進行註冊，以建立HttpClient執行個體來發送Http請求。  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Add HttpClient service</span></span><br><span class="line">builder.Services.AddHttpClient();</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
@@ -151,10 +151,10 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">LineNotifyService</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> LineAuthorizeAPI = <span class="string">&quot;https://notify-bot.line.me/oauth/authorize&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> LineTokenAPI = <span class="string">&quot;https://notify-bot.line.me/oauth/token&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> LineNotifyAPI = <span class="string">&quot;https://notify-api.line.me/api/notify&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> LineRevokeAPI = <span class="string">&quot;https://notify-api.line.me/api/revoke&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration _configuration;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> LineNotifySetting _lineNotifySetting = <span class="keyword">new</span> LineNotifySetting();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IHttpClientFactory _httpClientFactory;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LineNotifyController</span>(<span class="params">IConfiguration configuration, IHttpClientFactory httpClientFactory</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        _configuration = configuration;</span><br><span class="line">        _lineNotifySetting.Client_ID = _configuration[<span class="string">&quot;LineNotifySetting:client_id&quot;</span>];</span><br><span class="line">        _lineNotifySetting.Client_Secret = _configuration[<span class="string">&quot;LineNotifySetting:client_secret&quot;</span>];</span><br><span class="line">        _lineNotifySetting.Redirect_URI = _configuration[<span class="string">&quot;LineNotifySetting:redirect_uri&quot;</span>];</span><br><span class="line">        _httpClientFactory = httpClientFactory;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-導向Line-Notify授權網頁"><a href="#2-導向Line-Notify授權網頁" class="headerlink" title="2. 導向Line Notify授權網頁"></a>2. 導向Line Notify授權網頁</h3><p>將使用者導向Line Notify服務授權之頁面。</p>
-<table border="0" style="border: none;">
+<table>
     <tr>
-        <td><img src="https://i.imgur.com/6wrCM1s.png"></td>
-        <td><img src="https://i.imgur.com/ozWFsir.png"></td>
+        <td style="border: none;"><img src="https://i.imgur.com/6wrCM1s.png"></td>
+        <td style="border: none;"><img src="https://i.imgur.com/ozWFsir.png"></td>
     </tr>
 </table>
 
@@ -199,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://inkychew.github.io/dotnet-linenotify/" data-id="clechhlaf0018z0vh3oqr4jyj" data-title=".Net 6 - Build Line Notify Web API" class="article-share-link">Share</a>
+      <a data-url="https://inkychew.github.io/dotnet-linenotify/" data-id="clexw8vld0012r0vh98j57eku" data-title=".Net 6 - Build Line Notify Web API" class="article-share-link">Share</a>
       
       
       
@@ -250,7 +250,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Net/" style="font-size: 15px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
+      <a href="/tags/Net/" style="font-size: 17.5px;">.Net</a> <a href="/tags/AWS/" style="font-size: 17.5px;">AWS</a> <a href="/tags/Angular/" style="font-size: 15px;">Angular</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Design-pattern/" style="font-size: 15px;">Design pattern</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/OOSE/" style="font-size: 12.5px;">OOSE</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/sorting/" style="font-size: 15px;">sorting</a>
     </div>
   </div>
 
@@ -260,6 +260,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/sc-captcha/">.Net 6 - CAPTCHA</a>
+          </li>
         
           <li>
             <a href="/ng-webcam/">Angular - 透過網頁開啟相機解析條碼</a>
@@ -275,10 +279,6 @@
         
           <li>
             <a href="/ng-drag/">Angular - Drag data</a>
-          </li>
-        
-          <li>
-            <a href="/ng-loader/">Angular - Add loading spinner</a>
           </li>
         
       </ul>
