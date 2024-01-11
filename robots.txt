@@ -8,5 +8,3 @@ Allow: /tags/
 Disallow: /js/
 Disallow: /css/
 Disallow: /fancybox/
-
-Sitemap: https://inkychew.github.io/sitemap.xml
